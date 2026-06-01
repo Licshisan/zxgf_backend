@@ -5,3 +5,121 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum UserRole {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+  TOOL
+}
+
+enum MessageContentType {
+  TEXT
+  MARKDOWN
+  IMAGE
+  VIDEO
+  FILE
+}
+
+enum AgentTaskStatus {
+  PENDING
+  RUNNING
+  SUCCEEDED
+  FAILED
+  CANCELED
+}
+
+model User {
+  id           String         @id @default(uuid()) @db.Uuid
+  username     String         @unique @db.VarChar(64)
+  email        String?        @unique @db.VarChar(255)
+  passwordHash String         @map("password_hash") @db.VarChar(255)
+  displayName  String?        @map("display_name") @db.VarChar(100)
+  role         UserRole       @default(STUDENT)
+  sessions     Session[]
+  taskLogs     AgentTaskLog[]
+  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("users")
+}
+
+model Session {
+  id        String         @id @default(uuid()) @db.Uuid
+  userId    String         @map("user_id") @db.Uuid
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String?        @db.VarChar(200)
+  course    String?        @db.VarChar(200)
+  goal      String?
+  metadata  Json?
+  messages  Message[]
+  taskLogs  AgentTaskLog[]
+  createdAt DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model Message {
+  id          String             @id @default(uuid()) @db.Uuid
+  sessionId   String             @map("session_id") @db.Uuid
+  session     Session            @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role        MessageRole
+  content     String
+  contentType MessageContentType @default(TEXT) @map("content_type")
+  metadata    Json?
+  taskLogs    AgentTaskLog[]
+  createdAt   DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([sessionId])
+  @@index([createdAt])
+  @@map("messages")
+}
+
+model DocumentChunk {
+  id          String                    @id @default(uuid()) @db.Uuid
+  sourceId    String                    @map("source_id") @db.VarChar(120)
+  sourceTitle String?                   @map("source_title") @db.VarChar(255)
+  chunkIndex  Int                       @map("chunk_index")
+  content     String
+  metadata    Json?
+  embedding   Unsupported("vector(1024)")
+  createdAt   DateTime                  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime                  @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@unique([sourceId, chunkIndex])
+  @@index([sourceId])
+  @@map("document_chunks")
+}
+
+model AgentTaskLog {
+  id         String          @id @default(uuid()) @db.Uuid
+  userId     String?         @map("user_id") @db.Uuid
+  user       User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
+  sessionId  String?         @map("session_id") @db.Uuid
+  session    Session?        @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  messageId  String?         @map("message_id") @db.Uuid
+  message    Message?        @relation(fields: [messageId], references: [id], onDelete: SetNull)
+  agentName  String          @map("agent_name") @db.VarChar(100)
+  taskType   String          @map("task_type") @db.VarChar(100)
+  status     AgentTaskStatus @default(PENDING)
+  input      Json?
+  output     Json?
+  error      String?
+  startedAt  DateTime        @default(now()) @map("started_at") @db.Timestamptz(6)
+  finishedAt DateTime?       @map("finished_at") @db.Timestamptz(6)
+
+  @@index([userId])
+  @@index([sessionId])
+  @@index([messageId])
+  @@index([status])
+  @@index([taskType])
+  @@map("agent_task_logs")
+}
