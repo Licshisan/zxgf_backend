@@ -42,6 +42,7 @@ model User {
   passwordHash String         @map("password_hash") @db.VarChar(255)
   displayName  String?        @map("display_name") @db.VarChar(100)
   role         UserRole       @default(STUDENT)
+  profile      Json?
   sessions     Session[]
   taskLogs     AgentTaskLog[]
   createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
