@@ -30,6 +30,8 @@ async function bootstrap() {
   SwaggerModule.setup(swaggerPath, app, document);
 
   await app.listen(port);
-  logger.log(`Swagger docs available at http://localhost:${port}/${swaggerPath}`);
+  logger.log(
+    `Swagger docs available at http://localhost:${port}/${swaggerPath}`,
+  );
 }
 bootstrap();

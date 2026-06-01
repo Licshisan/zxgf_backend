@@ -59,7 +59,8 @@ export class AuthController {
   @Post('send-reset-code')
   @ApiOperation({
     summary: '发送找回密码验证码',
-    description: '向已注册邮箱发送 6 位验证码。为避免枚举邮箱，接口返回统一成功信息。',
+    description:
+      '向已注册邮箱发送 6 位验证码。为避免枚举邮箱，接口返回统一成功信息。',
   })
   @ApiOkResponse({ description: '请求已处理' })
   sendResetCode(@Body() dto: SendEmailCodeDto) {

@@ -1,35 +1,32 @@
-import { Body, Controller, Post, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, Res } from '@nestjs/common';
 import {
-  ApiBearerAuth,
-  ApiBody,
   ApiOkResponse,
   ApiOperation,
   ApiProduces,
   ApiTags,
-  ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
+import { EventType, type AGUIEvent, type RunAgentInput } from '@ag-ui/core';
 import type { Response } from 'express';
-import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { ChatService } from './chat.service';
-import { ChatStreamDto } from './dto/chat-stream.dto';
 
-@ApiTags('聊天')
+@ApiTags('chat')
 @Controller('chat')
 export class ChatController {
   constructor(private readonly chatService: ChatService) {}
 
   @Post('stream')
-  @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   @ApiOperation({
-    summary: '流式聊天测试',
-    description: '返回 SSE 流式数据，用于测试前端打字机效果。',
+    summary: 'AG-UI streaming chat',
+    description:
+      'Accepts AG-UI RunAgentInput and returns AG-UI events over SSE.',
   })
-  @ApiBody({ type: ChatStreamDto })
   @ApiProduces('text/event-stream')
-  @ApiOkResponse({ description: '返回 text/event-stream 流式响应' })
-  @ApiUnauthorizedResponse({ description: '未登录或令牌无效' })
-  async stream(@Body() dto: ChatStreamDto, @Res() response: Response) {
+  @ApiOkResponse({ description: 'Returns AG-UI Server-Sent Events stream' })
+  async stream(
+    @Body() body: Partial<RunAgentInput>,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    console.log(body);
     const abortController = new AbortController();
 
     response.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
@@ -38,34 +35,42 @@ export class ChatController {
     response.setHeader('X-Accel-Buffering', 'no');
     response.flushHeaders();
 
-    response.on('close', () => {
+    const onClientClose = () => {
       abortController.abort();
-    });
+    };
+    response.on('close', onClientClose);
 
     try {
-      for await (const event of this.chatService.createMockStream(
-        dto.message,
+      for await (const event of this.chatService.runAgent(
+        body,
         abortController.signal,
       )) {
         if (response.destroyed || abortController.signal.aborted) {
-          return;
+          break;
         }
-
-        response.write(`data: ${JSON.stringify(event)}\n\n`);
+        this.writeSseEvent(response, event);
       }
-    } catch (error) {
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'AG-UI stream failed';
+      const errorEvent: AGUIEvent = {
+        type: EventType.RUN_ERROR,
+        message: errMsg,
+        code: 'CHAT_STREAM_FAILED',
+        timestamp: Date.now(),
+      };
+
       if (!response.destroyed) {
-        response.write(
-          `data: ${JSON.stringify({
-            type: 'error',
-            message: '流式响应失败',
-          })}\n\n`,
-        );
+        this.writeSseEvent(response, errorEvent);
       }
     } finally {
+      response.off('close', onClientClose);
       if (!response.destroyed) {
         response.end();
       }
     }
+  }
+
+  private writeSseEvent(response: Response, event: AGUIEvent): void {
+    response.write(`data: ${JSON.stringify(event)}\n\n`);
   }
 }

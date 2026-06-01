@@ -10,7 +10,8 @@ export class MailService {
 
   constructor(config: ConfigService) {
     const user = config.get<string>('SMTP_USER');
-    this.from = config.get<string>('SMTP_FROM') || user || 'no-reply@example.com';
+    this.from =
+      config.get<string>('SMTP_FROM') || user || 'no-reply@example.com';
 
     this.transporter = nodemailer.createTransport({
       host: config.get<string>('SMTP_HOST', 'localhost'),

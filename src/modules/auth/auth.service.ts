@@ -2,7 +2,6 @@ import {
   BadRequestException,
   ConflictException,
   Injectable,
-  UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Prisma, UserRole } from '@prisma/client';
@@ -86,7 +85,7 @@ export class AuthService {
     const user = await this.prisma.user.findFirst({ where });
 
     if (!user || !(await bcrypt.compare(dto.password, user.passwordHash))) {
-      throw new UnauthorizedException('Invalid account or password');
+      throw new BadRequestException('Invalid account or password');
     }
 
     return this.createAuthResponse(user);
@@ -100,10 +99,16 @@ export class AuthService {
 
     if (existingUser) {
       const code = await this.saveEmailCode('reset', email);
-      await this.mailService.sendVerificationCode(email, code, 'Password reset code');
+      await this.mailService.sendVerificationCode(
+        email,
+        code,
+        'Password reset code',
+      );
     }
 
-    return { message: 'If the email exists, a verification code has been sent' };
+    return {
+      message: 'If the email exists, a verification code has been sent',
+    };
   }
 
   async resetPassword(dto: ResetPasswordDto) {
