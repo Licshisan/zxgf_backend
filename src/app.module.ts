@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { PrismaModule } from './shared/prisma/prisma.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ChatModule } from './modules/chat/chat.module';
+import { RagModule } from './modules/rag/rag.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ChatModule } from './modules/chat/chat.module';
     PrismaModule,
     AuthModule,
     ChatModule,
+    RagModule,
   ],
   controllers: [AppController],
   providers: [AppService],

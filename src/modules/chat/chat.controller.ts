@@ -8,7 +8,7 @@ import {
 import { type AGUIEvent, type RunAgentInput } from '@ag-ui/core';
 import { AGUI_MEDIA_TYPE } from '@ag-ui/encoder';
 import type { Response } from 'express';
-import { StreamAgent } from '../../common/decorators/stream-agent.decorator';
+import { StreamAgent } from './decorators/stream-agent.decorator';
 import { LlmService } from './llm.service';
 import { MockService } from './mock.service';
 
