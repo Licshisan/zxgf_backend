@@ -1,0 +1,654 @@
+{
+  "course_id": "OS-001",
+  "chapter_list": [
+    {
+      "chapter_id": "ch01",
+      "chapter_name": "操作系统导论",
+      "sort": 1,
+      "child": [
+        {
+          "section_id": "ch01_01",
+          "section_name": "操作系统的角色：抽象、复用与保护"
+        },
+        {
+          "section_id": "ch01_02",
+          "section_name": "虚拟化、并发与持久化三大主题"
+        },
+        {
+          "section_id": "ch01_03",
+          "section_name": "系统调用、用户态与内核态"
+        },
+        {
+          "section_id": "ch01_04",
+          "section_name": "操作系统设计目标与历史演进"
+        },
+        {
+          "section_id": "ch01_05",
+          "section_name": "机制与策略的分离"
+        },
+        {
+          "section_id": "ch01_06",
+          "section_name": "内核、微内核与模块化结构"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_name": "进程抽象与进程 API",
+      "sort": 2,
+      "child": [
+        {
+          "section_id": "ch02_01",
+          "section_name": "程序、进程与执行上下文"
+        },
+        {
+          "section_id": "ch02_02",
+          "section_name": "进程状态机与状态转换"
+        },
+        {
+          "section_id": "ch02_03",
+          "section_name": "进程控制块 PCB 与内核数据结构"
+        },
+        {
+          "section_id": "ch02_04",
+          "section_name": "fork 系统调用与地址空间复制"
+        },
+        {
+          "section_id": "ch02_05",
+          "section_name": "wait 与僵尸进程回收"
+        },
+        {
+          "section_id": "ch02_06",
+          "section_name": "exec 与程序映像替换"
+        },
+        {
+          "section_id": "ch02_07",
+          "section_name": "shell、重定向与管道的进程组合"
+        },
+        {
+          "section_id": "ch02_08",
+          "section_name": "进程间通信 IPC 基础"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_name": "CPU 虚拟化与调度",
+      "sort": 3,
+      "child": [
+        {
+          "section_id": "ch03_01",
+          "section_name": "受限直接执行机制"
+        },
+        {
+          "section_id": "ch03_02",
+          "section_name": "陷入、系统调用与异常处理"
+        },
+        {
+          "section_id": "ch03_03",
+          "section_name": "定时器中断与上下文切换"
+        },
+        {
+          "section_id": "ch03_04",
+          "section_name": "调度指标：周转时间、响应时间与公平性"
+        },
+        {
+          "section_id": "ch03_05",
+          "section_name": "FIFO、SJF 与 STCF 调度"
+        },
+        {
+          "section_id": "ch03_06",
+          "section_name": "轮转调度与时间片选择"
+        },
+        {
+          "section_id": "ch03_07",
+          "section_name": "I/O 密集型与 CPU 密集型负载"
+        },
+        {
+          "section_id": "ch03_08",
+          "section_name": "多级反馈队列 MLFQ 规则"
+        },
+        {
+          "section_id": "ch03_09",
+          "section_name": "MLFQ 的饥饿、防作弊与优先级提升"
+        },
+        {
+          "section_id": "ch03_10",
+          "section_name": "彩票调度与比例份额调度"
+        },
+        {
+          "section_id": "ch03_11",
+          "section_name": "多处理器调度、缓存亲和性与负载均衡"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_name": "地址空间与内存虚拟化基础",
+      "sort": 4,
+      "child": [
+        {
+          "section_id": "ch04_01",
+          "section_name": "地址空间抽象与内存布局"
+        },
+        {
+          "section_id": "ch04_02",
+          "section_name": "早期系统、多道程序与时分共享"
+        },
+        {
+          "section_id": "ch04_03",
+          "section_name": "动态重定位与基址界限寄存器"
+        },
+        {
+          "section_id": "ch04_04",
+          "section_name": "内存 API：malloc 与 free"
+        },
+        {
+          "section_id": "ch04_05",
+          "section_name": "堆、栈与内存分配生命周期"
+        },
+        {
+          "section_id": "ch04_06",
+          "section_name": "内存错误：泄漏、悬空指针与越界访问"
+        },
+        {
+          "section_id": "ch04_07",
+          "section_name": "分段机制与段表"
+        },
+        {
+          "section_id": "ch04_08",
+          "section_name": "段共享、保护位与外部碎片"
+        },
+        {
+          "section_id": "ch04_09",
+          "section_name": "空闲空间管理：分裂、合并与空闲列表"
+        },
+        {
+          "section_id": "ch04_10",
+          "section_name": "首次适配、最佳适配与伙伴系统"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_name": "分页与地址转换",
+      "sort": 5,
+      "child": [
+        {
+          "section_id": "ch05_01",
+          "section_name": "分页基本思想：页、页框与页表"
+        },
+        {
+          "section_id": "ch05_02",
+          "section_name": "页表项 PTE：有效位、保护位、脏位与引用位"
+        },
+        {
+          "section_id": "ch05_03",
+          "section_name": "地址转换：虚拟页号与页内偏移"
+        },
+        {
+          "section_id": "ch05_04",
+          "section_name": "页表存放位置与页表过大问题"
+        },
+        {
+          "section_id": "ch05_05",
+          "section_name": "TLB 快速地址转换机制"
+        },
+        {
+          "section_id": "ch05_06",
+          "section_name": "TLB 命中、未命中与替换"
+        },
+        {
+          "section_id": "ch05_07",
+          "section_name": "上下文切换中的 TLB 刷新与 ASID"
+        },
+        {
+          "section_id": "ch05_08",
+          "section_name": "多级页表的空间压缩"
+        },
+        {
+          "section_id": "ch05_09",
+          "section_name": "反向页表与哈希页表"
+        },
+        {
+          "section_id": "ch05_10",
+          "section_name": "VAX/VMS 虚拟内存系统案例"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch06",
+      "chapter_name": "超越物理内存",
+      "sort": 6,
+      "child": [
+        {
+          "section_id": "ch06_01",
+          "section_name": "交换空间与按需分页"
+        },
+        {
+          "section_id": "ch06_02",
+          "section_name": "页错误处理流程"
+        },
+        {
+          "section_id": "ch06_03",
+          "section_name": "页面换入换出与磁盘 I/O 开销"
+        },
+        {
+          "section_id": "ch06_04",
+          "section_name": "局部性原理与缓存管理"
+        },
+        {
+          "section_id": "ch06_05",
+          "section_name": "最优替换、FIFO 与随机替换"
+        },
+        {
+          "section_id": "ch06_06",
+          "section_name": "LRU 替换与栈性质"
+        },
+        {
+          "section_id": "ch06_07",
+          "section_name": "近似 LRU 与时钟算法"
+        },
+        {
+          "section_id": "ch06_08",
+          "section_name": "脏页写回与后台分页守护进程"
+        },
+        {
+          "section_id": "ch06_09",
+          "section_name": "工作集模型与抖动"
+        },
+        {
+          "section_id": "ch06_10",
+          "section_name": "内存压力、准入控制与性能退化"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch07",
+      "chapter_name": "线程与并发基础",
+      "sort": 7,
+      "child": [
+        {
+          "section_id": "ch07_01",
+          "section_name": "线程抽象与共享地址空间"
+        },
+        {
+          "section_id": "ch07_02",
+          "section_name": "线程创建、join 与线程 API"
+        },
+        {
+          "section_id": "ch07_03",
+          "section_name": "共享数据与竞态条件"
+        },
+        {
+          "section_id": "ch07_04",
+          "section_name": "临界区、互斥与同步目标"
+        },
+        {
+          "section_id": "ch07_05",
+          "section_name": "不可控调度交错与并发缺陷"
+        },
+        {
+          "section_id": "ch07_06",
+          "section_name": "原子性与内存可见性"
+        },
+        {
+          "section_id": "ch07_07",
+          "section_name": "并发程序调试与可重复性问题"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch08",
+      "chapter_name": "锁与并发数据结构",
+      "sort": 8,
+      "child": [
+        {
+          "section_id": "ch08_01",
+          "section_name": "锁的基本语义与正确用法"
+        },
+        {
+          "section_id": "ch08_02",
+          "section_name": "测试并设置 TAS 与自旋锁"
+        },
+        {
+          "section_id": "ch08_03",
+          "section_name": "比较并交换 CAS 与无锁基础"
+        },
+        {
+          "section_id": "ch08_04",
+          "section_name": "Load-Linked 与 Store-Conditional"
+        },
+        {
+          "section_id": "ch08_05",
+          "section_name": "禁用中断与单处理器同步"
+        },
+        {
+          "section_id": "ch08_06",
+          "section_name": "票锁、队列锁与公平性"
+        },
+        {
+          "section_id": "ch08_07",
+          "section_name": "休眠锁、两阶段锁与 futex 思想"
+        },
+        {
+          "section_id": "ch08_08",
+          "section_name": "锁粒度与性能权衡"
+        },
+        {
+          "section_id": "ch08_09",
+          "section_name": "并发计数器、链表、队列与哈希表"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch09",
+      "chapter_name": "条件变量、信号量与经典并发问题",
+      "sort": 9,
+      "child": [
+        {
+          "section_id": "ch09_01",
+          "section_name": "条件变量的等待与通知语义"
+        },
+        {
+          "section_id": "ch09_02",
+          "section_name": "Mesa 语义与 while 循环检查条件"
+        },
+        {
+          "section_id": "ch09_03",
+          "section_name": "生产者消费者问题"
+        },
+        {
+          "section_id": "ch09_04",
+          "section_name": "覆盖条件与广播唤醒"
+        },
+        {
+          "section_id": "ch09_05",
+          "section_name": "信号量的 P/V 操作与计数语义"
+        },
+        {
+          "section_id": "ch09_06",
+          "section_name": "二值信号量、互斥锁与条件同步"
+        },
+        {
+          "section_id": "ch09_07",
+          "section_name": "读者写者问题"
+        },
+        {
+          "section_id": "ch09_08",
+          "section_name": "哲学家就餐问题"
+        },
+        {
+          "section_id": "ch09_09",
+          "section_name": "屏障与阶段同步"
+        },
+        {
+          "section_id": "ch09_10",
+          "section_name": "死锁的四个必要条件"
+        },
+        {
+          "section_id": "ch09_11",
+          "section_name": "死锁预防、避免、检测与恢复"
+        },
+        {
+          "section_id": "ch09_12",
+          "section_name": "非死锁并发缺陷与事件驱动并发"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch10",
+      "chapter_name": "I/O 设备、磁盘与 RAID",
+      "sort": 10,
+      "child": [
+        {
+          "section_id": "ch10_01",
+          "section_name": "I/O 设备模型与总线结构"
+        },
+        {
+          "section_id": "ch10_02",
+          "section_name": "设备寄存器、状态位与命令提交"
+        },
+        {
+          "section_id": "ch10_03",
+          "section_name": "轮询、中断与 DMA"
+        },
+        {
+          "section_id": "ch10_04",
+          "section_name": "设备驱动程序与操作系统接口"
+        },
+        {
+          "section_id": "ch10_05",
+          "section_name": "磁盘结构：磁道、扇区与柱面"
+        },
+        {
+          "section_id": "ch10_06",
+          "section_name": "寻道、旋转延迟与传输时间"
+        },
+        {
+          "section_id": "ch10_07",
+          "section_name": "磁盘调度：SSTF、SCAN 与 C-SCAN"
+        },
+        {
+          "section_id": "ch10_08",
+          "section_name": "RAID 基本思想：条带化、镜像与校验"
+        },
+        {
+          "section_id": "ch10_09",
+          "section_name": "RAID 0、1、4、5 的可靠性与性能"
+        },
+        {
+          "section_id": "ch10_10",
+          "section_name": "故障恢复、重建窗口与写入洞问题"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch11",
+      "chapter_name": "文件与目录接口",
+      "sort": 11,
+      "child": [
+        {
+          "section_id": "ch11_01",
+          "section_name": "文件抽象与字节流模型"
+        },
+        {
+          "section_id": "ch11_02",
+          "section_name": "文件描述符与打开文件表"
+        },
+        {
+          "section_id": "ch11_03",
+          "section_name": "open、read、write 与 close"
+        },
+        {
+          "section_id": "ch11_04",
+          "section_name": "lseek、偏移量与随机访问"
+        },
+        {
+          "section_id": "ch11_05",
+          "section_name": "目录、路径名与命名层次"
+        },
+        {
+          "section_id": "ch11_06",
+          "section_name": "硬链接、符号链接与 inode 引用计数"
+        },
+        {
+          "section_id": "ch11_07",
+          "section_name": "权限、所有者与文件元数据"
+        },
+        {
+          "section_id": "ch11_08",
+          "section_name": "fsync、rename 与持久化语义"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch12",
+      "chapter_name": "文件系统实现与 FFS",
+      "sort": 12,
+      "child": [
+        {
+          "section_id": "ch12_01",
+          "section_name": "文件系统布局与基本数据结构"
+        },
+        {
+          "section_id": "ch12_02",
+          "section_name": "inode、数据块与位图"
+        },
+        {
+          "section_id": "ch12_03",
+          "section_name": "目录实现与路径遍历"
+        },
+        {
+          "section_id": "ch12_04",
+          "section_name": "空闲空间管理与块分配"
+        },
+        {
+          "section_id": "ch12_05",
+          "section_name": "缓存、缓冲区缓存与写入策略"
+        },
+        {
+          "section_id": "ch12_06",
+          "section_name": "局部性原理与快速文件系统 FFS"
+        },
+        {
+          "section_id": "ch12_07",
+          "section_name": "柱面组、块组与数据放置"
+        },
+        {
+          "section_id": "ch12_08",
+          "section_name": "大文件、多级索引与 extent 思想"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch13",
+      "chapter_name": "崩溃一致性与日志文件系统",
+      "sort": 13,
+      "child": [
+        {
+          "section_id": "ch13_01",
+          "section_name": "崩溃一致性问题"
+        },
+        {
+          "section_id": "ch13_02",
+          "section_name": "文件系统检查 FSCK"
+        },
+        {
+          "section_id": "ch13_03",
+          "section_name": "预写日志 WAL 基本思想"
+        },
+        {
+          "section_id": "ch13_04",
+          "section_name": "元数据日志与数据日志"
+        },
+        {
+          "section_id": "ch13_05",
+          "section_name": "日志事务、提交记录与检查点"
+        },
+        {
+          "section_id": "ch13_06",
+          "section_name": "恢复流程：重做、回滚与幂等性"
+        },
+        {
+          "section_id": "ch13_07",
+          "section_name": "有序写入、写屏障与崩溃窗口"
+        },
+        {
+          "section_id": "ch13_08",
+          "section_name": "日志结构文件系统 LFS"
+        },
+        {
+          "section_id": "ch13_09",
+          "section_name": "段清理、写放大与冷热数据"
+        },
+        {
+          "section_id": "ch13_10",
+          "section_name": "校验和、故障模式与数据保护"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch14",
+      "chapter_name": "分布式系统与分布式文件系统",
+      "sort": 14,
+      "child": [
+        {
+          "section_id": "ch14_01",
+          "section_name": "分布式系统基本特征与挑战"
+        },
+        {
+          "section_id": "ch14_02",
+          "section_name": "通信、故障与不可靠网络"
+        },
+        {
+          "section_id": "ch14_03",
+          "section_name": "远程过程调用 RPC"
+        },
+        {
+          "section_id": "ch14_04",
+          "section_name": "客户端缓存与服务器状态"
+        },
+        {
+          "section_id": "ch14_05",
+          "section_name": "Sun NFS 的无状态设计"
+        },
+        {
+          "section_id": "ch14_06",
+          "section_name": "NFS 的缓存一致性与 close-to-open 语义"
+        },
+        {
+          "section_id": "ch14_07",
+          "section_name": "Andrew 文件系统 AFS 的回调机制"
+        },
+        {
+          "section_id": "ch14_08",
+          "section_name": "分布式文件系统的可扩展性权衡"
+        },
+        {
+          "section_id": "ch14_09",
+          "section_name": "一致性、可用性与故障恢复取舍"
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch15",
+      "chapter_name": "虚拟机监视器、监视器与实验实践",
+      "sort": 15,
+      "child": [
+        {
+          "section_id": "ch15_01",
+          "section_name": "虚拟机监视器 VMM 的动机与基本概念"
+        },
+        {
+          "section_id": "ch15_02",
+          "section_name": "CPU 虚拟化：陷入模拟与二进制翻译"
+        },
+        {
+          "section_id": "ch15_03",
+          "section_name": "内存虚拟化：影子页表与嵌套页表"
+        },
+        {
+          "section_id": "ch15_04",
+          "section_name": "I/O 虚拟化与设备模拟"
+        },
+        {
+          "section_id": "ch15_05",
+          "section_name": "监视器与 Mesa 语义"
+        },
+        {
+          "section_id": "ch15_06",
+          "section_name": "操作系统实验环境与调试方法"
+        },
+        {
+          "section_id": "ch15_07",
+          "section_name": "xv6 系统项目与内核实践"
+        },
+        {
+          "section_id": "ch15_08",
+          "section_name": "系统调用实验、页表实验与并发实验"
+        }
+      ]
+    }
+  ]
+}
