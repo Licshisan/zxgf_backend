@@ -34,6 +34,7 @@ export class OpenAIChatProvider implements ChatProvider {
     const model = input.options.model || this.config.get<string>('LLM_MODEL')!
     const client = new OpenAI({ apiKey, baseURL });
 
+    console.log(messages)
     try {
       const stream = await client.chat.completions.create(
         {
@@ -47,13 +48,13 @@ export class OpenAIChatProvider implements ChatProvider {
 
       for await (const chunk of stream) {
         if (input.signal.aborted) return;
-
         const delta = chunk.choices[0]?.delta?.content;
         if (delta) {
           yield { type: 'text-delta', delta };
         }
       }
     } catch (err) {
+      console.error('OpenAIChatProvider streamChat error:', err);
       if ( input.signal.aborted || (err instanceof Error && err.name === 'AbortError')) {
         return;
       }

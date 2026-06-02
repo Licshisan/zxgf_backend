@@ -18,7 +18,7 @@ const CHAT_STREAM_ERROR_CODE = 'CHAT_STREAM_FAILED';
 export class ChatController {
   constructor(private readonly chatService: ChatService) {}
 
-  @Post('chat')
+  @Post('stream')
   @ApiOperation({
     summary: 'AG-UI 大模型流式对话',
     description:

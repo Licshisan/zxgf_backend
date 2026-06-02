@@ -148,31 +148,21 @@ export function messageContentToText(content: Message['content']): string {
   if (typeof content === 'string') {
     return content.trim();
   }
-
-  if (!Array.isArray(content)) {
-    return '';
-  }
+  if (!Array.isArray(content)) return '';
 
   const textParts: string[] = [];
   for (const part of content as unknown[]) {
-    if (typeof part !== 'object' || part === null || !('type' in part)) {
-      continue;
-    }
+    if (typeof part !== 'object' || part === null || !('type' in part)) continue;
 
-    const item = part as { type: unknown; text?: unknown };
-    if (typeof item.type !== 'string') {
-      continue;
-    }
+    const item = part as { type: string; text?: string; data?: string };
+    // 只保留 text、markdown，过滤 suggestion
+    if (!['text', 'markdown'].includes(item.type)) continue;
 
-    if (item.type === 'text' && typeof item.text === 'string') {
-      textParts.push(item.text);
-      continue;
-    }
-
-    textParts.push(`[${item.type}]`);
+    const contentStr = item.text ?? item.data ?? '';
+    contentStr && textParts.push(contentStr);
   }
 
-  return textParts.join(' ').trim();
+  return textParts.join('\n').trim();
 }
 
 // 将 AG-UI 的多角色消息整理为 OpenAI Chat Completions 可接收的上下文。
