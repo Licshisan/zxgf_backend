@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
 import {
+  IsIn,
   IsInt,
   IsNotEmpty,
   IsObject,
@@ -25,6 +26,14 @@ export class ImportDocumentDto {
   @IsObject()
   @IsOptional()
   metadata?: Record<string, unknown>;
+
+  @IsIn(['text', 'markdown'])
+  @IsOptional()
+  chunkStrategy?: 'text' | 'markdown';
+
+  @IsString()
+  @IsOptional()
+  chunkContextTitle?: string;
 
   @Type(() => Number)
   @IsInt()

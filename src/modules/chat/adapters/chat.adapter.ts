@@ -152,14 +152,17 @@ export function messageContentToText(content: Message['content']): string {
 
   const textParts: string[] = [];
   for (const part of content as unknown[]) {
-    if (typeof part !== 'object' || part === null || !('type' in part)) continue;
+    if (typeof part !== 'object' || part === null || !('type' in part))
+      continue;
 
     const item = part as { type: string; text?: string; data?: string };
     // 只保留 text、markdown，过滤 suggestion
     if (!['text', 'markdown'].includes(item.type)) continue;
 
     const contentStr = item.text ?? item.data ?? '';
-    contentStr && textParts.push(contentStr);
+    if (contentStr) {
+      textParts.push(contentStr);
+    }
   }
 
   return textParts.join('\n').trim();

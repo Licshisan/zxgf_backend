@@ -85,7 +85,7 @@ model Message {
 }
 
 model DocumentChunk {
-  id          String                    @id @default(uuid()) @db.Uuid
+  id          Int                       @id @default(autoincrement())
   sourceId    String                    @map("source_id") @db.VarChar(120)
   sourceTitle String?                   @map("source_title") @db.VarChar(255)
   chunkIndex  Int                       @map("chunk_index")
@@ -93,7 +93,7 @@ model DocumentChunk {
   metadata    Json?
   embedding   Unsupported("vector(1024)")
   createdAt   DateTime                  @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt   DateTime                  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  updatedAt   DateTime                  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
 
   @@unique([sourceId, chunkIndex])
   @@index([sourceId])

@@ -30,11 +30,11 @@ export class OpenAIChatProvider implements ChatProvider {
       throw new Error('缺少必需的 LLM_API_KEY 配置');
     }
 
-    const baseURL = this.config.get<string>('LLM_BASE_URL')
-    const model = input.options.model || this.config.get<string>('LLM_MODEL')!
+    const baseURL = this.config.get<string>('LLM_BASE_URL');
+    const model = input.options.model || this.config.get<string>('LLM_MODEL')!;
     const client = new OpenAI({ apiKey, baseURL });
 
-    console.log(messages)
+    console.log(messages);
     try {
       const stream = await client.chat.completions.create(
         {
@@ -55,7 +55,10 @@ export class OpenAIChatProvider implements ChatProvider {
       }
     } catch (err) {
       console.error('OpenAIChatProvider streamChat error:', err);
-      if ( input.signal.aborted || (err instanceof Error && err.name === 'AbortError')) {
+      if (
+        input.signal.aborted ||
+        (err instanceof Error && err.name === 'AbortError')
+      ) {
         return;
       }
       throw err;

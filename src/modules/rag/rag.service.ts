@@ -1,24 +1,38 @@
 import { Injectable } from '@nestjs/common';
-import { DocumentChunkService } from './documents/document-chunk.service';
+import {
+  DocumentChunkService,
+  type TextChunk,
+} from './documents/document-chunk.service';
 import type { ImportDocumentDto } from './dto/import-document.dto';
 import type { SearchRagDto } from './dto/search-rag.dto';
-import { OpenAIEmbeddingProvider } from './embeddings/openai-embedding.provider';
+import { EmbeddingProviderRegistry } from './embeddings/embedding-provider.registry';
 import { VectorStoreService } from './vector-store/vector-store.service';
 
 @Injectable()
 export class RagService {
   constructor(
     private readonly chunkService: DocumentChunkService,
-    private readonly embeddingProvider: OpenAIEmbeddingProvider,
+    private readonly embeddingProvider: EmbeddingProviderRegistry,
     private readonly vectorStore: VectorStoreService,
   ) {}
 
   async importDocument(dto: ImportDocumentDto) {
-    const chunks = this.chunkService.splitText(
-      dto.content,
-      dto.chunkSize,
-      dto.overlap,
-    );
+    let chunks: TextChunk[];
+
+    if (dto.chunkStrategy === 'markdown') {
+      chunks = this.chunkService.splitMarkdown(dto.content, {
+        chunkSize: dto.chunkSize,
+        overlap: dto.overlap,
+        contextTitle: dto.chunkContextTitle,
+      });
+    } else {
+      chunks = this.chunkService.splitText(
+        dto.content,
+        dto.chunkSize,
+        dto.overlap,
+      );
+    }
+
     const embeddings = await this.embeddingProvider.embedTexts(
       chunks.map((chunk) => chunk.content),
     );
@@ -32,6 +46,7 @@ export class RagService {
         content: chunk.content,
         metadata: {
           ...(dto.metadata ?? {}),
+          ...(chunk.metadata ?? {}),
           chunkLength: chunk.content.length,
         },
         embedding: embeddings[index],
@@ -53,11 +68,16 @@ export class RagService {
       sourceId: dto.sourceId,
       filters: dto.filters,
     });
+    const minScore = dto.minScore ?? 0;
+    const filteredResults = results.filter(
+      (result) => result.score >= minScore,
+    );
 
     return {
       query: dto.query,
       topK: dto.topK ?? 5,
-      results,
+      minScore,
+      results: filteredResults,
     };
   }
 }

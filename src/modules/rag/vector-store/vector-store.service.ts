@@ -12,7 +12,7 @@ export interface UpsertChunkInput {
 }
 
 export interface RagSearchResult {
-  id: string;
+  id: number;
   sourceId: string;
   sourceTitle: string | null;
   chunkIndex: number;
@@ -89,7 +89,7 @@ export class VectorStoreService {
 
     return this.prisma.$queryRaw<RagSearchResult[]>`
       SELECT
-        id::text,
+        id,
         source_id AS "sourceId",
         source_title AS "sourceTitle",
         chunk_index AS "chunkIndex",
