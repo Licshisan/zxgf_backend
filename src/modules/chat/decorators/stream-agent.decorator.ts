@@ -72,10 +72,8 @@ export function StreamAgent(options: StreamAgentOptions = {}): MethodDecorator {
       response.on('close', onClientClose);
 
       try {
-        const events = await original.apply(this, [
-          ...args,
-          abortController.signal,
-        ]);
+        const runOriginal = original.bind(this) as StreamHandler;
+        const events = await runOriginal(...args, abortController.signal);
 
         for await (const event of events) {
           if (response.destroyed || abortController.signal.aborted) {

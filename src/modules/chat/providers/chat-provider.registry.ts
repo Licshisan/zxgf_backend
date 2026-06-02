@@ -1,10 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { MockChatProvider } from './mock-chat.provider';
 import { OpenAIChatProvider } from './openai-chat.provider';
-import type {
-  ChatProvider,
-  ChatProviderName,
-} from './chat-provider.interface';
+import type { ChatProvider, ChatProviderName } from './chat-provider.interface';
 
 @Injectable()
 export class ChatProviderRegistry {

@@ -10,7 +10,7 @@ import { RagService } from '../src/modules/rag/rag.service';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.env.local', '.env'],
+      envFilePath: ['.env'],
     }),
     RagModule,
   ],

@@ -8,7 +8,7 @@ import {
 import { ChatProviderRegistry } from './providers/chat-provider.registry';
 
 @Injectable()
-export class LlmService {
+export class ChatService {
   constructor(private readonly providerRegistry: ChatProviderRegistry) {}
 
   runAgent(

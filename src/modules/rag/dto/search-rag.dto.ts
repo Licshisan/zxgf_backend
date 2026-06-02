@@ -12,7 +12,7 @@ import {
 export class SearchRagDto {
   @IsString()
   @IsNotEmpty()
-  query: string;
+  query!: string;
 
   @Type(() => Number)
   @IsInt()

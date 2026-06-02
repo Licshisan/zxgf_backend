@@ -71,10 +71,29 @@ export function messageContentToText(content: Message['content']): string {
 
   if (Array.isArray(content)) {
     return content
-      .map((part) => (part.type === 'text' ? part.text : `[${part.type}]`))
+      .map((part: unknown) => {
+        if (!isMessageContentPart(part)) {
+          return '';
+        }
+
+        return part.type === 'text' && typeof part.text === 'string'
+          ? part.text
+          : `[${part.type}]`;
+      })
       .join(' ')
       .trim();
   }
 
   return '';
+}
+
+function isMessageContentPart(
+  value: unknown,
+): value is { type: string; text?: unknown } {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'type' in value &&
+    typeof value.type === 'string'
+  );
 }

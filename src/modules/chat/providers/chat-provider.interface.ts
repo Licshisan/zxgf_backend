@@ -37,7 +37,7 @@ export interface ChatProvider {
 export function getProviderOptions(
   input: Partial<RunAgentInput>,
 ): ChatProviderOptions {
-  const forwardedProps = input.forwardedProps;
+  const forwardedProps: unknown = input.forwardedProps as unknown;
   if (
     typeof forwardedProps !== 'object' ||
     forwardedProps === null ||
@@ -46,5 +46,49 @@ export function getProviderOptions(
     return {};
   }
 
-  return forwardedProps as ChatProviderOptions;
+  const props = forwardedProps as Record<string, unknown>;
+  return {
+    provider: isChatProviderName(props.provider) ? props.provider : undefined,
+    model: typeof props.model === 'string' ? props.model : undefined,
+    temperature:
+      typeof props.temperature === 'number' ? props.temperature : undefined,
+    reasoning: getReasoningOptions(props.reasoning),
+  };
+}
+
+function isChatProviderName(value: unknown): value is ChatProviderName {
+  return value === 'mock' || value === 'openai';
+}
+
+function getReasoningOptions(value: unknown): ChatProviderOptions['reasoning'] {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+    return undefined;
+  }
+
+  const reasoning = value as Record<string, unknown>;
+  return {
+    enabled:
+      typeof reasoning.enabled === 'boolean' ? reasoning.enabled : undefined,
+    effort: isReasoningEffort(reasoning.effort) ? reasoning.effort : undefined,
+    summary: isReasoningSummary(reasoning.summary)
+      ? reasoning.summary
+      : undefined,
+  };
+}
+
+function isReasoningEffort(
+  value: unknown,
+): value is NonNullable<ChatProviderOptions['reasoning']>['effort'] {
+  return (
+    value === 'minimal' ||
+    value === 'low' ||
+    value === 'medium' ||
+    value === 'high'
+  );
+}
+
+function isReasoningSummary(
+  value: unknown,
+): value is NonNullable<ChatProviderOptions['reasoning']>['summary'] {
+  return value === 'auto' || value === 'concise' || value === 'detailed';
 }

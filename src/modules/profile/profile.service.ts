@@ -4,8 +4,8 @@ import { PrismaService } from '../../shared/prisma/prisma.service';
 import {
   createEmptyUserProfile,
   PROFILE_DIMENSIONS,
-  type ProfileDimensionValue,
-  type UserProfileData,
+  ProfileDimensionValue,
+  UserProfileData,
 } from './types/user-profile.type';
 
 @Injectable()

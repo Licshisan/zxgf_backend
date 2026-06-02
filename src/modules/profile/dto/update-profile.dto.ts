@@ -9,31 +9,31 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import type { UserProfileData } from '../types/user-profile.type';
+import * as userProfileType from '../types/user-profile.type';
 
 class ProfileDimensionValueDto {
   @IsNumber()
   @Min(0)
   @Max(100)
-  score: number;
+  score!: number;
 
   @IsString()
-  label: string;
+  label!: string;
 
   @IsString()
-  summary: string;
+  summary!: string;
 
   @IsNumber()
   @Min(0)
   @Max(1)
-  confidence: number;
+  confidence!: number;
 
   @IsArray()
   @IsString({ each: true })
-  evidence: string[];
+  evidence!: string[];
 
   @IsString()
-  updatedAt: string;
+  updatedAt!: string;
 }
 
 class UserProfileDataDto {
@@ -72,5 +72,5 @@ export class UpdateProfileDto {
   @IsObject()
   @ValidateNested()
   @Type(() => UserProfileDataDto)
-  profile: UserProfileData;
+  profile!: userProfileType.UserProfileData;
 }

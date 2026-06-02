@@ -12,7 +12,7 @@ import {
 export class ImportDocumentDto {
   @IsString()
   @IsNotEmpty()
-  sourceId: string;
+  sourceId!: string;
 
   @IsString()
   @IsOptional()
@@ -20,7 +20,7 @@ export class ImportDocumentDto {
 
   @IsString()
   @IsNotEmpty()
-  content: string;
+  content!: string;
 
   @IsObject()
   @IsOptional()
