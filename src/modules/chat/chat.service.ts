@@ -1,10 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { type AGUIEvent, type RunAgentInput } from '@ag-ui/core';
-import { toAguiStream } from './adapters/ag-ui.adapter';
-import {
-  getProviderOptions,
-  type ChatProviderEvent,
-} from './providers/chat-provider.interface';
+import { getProviderOptions, toAguiStream } from './adapters/chat.adapter';
+import { type ChatProviderEvent } from './providers/chat-provider.interface';
 import { ChatProviderRegistry } from './providers/chat-provider.registry';
 
 @Injectable()

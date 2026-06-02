@@ -34,12 +34,12 @@ export class AuthService {
     });
 
     if (existingUser) {
-      throw new ConflictException('Email already registered');
+      throw new ConflictException('邮箱已注册');
     }
 
     const code = await this.saveEmailCode('register', email);
-    await this.mailService.sendVerificationCode(email, code, 'Register code');
-    return { message: 'Verification code sent' };
+    await this.mailService.sendVerificationCode(email, code, '注册验证码');
+    return { message: '验证码已发送' };
   }
 
   async register(dto: RegisterDto) {
@@ -50,7 +50,7 @@ export class AuthService {
 
     const role = dto.role ?? UserRole.STUDENT;
     if (role === UserRole.ADMIN) {
-      throw new BadRequestException('Admin registration is not allowed');
+      throw new BadRequestException('不允许注册管理员账号');
     }
 
     const existingUser = await this.prisma.user.findFirst({
@@ -59,7 +59,7 @@ export class AuthService {
       },
     });
     if (existingUser) {
-      throw new ConflictException('Username or email already exists');
+      throw new ConflictException('用户名或邮箱已存在');
     }
 
     const passwordHash = await bcrypt.hash(dto.password, SALT_ROUNDS);
@@ -85,7 +85,7 @@ export class AuthService {
     const user = await this.prisma.user.findFirst({ where });
 
     if (!user || !(await bcrypt.compare(dto.password, user.passwordHash))) {
-      throw new BadRequestException('Invalid account or password');
+      throw new BadRequestException('账号或密码错误');
     }
 
     return this.createAuthResponse(user);
@@ -102,12 +102,12 @@ export class AuthService {
       await this.mailService.sendVerificationCode(
         email,
         code,
-        'Password reset code',
+        '密码重置验证码',
       );
     }
 
     return {
-      message: 'If the email exists, a verification code has been sent',
+      message: '如果该邮箱存在，验证码已发送',
     };
   }
 
@@ -119,7 +119,7 @@ export class AuthService {
       where: { email },
     });
     if (!user) {
-      throw new BadRequestException('Invalid verification code');
+      throw new BadRequestException('验证码无效');
     }
 
     const passwordHash = await bcrypt.hash(dto.newPassword, SALT_ROUNDS);
@@ -128,7 +128,7 @@ export class AuthService {
       data: { passwordHash },
     });
     await this.deleteEmailCode('reset', email);
-    return { message: 'Password reset successfully' };
+    return { message: '密码重置成功' };
   }
 
   private async saveEmailCode(purpose: 'register' | 'reset', email: string) {
@@ -150,7 +150,7 @@ export class AuthService {
     const savedCode = await this.redisService.get(key);
 
     if (!savedCode || savedCode !== code) {
-      throw new BadRequestException('Invalid or expired verification code');
+      throw new BadRequestException('验证码无效或已过期');
     }
   }
 

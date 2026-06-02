@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import type { Message } from '@ag-ui/core';
-import { messageContentToText } from '../adapters/ag-ui.adapter';
+import { messageContentToText } from '../adapters/chat.adapter';
 import type {
   ChatProvider,
   ChatProviderEvent,
@@ -8,7 +8,7 @@ import type {
   ChatProviderName,
 } from './chat-provider.interface';
 
-const MOCK_REPLY_PREFIX = 'This is a mock AI reply: ';
+const MOCK_REPLY_PREFIX = '这是一条模拟 AI 回复：';
 const STREAM_DELAY_MS = 120;
 const CHUNK_SIZE = 12;
 
@@ -21,53 +21,51 @@ export class MockChatProvider implements ChatProvider {
     input: ChatProviderInput,
   ): AsyncGenerator<ChatProviderEvent> {
     try {
-      const chunks = this.splitReply(this.createMockReply(input.messages));
+      const reply = this.createMockReply(input.messages);
+      const chunks = reply.match(new RegExp(`.{1,${CHUNK_SIZE}}`, 'gu')) ?? [];
+
       for (const chunk of chunks) {
         if (input.signal.aborted) {
-          this.logger.log('Stream aborted by client during content streaming');
+          this.logger.log('客户端在内容流式传输期间中断了请求');
           return;
         }
 
-        await this.delay(STREAM_DELAY_MS, input.signal);
+        await this.waitForNextChunk(input.signal);
 
         if (input.signal.aborted) {
-          this.logger.log('Stream aborted after delay');
+          this.logger.log('延迟后检测到流式请求已中断');
           return;
         }
 
         yield { type: 'text-delta', delta: chunk };
       }
     } catch (err) {
-      this.logger.error('AG-UI mock stream error', err);
+      this.logger.error('AG-UI 模拟流式响应出错', err);
       throw err;
     }
   }
 
   private createMockReply(messages: Message[]): string {
+    let userText = '';
     const lastUserMessage = [...messages]
       .reverse()
       .find((message) => message.role === 'user');
-    const userText = lastUserMessage
-      ? messageContentToText(lastUserMessage.content)
-      : '';
 
-    return `${MOCK_REPLY_PREFIX}I received your question "${userText}". You can replace this with a real model or agent stream later.`;
+    if (lastUserMessage) {
+      userText = messageContentToText(lastUserMessage.content);
+    }
+
+    return `${MOCK_REPLY_PREFIX}我已收到你的问题：“${userText}”。之后可以将这里替换为真实模型或智能体的流式输出。`;
   }
 
-  private splitReply(reply: string): string[] {
-    if (!reply) return [];
-    const reg = new RegExp(`.{1,${CHUNK_SIZE}}`, 'gu');
-    return reply.match(reg) ?? [];
-  }
-
-  private delay(ms: number, signal: AbortSignal): Promise<void> {
+  private waitForNextChunk(signal: AbortSignal): Promise<void> {
     return new Promise((resolve) => {
       if (signal.aborted) {
         resolve();
         return;
       }
 
-      let timer: NodeJS.Timeout | null = setTimeout(resolve, ms);
+      let timer: NodeJS.Timeout | null = setTimeout(resolve, STREAM_DELAY_MS);
 
       const onAbort = () => {
         if (timer) {

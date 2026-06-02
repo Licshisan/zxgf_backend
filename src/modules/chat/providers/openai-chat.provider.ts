@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
-import { toOpenAIChatMessages } from '../adapters/openai-message.adapter';
+import { toOpenAIChatMessages } from '../adapters/chat.adapter';
 import type {
   ChatProvider,
   ChatProviderEvent,
@@ -22,13 +22,22 @@ export class OpenAIChatProvider implements ChatProvider {
 
     const messages = toOpenAIChatMessages(input.messages);
     if (messages.length === 0) {
-      throw new Error('No text chat messages were provided');
+      throw new Error('未提供可用于对话的文本消息');
     }
 
+    const apiKey = this.config.get<string>('LLM_API_KEY')?.trim();
+    if (!apiKey) {
+      throw new Error('缺少必需的 LLM_API_KEY 配置');
+    }
+
+    const baseURL = this.config.get<string>('LLM_BASE_URL')
+    const model = input.options.model || this.config.get<string>('LLM_MODEL')!
+    const client = new OpenAI({ apiKey, baseURL });
+
     try {
-      const stream = await this.createClient().chat.completions.create(
+      const stream = await client.chat.completions.create(
         {
-          model: this.getModel(input.options.model),
+          model,
           messages,
           stream: true,
           temperature: input.options.temperature,
@@ -45,53 +54,10 @@ export class OpenAIChatProvider implements ChatProvider {
         }
       }
     } catch (err) {
-      if (input.signal.aborted || this.isAbortError(err)) {
+      if ( input.signal.aborted || (err instanceof Error && err.name === 'AbortError')) {
         return;
       }
-
       throw err;
     }
-  }
-
-  private createClient(): OpenAI {
-    return new OpenAI({
-      apiKey: this.getApiKey(),
-      baseURL: this.getBaseUrl(),
-    });
-  }
-
-  private getBaseUrl(): string {
-    const baseUrl =
-      this.config.get<string>('LLM_BASE_URL') ??
-      this.config.get<string>('OPENAI_BASE_URL') ??
-      'https://api.openai.com/v1';
-
-    return baseUrl.trim().replace(/\/+$/, '');
-  }
-
-  private getApiKey(): string {
-    const apiKey =
-      this.config.get<string>('LLM_API_KEY') ??
-      this.config.get<string>('OPENAI_API_KEY');
-
-    if (!apiKey?.trim()) {
-      throw new Error('LLM_API_KEY is required');
-    }
-
-    return apiKey.trim();
-  }
-
-  private getModel(requestedModel?: string): string {
-    const model =
-      requestedModel ??
-      this.config.get<string>('LLM_MODEL') ??
-      this.config.get<string>('OPENAI_MODEL') ??
-      'gpt-4o-mini';
-
-    return model.trim() || 'gpt-4o-mini';
-  }
-
-  private isAbortError(err: unknown): boolean {
-    return err instanceof Error && err.name === 'AbortError';
   }
 }
