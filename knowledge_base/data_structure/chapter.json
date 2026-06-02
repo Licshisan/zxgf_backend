@@ -1,0 +1,87 @@
+{
+  "course_id": "DS-C-001",
+  "chapter_list": [
+    {
+      "chapter_id": "ch01",
+      "chapter_name": "绪论",
+      "sort": 1,
+      "child": [
+        {"section_id": "ch01_01", "section_name": "数据结构基本概念"},
+        {"section_id": "ch01_02", "section_name": "算法复杂度与时间空间分析"}
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "chapter_name": "线性表",
+      "sort": 2,
+      "child": [
+        {"section_id": "ch02_01", "section_name": "顺序表定义与操作"},
+        {"section_id": "ch02_02", "section_name": "单链表定义与操作"},
+        {"section_id": "ch02_03", "section_name": "双向链表、循环链表"}
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "chapter_name": "栈和队列",
+      "sort": 3,
+      "child": [
+        {"section_id": "ch03_01", "section_name": "栈的顺序与链式实现"},
+        {"section_id": "ch03_02", "section_name": "栈典型应用（表达式求值、括号匹配）"},
+        {"section_id": "ch03_03", "section_name": "队列与循环队列实现"}
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "chapter_name": "串",
+      "sort": 4,
+      "child": [
+        {"section_id": "ch04_01", "section_name": "字符串基本操作"},
+        {"section_id": "ch04_02", "section_name": "KMP算法原理"}
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "chapter_name": "树与二叉树",
+      "sort": 5,
+      "child": [
+        {"section_id": "ch05_01", "section_name": "树的基本概念"},
+        {"section_id": "ch05_02", "section_name": "二叉树性质与存储"},
+        {"section_id": "ch05_03", "section_name": "二叉树遍历"},
+        {"section_id": "ch05_04", "section_name": "线索二叉树"},
+        {"section_id": "ch05_05", "section_name": "哈夫曼树与编码"}
+      ]
+    },
+    {
+      "chapter_id": "ch06",
+      "chapter_name": "图",
+      "sort": 6,
+      "child": [
+        {"section_id": "ch06_01", "section_name": "图的存储结构（邻接矩阵、邻接表）"},
+        {"section_id": "ch06_02", "section_name": "图的遍历（DFS、BFS）"},
+        {"section_id": "ch06_03", "section_name": "最小生成树"},
+        {"section_id": "ch06_04", "section_name": "最短路径"}
+      ]
+    },
+    {
+      "chapter_id": "ch07",
+      "chapter_name": "查找",
+      "sort": 7,
+      "child": [
+        {"section_id": "ch07_01", "section_name": "顺序查找、折半查找"},
+        {"section_id": "ch07_02", "section_name": "树表查找（B树、B+树）"},
+        {"section_id": "ch07_03", "section_name": "哈希表与哈希查找"}
+      ]
+    },
+    {
+      "chapter_id": "ch08",
+      "chapter_name": "排序",
+      "sort": 8,
+      "child": [
+        {"section_id": "ch08_01", "section_name": "插入、交换类排序"},
+        {"section_id": "ch08_02", "section_name": "选择排序"},
+        {"section_id": "ch08_03", "section_name": "归并排序、基数排序"},
+        {"section_id": "ch08_04", "section_name": "各类排序算法复杂度对比"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "course_id": "DS-C-001",
+  "course_name": "数据结构(C语言)",
+  "en_name": "Data Structures in C",
+  "major": "计算机科学与技术",
+  "pre_course": ["C语言程序设计"],
+  "course_target": "掌握线性表、栈队列、树、图、查找、排序等逻辑结构与C语言实现，具备算法设计与代码实操能力",
+  "base_difficulty": 3
+}

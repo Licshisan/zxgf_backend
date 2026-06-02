@@ -1,0 +1,4953 @@
+[
+  {
+    "id": "OS-MC-0001",
+    "type": "multiple_choice",
+    "stem": "下列与先来先服务调度相关的概念有( )。",
+    "options": [
+      "A. 按到达顺序入队",
+      "B. 队首先运行",
+      "C. 批处理系统",
+      "D. 必须抢占"
+    ],
+    "answer": "ABC",
+    "explanation": "按到达顺序入队、队首先运行、批处理系统与先来先服务调度相关。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8d3574be2eb4b8c5df83"
+  },
+  {
+    "id": "OS-MC-0002",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现先来先服务调度的作用？",
+    "options": [
+      "A. 实现简单",
+      "B. 有利于长作业",
+      "C. 按到达顺序入队",
+      "D. 总是最短作业先运行"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现先来先服务调度在系统中的作用。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ed690a42f43d1cb1be14"
+  },
+  {
+    "id": "OS-MC-0003",
+    "type": "multiple_choice",
+    "stem": "下列属于FCFS考查范围的有( )。",
+    "options": [
+      "A. 先来先服务调度",
+      "B. 批处理系统",
+      "C. 非抢占",
+      "D. 不会使短作业等待"
+    ],
+    "answer": "ABC",
+    "explanation": "先来先服务调度、批处理系统和非抢占属于该知识点范围。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f43f9f06cd2c7406811e"
+  },
+  {
+    "id": "OS-MC-0004",
+    "type": "multiple_choice",
+    "stem": "下列属于先来先服务调度特征的有( )。",
+    "options": [
+      "A. 实现简单",
+      "B. 有利于长作业",
+      "C. 可能产生护航效应",
+      "D. 总是最短作业先运行"
+    ],
+    "answer": "ABC",
+    "explanation": "实现简单、有利于长作业、可能产生护航效应均属于先来先服务调度的特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "25938cc050d1f0cc7396"
+  },
+  {
+    "id": "OS-MC-0005",
+    "type": "multiple_choice",
+    "stem": "关于先来先服务调度，正确的说法有( )。",
+    "options": [
+      "A. 按进程或作业到达先后顺序分配处理机的非抢占调度算法",
+      "B. 实现简单",
+      "C. 有利于长作业",
+      "D. 不会使短作业等待"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合先来先服务调度定义和特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b5b0bada5fbf1af5d51a"
+  },
+  {
+    "id": "OS-MC-0006",
+    "type": "multiple_choice",
+    "stem": "围绕先来先服务调度进行判断，正确项包括( )。",
+    "options": [
+      "A. 可能产生护航效应",
+      "B. 队首先运行",
+      "C. CPU 调度",
+      "D. 必须抢占"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "4ea98dd1bf4e85cb27cc"
+  },
+  {
+    "id": "OS-MC-0007",
+    "type": "multiple_choice",
+    "stem": "学习先来先服务调度时，需要掌握的内容包括( )。",
+    "options": [
+      "A. FCFS",
+      "B. 按到达顺序入队",
+      "C. 实现简单",
+      "D. 需要页面置换"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是先来先服务调度的核心学习内容。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5b23601fdec37372d239"
+  },
+  {
+    "id": "OS-MC-0008",
+    "type": "multiple_choice",
+    "stem": "若题目考查先来先服务调度，可作为正确线索的有( )。",
+    "options": [
+      "A. 按进程或作业到达先后顺序分配处理机的非抢占调度算法",
+      "B. 按到达顺序入队",
+      "C. 平均等待时间可能较长",
+      "D. 需要页面置换"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别先来先服务调度。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "FCFS",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2f728014645d803adce3"
+  },
+  {
+    "id": "OS-MC-0009",
+    "type": "multiple_choice",
+    "stem": "下列与优先级调度相关的概念有( )。",
+    "options": [
+      "A. 静态优先级",
+      "B. 动态优先级",
+      "C. 老化技术",
+      "D. 不需要就绪队列"
+    ],
+    "answer": "ABC",
+    "explanation": "静态优先级、动态优先级、老化技术与优先级调度相关。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5ab7cc15f5fea8fcf9f0"
+  },
+  {
+    "id": "OS-MC-0010",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现优先级调度的作用？",
+    "options": [
+      "A. 可抢占或非抢占",
+      "B. 可体现紧急程度",
+      "C. 静态优先级",
+      "D. 只能非抢占"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现优先级调度在系统中的作用。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f6fe05b9e42342762c09"
+  },
+  {
+    "id": "OS-MC-0011",
+    "type": "multiple_choice",
+    "stem": "下列属于优先级调度特征的有( )。",
+    "options": [
+      "A. 可抢占或非抢占",
+      "B. 可体现紧急程度",
+      "C. 可能导致饥饿",
+      "D. 只能非抢占"
+    ],
+    "answer": "ABC",
+    "explanation": "可抢占或非抢占、可体现紧急程度、可能导致饥饿均属于优先级调度的特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "df0554346d8cd0dc80b4"
+  },
+  {
+    "id": "OS-MC-0012",
+    "type": "multiple_choice",
+    "stem": "下列属于优先级调度考查范围的有( )。",
+    "options": [
+      "A. 优先级调度",
+      "B. 老化技术",
+      "C. 可使用动态优先级",
+      "D. 不会产生饥饿"
+    ],
+    "answer": "ABC",
+    "explanation": "优先级调度、老化技术和可使用动态优先级属于该知识点范围。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6f543bfff92762f9db91"
+  },
+  {
+    "id": "OS-MC-0013",
+    "type": "multiple_choice",
+    "stem": "关于优先级调度，正确的说法有( )。",
+    "options": [
+      "A. 根据进程优先级选择运行对象的调度算法",
+      "B. 可抢占或非抢占",
+      "C. 可体现紧急程度",
+      "D. 不会产生饥饿"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合优先级调度定义和特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "bde613807c2ebac1ed0a"
+  },
+  {
+    "id": "OS-MC-0014",
+    "type": "multiple_choice",
+    "stem": "围绕优先级调度进行判断，正确项包括( )。",
+    "options": [
+      "A. 可能导致饥饿",
+      "B. 动态优先级",
+      "C. CPU 调度",
+      "D. 不需要就绪队列"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f4182255a1cf032b92a1"
+  },
+  {
+    "id": "OS-MC-0015",
+    "type": "multiple_choice",
+    "stem": "学习优先级调度时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 优先级调度",
+      "B. 静态优先级",
+      "C. 可抢占或非抢占",
+      "D. 只用于文件系统"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是优先级调度的核心学习内容。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "308cee6c4d607b711ef9"
+  },
+  {
+    "id": "OS-MC-0016",
+    "type": "multiple_choice",
+    "stem": "若题目考查优先级调度，可作为正确线索的有( )。",
+    "options": [
+      "A. 根据进程优先级选择运行对象的调度算法",
+      "B. 静态优先级",
+      "C. 实时任务",
+      "D. 只用于文件系统"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别优先级调度。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "优先级调度",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6536f5a7e96a0f5d2828"
+  },
+  {
+    "id": "OS-MC-0017",
+    "type": "multiple_choice",
+    "stem": "下列与时间片轮转调度相关的概念有( )。",
+    "options": [
+      "A. 就绪队列",
+      "B. 时间片",
+      "C. 上下文切换",
+      "D. 没有上下文切换"
+    ],
+    "answer": "ABC",
+    "explanation": "就绪队列、时间片、上下文切换与时间片轮转调度相关。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9ab66df1222d1c767b6b"
+  },
+  {
+    "id": "OS-MC-0018",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现时间片轮转调度的作用？",
+    "options": [
+      "A. 适合分时系统",
+      "B. 公平性较好",
+      "C. 就绪队列",
+      "D. 只适合批处理长作业"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现时间片轮转调度在系统中的作用。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ef8c67680282856609ab"
+  },
+  {
+    "id": "OS-MC-0019",
+    "type": "multiple_choice",
+    "stem": "下列属于时间片轮转考查范围的有( )。",
+    "options": [
+      "A. 时间片轮转调度",
+      "B. 上下文切换",
+      "C. 时间片到期会抢占",
+      "D. 一定使周转时间最短"
+    ],
+    "answer": "ABC",
+    "explanation": "时间片轮转调度、上下文切换和时间片到期会抢占属于该知识点范围。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a0f546cda316203af1f2"
+  },
+  {
+    "id": "OS-MC-0020",
+    "type": "multiple_choice",
+    "stem": "下列属于时间片轮转调度特征的有( )。",
+    "options": [
+      "A. 适合分时系统",
+      "B. 公平性较好",
+      "C. 时间片过小会增加切换开销",
+      "D. 只适合批处理长作业"
+    ],
+    "answer": "ABC",
+    "explanation": "适合分时系统、公平性较好、时间片过小会增加切换开销均属于时间片轮转调度的特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2946d662c46a318497a5"
+  },
+  {
+    "id": "OS-MC-0021",
+    "type": "multiple_choice",
+    "stem": "关于时间片轮转调度，正确的说法有( )。",
+    "options": [
+      "A. 按固定时间片轮流为就绪进程分配处理机的抢占式调度算法",
+      "B. 适合分时系统",
+      "C. 公平性较好",
+      "D. 一定使周转时间最短"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合时间片轮转调度定义和特征。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "357d58300701cf15dd40"
+  },
+  {
+    "id": "OS-MC-0022",
+    "type": "multiple_choice",
+    "stem": "围绕时间片轮转调度进行判断，正确项包括( )。",
+    "options": [
+      "A. 时间片过小会增加切换开销",
+      "B. 时间片",
+      "C. CPU 调度",
+      "D. 没有上下文切换"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8d73ec32c75992000018"
+  },
+  {
+    "id": "OS-MC-0023",
+    "type": "multiple_choice",
+    "stem": "学习时间片轮转调度时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 时间片轮转",
+      "B. 就绪队列",
+      "C. 适合分时系统",
+      "D. 按磁道号排序"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是时间片轮转调度的核心学习内容。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7d6338d2ab07680b79d6"
+  },
+  {
+    "id": "OS-MC-0024",
+    "type": "multiple_choice",
+    "stem": "若题目考查时间片轮转调度，可作为正确线索的有( )。",
+    "options": [
+      "A. 按固定时间片轮流为就绪进程分配处理机的抢占式调度算法",
+      "B. 就绪队列",
+      "C. 响应时间",
+      "D. 按磁道号排序"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别时间片轮转调度。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "时间片轮转",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5651c90d75efb897b034"
+  },
+  {
+    "id": "OS-MC-0025",
+    "type": "multiple_choice",
+    "stem": "下列算法中，( )算法既可采用抢占方式，也可采用非抢占方式。",
+    "options": [
+      "A. 高优先权优先法",
+      "B. 时间片轮转法",
+      "C. FCFS调度算",
+      "D. 短作业优先算法"
+    ],
+    "answer": "AD",
+    "explanation": "暂无解析",
+    "chapter": "CPU 调度",
+    "knowledge_point": "调度",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/weixin_46425661/article/details/136547232",
+    "source_title": "操作系统习题精解-CSDN博客",
+    "fingerprint": "476895455ba45ce24fd4"
+  },
+  {
+    "id": "OS-MC-0026",
+    "type": "multiple_choice",
+    "stem": "评价 CPU 调度算法时常用的指标包括( )。",
+    "options": [
+      "A. CPU 利用率",
+      "B. 吞吐量",
+      "C. 周转时间",
+      "D. 响应时间"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些指标分别反映资源利用、系统处理能力和用户感受。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "调度指标",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "026ede0a8d23a963dc27"
+  },
+  {
+    "id": "OS-MC-0027",
+    "type": "multiple_choice",
+    "stem": "下列调度算法可能导致饥饿现象的有( )。",
+    "options": [
+      "A. 静态优先级调度",
+      "B. 短作业优先调度",
+      "C. 时间片轮转调度",
+      "D. 先来先服务调度"
+    ],
+    "answer": "AB",
+    "explanation": "优先级过低或长作业可能长期得不到服务。",
+    "chapter": "CPU 调度",
+    "knowledge_point": "饥饿",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "774eddbea6d33b9c248d"
+  },
+  {
+    "id": "OS-MC-0028",
+    "type": "multiple_choice",
+    "stem": "下列与DMA相关的概念有( )。",
+    "options": [
+      "A. 磁盘块传输",
+      "B. 内存地址寄存器",
+      "C. 计数寄存器",
+      "D. 只能用于键盘输入"
+    ],
+    "answer": "ABC",
+    "explanation": "磁盘块传输、内存地址寄存器、计数寄存器与DMA相关。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f3f6ac6cfb71021b07ce"
+  },
+  {
+    "id": "OS-MC-0029",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现DMA的作用？",
+    "options": [
+      "A. 减少 CPU 参与",
+      "B. 适合块传输",
+      "C. 磁盘块传输",
+      "D. CPU 逐字节轮询"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现DMA在系统中的作用。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "21c737e1abcc5c707002"
+  },
+  {
+    "id": "OS-MC-0030",
+    "type": "multiple_choice",
+    "stem": "下列属于DMA特征的有( )。",
+    "options": [
+      "A. 减少 CPU 参与",
+      "B. 适合块传输",
+      "C. 传送完成后中断 CPU",
+      "D. CPU 逐字节轮询"
+    ],
+    "answer": "ABC",
+    "explanation": "减少 CPU 参与、适合块传输、传送完成后中断 CPU均属于DMA的特征。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2e3b1698a17e309de72e"
+  },
+  {
+    "id": "OS-MC-0031",
+    "type": "multiple_choice",
+    "stem": "下列属于DMA考查范围的有( )。",
+    "options": [
+      "A. DMA",
+      "B. 计数寄存器",
+      "C. 需要 DMA 控制器",
+      "D. 不访问内存"
+    ],
+    "answer": "ABC",
+    "explanation": "DMA、计数寄存器和需要 DMA 控制器属于该知识点范围。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7f5007c23dfa80ca4b4b"
+  },
+  {
+    "id": "OS-MC-0032",
+    "type": "multiple_choice",
+    "stem": "关于DMA，正确的说法有( )。",
+    "options": [
+      "A. 由 DMA 控制器在内存和设备之间直接进行数据块传送的 I/O 方式",
+      "B. 减少 CPU 参与",
+      "C. 适合块传输",
+      "D. 不访问内存"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合DMA定义和特征。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "815385a3576d1f39ac73"
+  },
+  {
+    "id": "OS-MC-0033",
+    "type": "multiple_choice",
+    "stem": "围绕DMA进行判断，正确项包括( )。",
+    "options": [
+      "A. 传送完成后中断 CPU",
+      "B. 内存地址寄存器",
+      "C. I/O 设备管理",
+      "D. 只能用于键盘输入"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d55c6024ff604a9bf1ce"
+  },
+  {
+    "id": "OS-MC-0034",
+    "type": "multiple_choice",
+    "stem": "学习DMA时，需要掌握的内容包括( )。",
+    "options": [
+      "A. DMA",
+      "B. 磁盘块传输",
+      "C. 减少 CPU 参与",
+      "D. 属于文件目录结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是DMA的核心学习内容。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "e5257e35624e43564521"
+  },
+  {
+    "id": "OS-MC-0035",
+    "type": "multiple_choice",
+    "stem": "若题目考查DMA，可作为正确线索的有( )。",
+    "options": [
+      "A. 由 DMA 控制器在内存和设备之间直接进行数据块传送的 I/O 方式",
+      "B. 磁盘块传输",
+      "C. 完成中断",
+      "D. 属于文件目录结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别DMA。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "DMA",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "deaeca5a2beeb78be522"
+  },
+  {
+    "id": "OS-MC-0036",
+    "type": "multiple_choice",
+    "stem": "I/O 控制方式包括( )。",
+    "options": [
+      "A. 程序直接控制方式",
+      "B. 中断驱动方式",
+      "C. DMA 方式",
+      "D. 通道控制方式"
+    ],
+    "answer": "ABCD",
+    "explanation": "I/O 控制方式从 CPU 忙等逐步发展到专用控制部件参与。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "I/O 控制",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "8b4c21eaf7b346f4054d"
+  },
+  {
+    "id": "OS-MC-0037",
+    "type": "multiple_choice",
+    "stem": "下列与SPOOLing相关的概念有( )。",
+    "options": [
+      "A. 输出井",
+      "B. 输入井",
+      "C. 打印队列",
+      "D. 死锁检测算法"
+    ],
+    "answer": "ABC",
+    "explanation": "输出井、输入井、打印队列与SPOOLing相关。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6c5e22b50d7886f8a239"
+  },
+  {
+    "id": "OS-MC-0038",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现SPOOLing的作用？",
+    "options": [
+      "A. 提高独占设备共享性",
+      "B. 利用磁盘缓冲",
+      "C. 输出井",
+      "D. 页面置换算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现SPOOLing在系统中的作用。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "16b3804b5391dcf6227d"
+  },
+  {
+    "id": "OS-MC-0039",
+    "type": "multiple_choice",
+    "stem": "下列属于SPOOLing特征的有( )。",
+    "options": [
+      "A. 提高独占设备共享性",
+      "B. 利用磁盘缓冲",
+      "C. 支持虚拟设备",
+      "D. 页面置换算法"
+    ],
+    "answer": "ABC",
+    "explanation": "提高独占设备共享性、利用磁盘缓冲、支持虚拟设备均属于SPOOLing的特征。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8f50a0eb70cd8f50ddb0"
+  },
+  {
+    "id": "OS-MC-0040",
+    "type": "multiple_choice",
+    "stem": "下列属于SPOOLing考查范围的有( )。",
+    "options": [
+      "A. SPOOLing",
+      "B. 打印队列",
+      "C. 典型应用是打印",
+      "D. 分段地址结构"
+    ],
+    "answer": "ABC",
+    "explanation": "SPOOLing、打印队列和典型应用是打印属于该知识点范围。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "979a9bc970e7871deaee"
+  },
+  {
+    "id": "OS-MC-0041",
+    "type": "multiple_choice",
+    "stem": "关于SPOOLing，正确的说法有( )。",
+    "options": [
+      "A. 用磁盘上的输入井和输出井模拟脱机输入输出的技术",
+      "B. 提高独占设备共享性",
+      "C. 利用磁盘缓冲",
+      "D. 分段地址结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合SPOOLing定义和特征。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "4389ab5ced9f6b6164d0"
+  },
+  {
+    "id": "OS-MC-0042",
+    "type": "multiple_choice",
+    "stem": "围绕SPOOLing进行判断，正确项包括( )。",
+    "options": [
+      "A. 支持虚拟设备",
+      "B. 输入井",
+      "C. I/O 设备管理",
+      "D. 死锁检测算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "881727d0680590edadd6"
+  },
+  {
+    "id": "OS-MC-0043",
+    "type": "multiple_choice",
+    "stem": "学习SPOOLing时，需要掌握的内容包括( )。",
+    "options": [
+      "A. SPOOLing",
+      "B. 输出井",
+      "C. 提高独占设备共享性",
+      "D. CPU 指令流水线"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是SPOOLing的核心学习内容。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3aa30226576f5f4dc63b"
+  },
+  {
+    "id": "OS-MC-0044",
+    "type": "multiple_choice",
+    "stem": "若题目考查SPOOLing，可作为正确线索的有( )。",
+    "options": [
+      "A. 用磁盘上的输入井和输出井模拟脱机输入输出的技术",
+      "B. 输出井",
+      "C. 虚拟打印机",
+      "D. CPU 指令流水线"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别SPOOLing。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "SPOOLing",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "26317facc833cdc8425c"
+  },
+  {
+    "id": "OS-MC-0045",
+    "type": "multiple_choice",
+    "stem": "缓冲技术的作用包括( )。",
+    "options": [
+      "A. 缓和 CPU 与设备速度不匹配",
+      "B. 减少中断频率",
+      "C. 提高并行性",
+      "D. 消除所有 I/O 错误"
+    ],
+    "answer": "ABC",
+    "explanation": "缓冲不能消除所有 I/O 错误，但能改善速度匹配和并行度。",
+    "chapter": "I/O 设备管理",
+    "knowledge_point": "缓冲",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "623b13ed7890192789a2"
+  },
+  {
+    "id": "OS-MC-0046",
+    "type": "multiple_choice",
+    "stem": "下列关于程序运行的局部 性原理说法错误的是()",
+    "options": [
+      "A. 包括时间局限性和空间局限性",
+      "B. 时间局限性是指程序的运行时 间是有限的，而不能使无限的",
+      "C. 如果程序中的某条指令被执行，则在不久之后它可能被再次执行",
+      "D. 如果程序访问了某个存储单元，则在不久之后它附近的存储单元也 将被访问到"
+    ],
+    "answer": "BCD",
+    "explanation": "暂无解析",
+    "chapter": "其他/待确认",
+    "knowledge_point": "待确认",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/2401_87555402/article/details/143611960",
+    "source_title": "操作系统期末总复习(题库)_操作系统期末题库及答案-CSDN博客",
+    "fingerprint": "a136b7a0d50bae639559"
+  },
+  {
+    "id": "OS-MC-0047",
+    "type": "multiple_choice",
+    "stem": "下列与快表 TLB相关的概念有( )。",
+    "options": [
+      "A. 快表命中",
+      "B. 快表未命中",
+      "C. 页表项",
+      "D. 替代外存"
+    ],
+    "answer": "ABC",
+    "explanation": "快表命中、快表未命中、页表项与快表 TLB相关。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5d820ee117a756b9828a"
+  },
+  {
+    "id": "OS-MC-0048",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现快表 TLB的作用？",
+    "options": [
+      "A. 减少页表访问",
+      "B. 利用局部性",
+      "C. 快表命中",
+      "D. 保存全部文件目录"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现快表 TLB在系统中的作用。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "38ece7430033e5600001"
+  },
+  {
+    "id": "OS-MC-0049",
+    "type": "multiple_choice",
+    "stem": "下列属于TLB考查范围的有( )。",
+    "options": [
+      "A. 快表 TLB",
+      "B. 页表项",
+      "C. 容量较小",
+      "D. 用于磁盘调度"
+    ],
+    "answer": "ABC",
+    "explanation": "快表 TLB、页表项和容量较小属于该知识点范围。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a2f97fdcb4a2cb2273dd"
+  },
+  {
+    "id": "OS-MC-0050",
+    "type": "multiple_choice",
+    "stem": "下列属于快表 TLB特征的有( )。",
+    "options": [
+      "A. 减少页表访问",
+      "B. 利用局部性",
+      "C. 命中后快速得到页框号",
+      "D. 保存全部文件目录"
+    ],
+    "answer": "ABC",
+    "explanation": "减少页表访问、利用局部性、命中后快速得到页框号均属于快表 TLB的特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8a38afc8c7dd848dd67c"
+  },
+  {
+    "id": "OS-MC-0051",
+    "type": "multiple_choice",
+    "stem": "关于快表 TLB，正确的说法有( )。",
+    "options": [
+      "A. 缓存最近使用页表项以加速地址变换的高速缓存",
+      "B. 减少页表访问",
+      "C. 利用局部性",
+      "D. 用于磁盘调度"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合快表 TLB定义和特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ccb288e955619e035411"
+  },
+  {
+    "id": "OS-MC-0052",
+    "type": "multiple_choice",
+    "stem": "围绕快表 TLB进行判断，正确项包括( )。",
+    "options": [
+      "A. 命中后快速得到页框号",
+      "B. 快表未命中",
+      "C. 内存管理",
+      "D. 替代外存"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "cabb9c03d4c83551999f"
+  },
+  {
+    "id": "OS-MC-0053",
+    "type": "multiple_choice",
+    "stem": "学习快表 TLB时，需要掌握的内容包括( )。",
+    "options": [
+      "A. TLB",
+      "B. 快表命中",
+      "C. 减少页表访问",
+      "D. 只能存放用户数据"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是快表 TLB的核心学习内容。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "052487f8e697d38fa6c6"
+  },
+  {
+    "id": "OS-MC-0054",
+    "type": "multiple_choice",
+    "stem": "若题目考查快表 TLB，可作为正确线索的有( )。",
+    "options": [
+      "A. 缓存最近使用页表项以加速地址变换的高速缓存",
+      "B. 快表命中",
+      "C. 页框号",
+      "D. 只能存放用户数据"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别快表 TLB。",
+    "chapter": "内存管理",
+    "knowledge_point": "TLB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b39d884b2bc12b426803"
+  },
+  {
+    "id": "OS-MC-0055",
+    "type": "multiple_choice",
+    "stem": "从下列关于虚拟存储器的论述中，选出两条正确的论述。",
+    "options": [
+      "A. 在请求段页式系统中，以页为单位管理用户的虚空间，以段为单位管理内存空间。",
+      "B. 在请求段页式系统中，以段为单位管理用户的虚空间，以页为单位管理内存空间。",
+      "C. 为提高请求分页系统中内存的利用率，允许用户使用不同大小的页面。",
+      "D. 在虚拟存储器中，为了能让更多的作业同时运行，通常只应装入10%〜30%的作业后便启动运行。",
+      "E. 实现虚拟存储器的最常用的算法，是最佳适应算法OPT。",
+      "F. 由于有了虚拟存储器，于是允许用户使用比内存更大的地址空间。"
+    ],
+    "answer": "BF",
+    "explanation": "暂无解析",
+    "chapter": "内存管理",
+    "knowledge_point": "内存管理",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/weixin_46425661/article/details/136547232",
+    "source_title": "操作系统习题精解-CSDN博客",
+    "fingerprint": "c4b2355eaa59ff87610f"
+  },
+  {
+    "id": "OS-MC-0056",
+    "type": "multiple_choice",
+    "stem": "下列与分段存储管理相关的概念有( )。",
+    "options": [
+      "A. 代码段",
+      "B. 数据段",
+      "C. 堆栈段",
+      "D. 用户不可见"
+    ],
+    "answer": "ABC",
+    "explanation": "代码段、数据段、堆栈段与分段存储管理相关。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "490431b49592c0917568"
+  },
+  {
+    "id": "OS-MC-0057",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现分段存储管理的作用？",
+    "options": [
+      "A. 段号",
+      "B. 段内偏移",
+      "C. 代码段",
+      "D. 固定大小页面"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现分段存储管理在系统中的作用。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "018ab76103040ba7f7f8"
+  },
+  {
+    "id": "OS-MC-0058",
+    "type": "multiple_choice",
+    "stem": "下列属于分段存储管理特征的有( )。",
+    "options": [
+      "A. 段号",
+      "B. 段内偏移",
+      "C. 便于共享",
+      "D. 固定大小页面"
+    ],
+    "answer": "ABC",
+    "explanation": "段号、段内偏移、便于共享均属于分段存储管理的特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d3404cb4a2153fafd1ef"
+  },
+  {
+    "id": "OS-MC-0059",
+    "type": "multiple_choice",
+    "stem": "下列属于分段考查范围的有( )。",
+    "options": [
+      "A. 分段存储管理",
+      "B. 堆栈段",
+      "C. 便于保护",
+      "D. 没有段表"
+    ],
+    "answer": "ABC",
+    "explanation": "分段存储管理、堆栈段和便于保护属于该知识点范围。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "086e7dce9d216017dd9e"
+  },
+  {
+    "id": "OS-MC-0060",
+    "type": "multiple_choice",
+    "stem": "关于分段存储管理，正确的说法有( )。",
+    "options": [
+      "A. 按程序逻辑单位把地址空间划分为若干长度可变的段",
+      "B. 段号",
+      "C. 段内偏移",
+      "D. 没有段表"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合分段存储管理定义和特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d5e689287d46aeeb4d0f"
+  },
+  {
+    "id": "OS-MC-0061",
+    "type": "multiple_choice",
+    "stem": "围绕分段存储管理进行判断，正确项包括( )。",
+    "options": [
+      "A. 便于共享",
+      "B. 数据段",
+      "C. 内存管理",
+      "D. 用户不可见"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "bcbf0b4656f2981b67cd"
+  },
+  {
+    "id": "OS-MC-0062",
+    "type": "multiple_choice",
+    "stem": "学习分段存储管理时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 分段",
+      "B. 代码段",
+      "C. 段号",
+      "D. 不能表示逻辑结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是分段存储管理的核心学习内容。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "fe39cc5f2caa5dba167f"
+  },
+  {
+    "id": "OS-MC-0063",
+    "type": "multiple_choice",
+    "stem": "若题目考查分段存储管理，可作为正确线索的有( )。",
+    "options": [
+      "A. 按程序逻辑单位把地址空间划分为若干长度可变的段",
+      "B. 代码段",
+      "C. 段表",
+      "D. 不能表示逻辑结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别分段存储管理。",
+    "chapter": "内存管理",
+    "knowledge_point": "分段",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c8ad4cea4927d46d338d"
+  },
+  {
+    "id": "OS-MC-0064",
+    "type": "multiple_choice",
+    "stem": "下列与分页存储管理相关的概念有( )。",
+    "options": [
+      "A. 页面",
+      "B. 页框",
+      "C. 页表项",
+      "D. 必须连续分配"
+    ],
+    "answer": "ABC",
+    "explanation": "页面、页框、页表项与分页存储管理相关。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "4e8ce5e1f57493867479"
+  },
+  {
+    "id": "OS-MC-0065",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现分页存储管理的作用？",
+    "options": [
+      "A. 页号",
+      "B. 页内偏移",
+      "C. 页面",
+      "D. 按逻辑模块变长划分"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现分页存储管理在系统中的作用。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b4501026c35abdf6682b"
+  },
+  {
+    "id": "OS-MC-0066",
+    "type": "multiple_choice",
+    "stem": "下列属于分页存储管理特征的有( )。",
+    "options": [
+      "A. 页号",
+      "B. 页内偏移",
+      "C. 页表",
+      "D. 按逻辑模块变长划分"
+    ],
+    "answer": "ABC",
+    "explanation": "页号、页内偏移、页表均属于分页存储管理的特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f98600c85f489106cace"
+  },
+  {
+    "id": "OS-MC-0067",
+    "type": "multiple_choice",
+    "stem": "下列属于分页考查范围的有( )。",
+    "options": [
+      "A. 分页存储管理",
+      "B. 页表项",
+      "C. 离散分配",
+      "D. 没有地址变换"
+    ],
+    "answer": "ABC",
+    "explanation": "分页存储管理、页表项和离散分配属于该知识点范围。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1d90d1a0aac705a2ed8e"
+  },
+  {
+    "id": "OS-MC-0068",
+    "type": "multiple_choice",
+    "stem": "关于分页存储管理，正确的说法有( )。",
+    "options": [
+      "A. 把逻辑地址空间和物理内存划分为固定大小页面和页框的管理方式",
+      "B. 页号",
+      "C. 页内偏移",
+      "D. 没有地址变换"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合分页存储管理定义和特征。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "74854f972324d20beb3a"
+  },
+  {
+    "id": "OS-MC-0069",
+    "type": "multiple_choice",
+    "stem": "分页存储管理中，逻辑地址通常包含( )。",
+    "options": [
+      "A. 页号",
+      "B. 页内偏移",
+      "C. 段号",
+      "D. 块号"
+    ],
+    "answer": "AB",
+    "explanation": "分页地址由页号和页内偏移组成。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "0b74b595604145644dfb"
+  },
+  {
+    "id": "OS-MC-0070",
+    "type": "multiple_choice",
+    "stem": "围绕分页存储管理进行判断，正确项包括( )。",
+    "options": [
+      "A. 页表",
+      "B. 页框",
+      "C. 内存管理",
+      "D. 必须连续分配"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "97af2926ccfd1542df0a"
+  },
+  {
+    "id": "OS-MC-0071",
+    "type": "multiple_choice",
+    "stem": "学习分页存储管理时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 分页",
+      "B. 页面",
+      "C. 页号",
+      "D. 只适合磁带"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是分页存储管理的核心学习内容。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "79b4b6d1e0949fb308ad"
+  },
+  {
+    "id": "OS-MC-0072",
+    "type": "multiple_choice",
+    "stem": "若题目考查分页存储管理，可作为正确线索的有( )。",
+    "options": [
+      "A. 把逻辑地址空间和物理内存划分为固定大小页面和页框的管理方式",
+      "B. 页面",
+      "C. 地址变换",
+      "D. 只适合磁带"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别分页存储管理。",
+    "chapter": "内存管理",
+    "knowledge_point": "分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1044470139b09b575834"
+  },
+  {
+    "id": "OS-MC-0073",
+    "type": "multiple_choice",
+    "stem": "连续内存分配中常见的动态分区分配算法有( )。",
+    "options": [
+      "A. 首次适应算法",
+      "B. 最佳适应算法",
+      "C. 最坏适应算法",
+      "D. 循环首次适应算法"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些算法以不同方式从空闲分区表中选择可用分区。",
+    "chapter": "内存管理",
+    "knowledge_point": "动态分区",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "d95211199a6d3135932a"
+  },
+  {
+    "id": "OS-MC-0074",
+    "type": "multiple_choice",
+    "stem": "下列与临界区相关的概念有( )。",
+    "options": [
+      "A. 访问共享变量",
+      "B. 进入区",
+      "C. 退出区",
+      "D. 文件目录的同义词"
+    ],
+    "answer": "ABC",
+    "explanation": "访问共享变量、进入区、退出区与临界区相关。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c6e2268069aff93a7347"
+  },
+  {
+    "id": "OS-MC-0075",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现临界区的作用？",
+    "options": [
+      "A. 忙则等待",
+      "B. 空闲让进",
+      "C. 访问共享变量",
+      "D. 任意普通代码段"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现临界区在系统中的作用。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "76e6cddee39dc75a77e9"
+  },
+  {
+    "id": "OS-MC-0076",
+    "type": "multiple_choice",
+    "stem": "下列属于临界区特征的有( )。",
+    "options": [
+      "A. 忙则等待",
+      "B. 空闲让进",
+      "C. 有限等待",
+      "D. 任意普通代码段"
+    ],
+    "answer": "ABC",
+    "explanation": "忙则等待、空闲让进、有限等待均属于临界区的特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a4d0ec787b7b27c9c574"
+  },
+  {
+    "id": "OS-MC-0077",
+    "type": "multiple_choice",
+    "stem": "下列属于临界区考查范围的有( )。",
+    "options": [
+      "A. 临界区",
+      "B. 退出区",
+      "C. 让权等待",
+      "D. 只能由一个线程拥有全部内存"
+    ],
+    "answer": "ABC",
+    "explanation": "临界区、退出区和让权等待属于该知识点范围。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b95b7d32057cd22f5fdb"
+  },
+  {
+    "id": "OS-MC-0078",
+    "type": "multiple_choice",
+    "stem": "临界区问题应满足的准则包括( )。",
+    "options": [
+      "A. 空闲让进",
+      "B. 忙则等待",
+      "C. 有限等待",
+      "D. 让权等待"
+    ],
+    "answer": "ABCD",
+    "explanation": "这四条是同步互斥算法设计的常用准则。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "a72bc3cf11a2271045c7"
+  },
+  {
+    "id": "OS-MC-0079",
+    "type": "multiple_choice",
+    "stem": "关于临界区，正确的说法有( )。",
+    "options": [
+      "A. 进程中访问临界资源的程序段",
+      "B. 忙则等待",
+      "C. 空闲让进",
+      "D. 只能由一个线程拥有全部内存"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合临界区定义和特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1f7cebeadc81f7d37b22"
+  },
+  {
+    "id": "OS-MC-0080",
+    "type": "multiple_choice",
+    "stem": "围绕临界区进行判断，正确项包括( )。",
+    "options": [
+      "A. 有限等待",
+      "B. 进入区",
+      "C. 同步、互斥与通信",
+      "D. 文件目录的同义词"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6f976b1d872cf33560b8"
+  },
+  {
+    "id": "OS-MC-0081",
+    "type": "multiple_choice",
+    "stem": "学习临界区时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 临界区",
+      "B. 访问共享变量",
+      "C. 忙则等待",
+      "D. 不涉及共享资源"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是临界区的核心学习内容。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5c5f6da82064b73850fa"
+  },
+  {
+    "id": "OS-MC-0082",
+    "type": "multiple_choice",
+    "stem": "若题目考查临界区，可作为正确线索的有( )。",
+    "options": [
+      "A. 进程中访问临界资源的程序段",
+      "B. 访问共享变量",
+      "C. 剩余区",
+      "D. 不涉及共享资源"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别临界区。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "临界区",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f3f77379b84c8fb272a5"
+  },
+  {
+    "id": "OS-MC-0083",
+    "type": "multiple_choice",
+    "stem": "下列与信号量相关的概念有( )。",
+    "options": [
+      "A. 互斥信号量",
+      "B. 资源信号量",
+      "C. 生产者消费者",
+      "D. 磁盘调度算法"
+    ],
+    "answer": "ABC",
+    "explanation": "互斥信号量、资源信号量、生产者消费者与信号量相关。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2f59f7e107fc98fbda2c"
+  },
+  {
+    "id": "OS-MC-0084",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现信号量的作用？",
+    "options": [
+      "A. P 操作",
+      "B. V 操作",
+      "C. 互斥信号量",
+      "D. 普通非原子变量"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现信号量在系统中的作用。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "251d734a0350c687273b"
+  },
+  {
+    "id": "OS-MC-0085",
+    "type": "multiple_choice",
+    "stem": "下列属于信号量特征的有( )。",
+    "options": [
+      "A. P 操作",
+      "B. V 操作",
+      "C. 原子性",
+      "D. 普通非原子变量"
+    ],
+    "answer": "ABC",
+    "explanation": "P 操作、V 操作、原子性均属于信号量的特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "582920955ed225241ab4"
+  },
+  {
+    "id": "OS-MC-0086",
+    "type": "multiple_choice",
+    "stem": "下列属于信号量考查范围的有( )。",
+    "options": [
+      "A. 信号量",
+      "B. 生产者消费者",
+      "C. 可实现互斥",
+      "D. 页表项"
+    ],
+    "answer": "ABC",
+    "explanation": "信号量、生产者消费者和可实现互斥属于该知识点范围。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "cfb9ed3f2f996e5439bc"
+  },
+  {
+    "id": "OS-MC-0087",
+    "type": "multiple_choice",
+    "stem": "关于信号量，正确的说法有( )。",
+    "options": [
+      "A. 用于进程同步和互斥的整型变量及其原子操作机制",
+      "B. P 操作",
+      "C. V 操作",
+      "D. 页表项"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合信号量定义和特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c03d685cbbe9780830bd"
+  },
+  {
+    "id": "OS-MC-0088",
+    "type": "multiple_choice",
+    "stem": "围绕信号量进行判断，正确项包括( )。",
+    "options": [
+      "A. 原子性",
+      "B. 资源信号量",
+      "C. 同步、互斥与通信",
+      "D. 磁盘调度算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "20e93604838866c6fd2b"
+  },
+  {
+    "id": "OS-MC-0089",
+    "type": "multiple_choice",
+    "stem": "学习信号量时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 信号量",
+      "B. 互斥信号量",
+      "C. P 操作",
+      "D. 只能用于文件命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是信号量的核心学习内容。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d827f0c5489e3a9d5330"
+  },
+  {
+    "id": "OS-MC-0090",
+    "type": "multiple_choice",
+    "stem": "若题目考查信号量，可作为正确线索的有( )。",
+    "options": [
+      "A. 用于进程同步和互斥的整型变量及其原子操作机制",
+      "B. 互斥信号量",
+      "C. PV 操作",
+      "D. 只能用于文件命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别信号量。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "信号量",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6d3e7c57a75c3701d37e"
+  },
+  {
+    "id": "OS-MC-0091",
+    "type": "multiple_choice",
+    "stem": "从下面的叙述中选出4条正确的叙述是( )。",
+    "options": [
+      "A. 一个进程的状态发生变化总会引起其他一些进程的状态发生变化",
+      "B. 进程被挂起(suspend)后，状态变为阻塞状态",
+      "C. 信号量的初值不能为负数",
+      "D. 线程是CPU调度的基本单位，但不是资源分配的基本单位",
+      "E. 在进程对应的代码中使用wait、signal操作后，可以防止系统发生死锁",
+      "F. 管程每次只允许一个进程进入",
+      "G. wait、signal操作可以解决一切互斥问题",
+      "H. 程序的顺序执行具有不可再现性"
+    ],
+    "answer": "CDFG",
+    "explanation": "暂无解析",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "同步互斥",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/weixin_46425661/article/details/136547232",
+    "source_title": "操作系统习题精解-CSDN博客",
+    "fingerprint": "6121d96c74d4ed9c7e75"
+  },
+  {
+    "id": "OS-MC-0092",
+    "type": "multiple_choice",
+    "stem": "下列可用于进程同步与互斥的机制有( )。",
+    "options": [
+      "A. 信号量",
+      "B. 管程",
+      "C. 互斥锁",
+      "D. 条件变量"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些机制都可协调并发执行中的共享资源访问或条件等待。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "同步机制",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "21417b156da0b62d17a4"
+  },
+  {
+    "id": "OS-MC-0093",
+    "type": "multiple_choice",
+    "stem": "下列与管程相关的概念有( )。",
+    "options": [
+      "A. 条件变量 wait",
+      "B. 条件变量 signal",
+      "C. 生产者消费者",
+      "D. 页面置换算法"
+    ],
+    "answer": "ABC",
+    "explanation": "条件变量 wait、条件变量 signal、生产者消费者与管程相关。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8ce601200cf0c9dbc466"
+  },
+  {
+    "id": "OS-MC-0094",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现管程的作用？",
+    "options": [
+      "A. 封装共享数据",
+      "B. 互斥进入",
+      "C. 条件变量 wait",
+      "D. 磁盘柱面编号"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现管程在系统中的作用。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8fcda71634efc2fdaa83"
+  },
+  {
+    "id": "OS-MC-0095",
+    "type": "multiple_choice",
+    "stem": "下列属于管程特征的有( )。",
+    "options": [
+      "A. 封装共享数据",
+      "B. 互斥进入",
+      "C. 条件变量",
+      "D. 磁盘柱面编号"
+    ],
+    "answer": "ABC",
+    "explanation": "封装共享数据、互斥进入、条件变量均属于管程的特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a98aec4b2df58de7bbdd"
+  },
+  {
+    "id": "OS-MC-0096",
+    "type": "multiple_choice",
+    "stem": "下列属于管程考查范围的有( )。",
+    "options": [
+      "A. 管程",
+      "B. 生产者消费者",
+      "C. 简化同步程序设计",
+      "D. 文件物理结构"
+    ],
+    "answer": "ABC",
+    "explanation": "管程、生产者消费者和简化同步程序设计属于该知识点范围。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a0e9c19b7eb192d824ca"
+  },
+  {
+    "id": "OS-MC-0097",
+    "type": "multiple_choice",
+    "stem": "关于管程，正确的说法有( )。",
+    "options": [
+      "A. 把共享数据和对共享数据的操作封装在一起的高级同步机制",
+      "B. 封装共享数据",
+      "C. 互斥进入",
+      "D. 文件物理结构"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合管程定义和特征。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2f8ba313b9c217727b21"
+  },
+  {
+    "id": "OS-MC-0098",
+    "type": "multiple_choice",
+    "stem": "围绕管程进行判断，正确项包括( )。",
+    "options": [
+      "A. 条件变量",
+      "B. 条件变量 signal",
+      "C. 同步、互斥与通信",
+      "D. 页面置换算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "eb728515eec4021923a2"
+  },
+  {
+    "id": "OS-MC-0099",
+    "type": "multiple_choice",
+    "stem": "学习管程时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 管程",
+      "B. 条件变量 wait",
+      "C. 封装共享数据",
+      "D. 用户态普通数组"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是管程的核心学习内容。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a163d0c5ca38bd99c522"
+  },
+  {
+    "id": "OS-MC-0100",
+    "type": "multiple_choice",
+    "stem": "若题目考查管程，可作为正确线索的有( )。",
+    "options": [
+      "A. 把共享数据和对共享数据的操作封装在一起的高级同步机制",
+      "B. 条件变量 wait",
+      "C. 互斥访问",
+      "D. 用户态普通数组"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别管程。",
+    "chapter": "同步、互斥与通信",
+    "knowledge_point": "管程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ba0b8585cae088841675"
+  },
+  {
+    "id": "OS-MC-0101",
+    "type": "multiple_choice",
+    "stem": "操作系统保护机制通常涉及( )。",
+    "options": [
+      "A. 访问控制",
+      "B. 用户认证",
+      "C. 权限检查",
+      "D. 地址保护"
+    ],
+    "answer": "ABCD",
+    "explanation": "保护机制限制主体对客体的访问并隔离进程地址空间。",
+    "chapter": "操作系统安全与保护",
+    "knowledge_point": "保护",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "15a25be508a3c7dc0f8d"
+  },
+  {
+    "id": "OS-MC-0102",
+    "type": "multiple_choice",
+    "stem": "下列与操作系统体系结构相关的概念有( )。",
+    "options": [
+      "A. 单体内核",
+      "B. 微内核",
+      "C. 层次式系统",
+      "D. 只决定显示器分辨率"
+    ],
+    "answer": "ABC",
+    "explanation": "单体内核、微内核、层次式系统与操作系统体系结构相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b82aa00bfe952024abc4"
+  },
+  {
+    "id": "OS-MC-0103",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现操作系统体系结构的作用？",
+    "options": [
+      "A. 层次结构",
+      "B. 微内核结构",
+      "C. 单体内核",
+      "D. 只描述外存块大小"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现操作系统体系结构在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b798b3fef06fc18c37da"
+  },
+  {
+    "id": "OS-MC-0104",
+    "type": "multiple_choice",
+    "stem": "下列属于OS 体系结构考查范围的有( )。",
+    "options": [
+      "A. 操作系统体系结构",
+      "B. 层次式系统",
+      "C. 宏内核结构",
+      "D. 等同于文件扩展名"
+    ],
+    "answer": "ABC",
+    "explanation": "操作系统体系结构、层次式系统和宏内核结构属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "47d2e6c87dd1e1faea3c"
+  },
+  {
+    "id": "OS-MC-0105",
+    "type": "multiple_choice",
+    "stem": "下列属于操作系统体系结构特征的有( )。",
+    "options": [
+      "A. 层次结构",
+      "B. 微内核结构",
+      "C. 模块化结构",
+      "D. 只描述外存块大小"
+    ],
+    "answer": "ABC",
+    "explanation": "层次结构、微内核结构、模块化结构均属于操作系统体系结构的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "986dcc630fbe069638b3"
+  },
+  {
+    "id": "OS-MC-0106",
+    "type": "multiple_choice",
+    "stem": "关于操作系统体系结构，正确的说法有( )。",
+    "options": [
+      "A. 操作系统内部模块的组织方式及模块之间的调用和协作关系",
+      "B. 层次结构",
+      "C. 微内核结构",
+      "D. 等同于文件扩展名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合操作系统体系结构定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1bc0e2bcb12c7a363c2d"
+  },
+  {
+    "id": "OS-MC-0107",
+    "type": "multiple_choice",
+    "stem": "围绕操作系统体系结构进行判断，正确项包括( )。",
+    "options": [
+      "A. 模块化结构",
+      "B. 微内核",
+      "C. 操作系统导论",
+      "D. 只决定显示器分辨率"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9898ab2e96f22c4ee881"
+  },
+  {
+    "id": "OS-MC-0108",
+    "type": "multiple_choice",
+    "stem": "学习操作系统体系结构时，需要掌握的内容包括( )。",
+    "options": [
+      "A. OS 体系结构",
+      "B. 单体内核",
+      "C. 层次结构",
+      "D. 不影响系统可维护性"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是操作系统体系结构的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1a4dc544db2b3dc86041"
+  },
+  {
+    "id": "OS-MC-0109",
+    "type": "multiple_choice",
+    "stem": "若题目考查操作系统体系结构，可作为正确线索的有( )。",
+    "options": [
+      "A. 操作系统内部模块的组织方式及模块之间的调用和协作关系",
+      "B. 单体内核",
+      "C. 模块化内核",
+      "D. 不影响系统可维护性"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别操作系统体系结构。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "OS 体系结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "0734cdf0fa679b8ee896"
+  },
+  {
+    "id": "OS-MC-0110",
+    "type": "multiple_choice",
+    "stem": "下列与中断相关的概念有( )。",
+    "options": [
+      "A. I/O 完成中断",
+      "B. 时钟中断",
+      "C. 异常",
+      "D. 不会发生现场保存"
+    ],
+    "answer": "ABC",
+    "explanation": "I/O 完成中断、时钟中断、异常与中断相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6512e626dca0e05ccc52"
+  },
+  {
+    "id": "OS-MC-0111",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现中断的作用？",
+    "options": [
+      "A. 提高系统响应能力",
+      "B. 支持设备并行工作",
+      "C. I/O 完成中断",
+      "D. 只能由用户程序产生"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现中断在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c05f0911dbc8a9fc67ef"
+  },
+  {
+    "id": "OS-MC-0112",
+    "type": "multiple_choice",
+    "stem": "下列属于中断特征的有( )。",
+    "options": [
+      "A. 提高系统响应能力",
+      "B. 支持设备并行工作",
+      "C. 需要保存现场",
+      "D. 只能由用户程序产生"
+    ],
+    "answer": "ABC",
+    "explanation": "提高系统响应能力、支持设备并行工作、需要保存现场均属于中断的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "55e1b16572b9291e4d94"
+  },
+  {
+    "id": "OS-MC-0113",
+    "type": "multiple_choice",
+    "stem": "下列属于中断考查范围的有( )。",
+    "options": [
+      "A. 中断",
+      "B. 异常",
+      "C. 处理后可恢复现场",
+      "D. 等同于死锁"
+    ],
+    "answer": "ABC",
+    "explanation": "中断、异常和处理后可恢复现场属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "4170a9cc428357bd9120"
+  },
+  {
+    "id": "OS-MC-0114",
+    "type": "multiple_choice",
+    "stem": "关于中断，正确的说法有( )。",
+    "options": [
+      "A. 处理器暂停当前执行并转去处理突发事件的机制",
+      "B. 提高系统响应能力",
+      "C. 支持设备并行工作",
+      "D. 等同于死锁"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合中断定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "138322b841c8727af677"
+  },
+  {
+    "id": "OS-MC-0115",
+    "type": "multiple_choice",
+    "stem": "围绕中断进行判断，正确项包括( )。",
+    "options": [
+      "A. 需要保存现场",
+      "B. 时钟中断",
+      "C. 操作系统导论",
+      "D. 不会发生现场保存"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9cb33dfee92c45452294"
+  },
+  {
+    "id": "OS-MC-0116",
+    "type": "multiple_choice",
+    "stem": "学习中断时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 中断",
+      "B. I/O 完成中断",
+      "C. 提高系统响应能力",
+      "D. 用于分配文件目录"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是中断的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3a2b894a88a3f09e6b3c"
+  },
+  {
+    "id": "OS-MC-0117",
+    "type": "multiple_choice",
+    "stem": "若题目考查中断，可作为正确线索的有( )。",
+    "options": [
+      "A. 处理器暂停当前执行并转去处理突发事件的机制",
+      "B. I/O 完成中断",
+      "C. 系统调用陷入",
+      "D. 用于分配文件目录"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别中断。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7f23b8fa6254d3277d32"
+  },
+  {
+    "id": "OS-MC-0118",
+    "type": "multiple_choice",
+    "stem": "下列与中断系统相关的概念有( )。",
+    "options": [
+      "A. 中断向量表",
+      "B. 中断优先级",
+      "C. 关中断",
+      "D. 不需要中断向量"
+    ],
+    "answer": "ABC",
+    "explanation": "中断向量表、中断优先级、关中断与中断系统相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b138253aaad848b21b66"
+  },
+  {
+    "id": "OS-MC-0119",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现中断系统的作用？",
+    "options": [
+      "A. 中断响应",
+      "B. 保护现场",
+      "C. 中断向量表",
+      "D. 只由用户程序轮询实现"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现中断系统在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7633f31ef3aba2eba4ac"
+  },
+  {
+    "id": "OS-MC-0120",
+    "type": "multiple_choice",
+    "stem": "下列属于中断系统特征的有( )。",
+    "options": [
+      "A. 中断响应",
+      "B. 保护现场",
+      "C. 中断服务程序",
+      "D. 只由用户程序轮询实现"
+    ],
+    "answer": "ABC",
+    "explanation": "中断响应、保护现场、中断服务程序均属于中断系统的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d92787fba3db7ad665cf"
+  },
+  {
+    "id": "OS-MC-0121",
+    "type": "multiple_choice",
+    "stem": "下列属于中断系统考查范围的有( )。",
+    "options": [
+      "A. 中断系统",
+      "B. 关中断",
+      "C. 恢复现场",
+      "D. 不会改变处理器执行流"
+    ],
+    "answer": "ABC",
+    "explanation": "中断系统、关中断和恢复现场属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "cbf6bbcf9476981a070f"
+  },
+  {
+    "id": "OS-MC-0122",
+    "type": "multiple_choice",
+    "stem": "关于中断系统，正确的说法有( )。",
+    "options": [
+      "A. 操作系统和硬件协同完成中断响应、现场保护、中断服务和现场恢复的一套机制",
+      "B. 中断响应",
+      "C. 保护现场",
+      "D. 不会改变处理器执行流"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合中断系统定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a2e96aa72c16635cdc53"
+  },
+  {
+    "id": "OS-MC-0123",
+    "type": "multiple_choice",
+    "stem": "围绕中断系统进行判断，正确项包括( )。",
+    "options": [
+      "A. 中断服务程序",
+      "B. 中断优先级",
+      "C. 操作系统导论",
+      "D. 不需要中断向量"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3531b24c55f9d8e05c35"
+  },
+  {
+    "id": "OS-MC-0124",
+    "type": "multiple_choice",
+    "stem": "学习中断系统时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 中断系统",
+      "B. 中断向量表",
+      "C. 中断响应",
+      "D. 只用于文件重命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是中断系统的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1285039496ff617af07b"
+  },
+  {
+    "id": "OS-MC-0125",
+    "type": "multiple_choice",
+    "stem": "若题目考查中断系统，可作为正确线索的有( )。",
+    "options": [
+      "A. 操作系统和硬件协同完成中断响应、现场保护、中断服务和现场恢复的一套机制",
+      "B. 中断向量表",
+      "C. 开中断",
+      "D. 只用于文件重命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别中断系统。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "中断系统",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f0de1cf61796b7c0643c"
+  },
+  {
+    "id": "OS-MC-0126",
+    "type": "multiple_choice",
+    "stem": "下列与用户态与核心态相关的概念有( )。",
+    "options": [
+      "A. 特权指令",
+      "B. 访管指令",
+      "C. 陷入",
+      "D. 核心态不能访问设备"
+    ],
+    "answer": "ABC",
+    "explanation": "特权指令、访管指令、陷入与用户态与核心态相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "716aa877064b94efc07a"
+  },
+  {
+    "id": "OS-MC-0127",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现用户态与核心态的作用？",
+    "options": [
+      "A. 用户态权限受限",
+      "B. 核心态可执行特权指令",
+      "C. 特权指令",
+      "D. 用户态可直接执行所有特权指令"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现用户态与核心态在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "02c026cb699e6ab1d2d5"
+  },
+  {
+    "id": "OS-MC-0128",
+    "type": "multiple_choice",
+    "stem": "下列属于处理器状态考查范围的有( )。",
+    "options": [
+      "A. 用户态与核心态",
+      "B. 陷入",
+      "C. 中断可进入核心态",
+      "D. 态转换不需要硬件支持"
+    ],
+    "answer": "ABC",
+    "explanation": "用户态与核心态、陷入和中断可进入核心态属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "70e97bf73bedb951ee47"
+  },
+  {
+    "id": "OS-MC-0129",
+    "type": "multiple_choice",
+    "stem": "下列属于用户态与核心态特征的有( )。",
+    "options": [
+      "A. 用户态权限受限",
+      "B. 核心态可执行特权指令",
+      "C. 系统调用可引起态转换",
+      "D. 用户态可直接执行所有特权指令"
+    ],
+    "answer": "ABC",
+    "explanation": "用户态权限受限、核心态可执行特权指令、系统调用可引起态转换均属于用户态与核心态的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "70f9b045f69ea218becc"
+  },
+  {
+    "id": "OS-MC-0130",
+    "type": "multiple_choice",
+    "stem": "关于用户态与核心态，正确的说法有( )。",
+    "options": [
+      "A. 处理器为保护系统资源而划分的普通执行状态和特权执行状态",
+      "B. 用户态权限受限",
+      "C. 核心态可执行特权指令",
+      "D. 态转换不需要硬件支持"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合用户态与核心态定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "fc930f32127c9a29be60"
+  },
+  {
+    "id": "OS-MC-0131",
+    "type": "multiple_choice",
+    "stem": "围绕用户态与核心态进行判断，正确项包括( )。",
+    "options": [
+      "A. 系统调用可引起态转换",
+      "B. 访管指令",
+      "C. 操作系统导论",
+      "D. 核心态不能访问设备"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a398ff8f345fadf099c2"
+  },
+  {
+    "id": "OS-MC-0132",
+    "type": "multiple_choice",
+    "stem": "学习用户态与核心态时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 处理器状态",
+      "B. 特权指令",
+      "C. 用户态权限受限",
+      "D. 只用于文件命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是用户态与核心态的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "0c83e4457dce127f367c"
+  },
+  {
+    "id": "OS-MC-0133",
+    "type": "multiple_choice",
+    "stem": "若题目考查用户态与核心态，可作为正确线索的有( )。",
+    "options": [
+      "A. 处理器为保护系统资源而划分的普通执行状态和特权执行状态",
+      "B. 特权指令",
+      "C. 状态位",
+      "D. 只用于文件命名"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别用户态与核心态。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "处理器状态",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7c2bc7406d3f7985b288"
+  },
+  {
+    "id": "OS-MC-0134",
+    "type": "multiple_choice",
+    "stem": "下列与操作系统相关的概念有( )。",
+    "options": [
+      "A. Windows",
+      "B. Linux",
+      "C. UNIX",
+      "D. 替代所有应用软件"
+    ],
+    "answer": "ABC",
+    "explanation": "Windows、Linux、UNIX与操作系统相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b0e69b7116b14452ee8d"
+  },
+  {
+    "id": "OS-MC-0135",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现操作系统的作用？",
+    "options": [
+      "A. 处理机管理",
+      "B. 存储器管理",
+      "C. Windows",
+      "D. 编译用户程序"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现操作系统在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c6f429ac7a550d1dff6d"
+  },
+  {
+    "id": "OS-MC-0136",
+    "type": "multiple_choice",
+    "stem": "下列属于操作系统功能考查范围的有( )。",
+    "options": [
+      "A. 操作系统",
+      "B. UNIX",
+      "C. 设备管理",
+      "D. 直接提高硬件主频"
+    ],
+    "answer": "ABC",
+    "explanation": "操作系统、UNIX和设备管理属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "4a7cb4da8327b50756f1"
+  },
+  {
+    "id": "OS-MC-0137",
+    "type": "multiple_choice",
+    "stem": "下列属于操作系统基本功能的有( )。",
+    "options": [
+      "A. 处理机管理",
+      "B. 存储器管理",
+      "C. 文件管理",
+      "D. 设备管理"
+    ],
+    "answer": "ABCD",
+    "explanation": "操作系统负责管理处理机、内存、文件和 I/O 设备等资源。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "69133d0f780fc4551dae"
+  },
+  {
+    "id": "OS-MC-0138",
+    "type": "multiple_choice",
+    "stem": "下列属于操作系统特征的有( )。",
+    "options": [
+      "A. 处理机管理",
+      "B. 存储器管理",
+      "C. 文件管理",
+      "D. 编译用户程序"
+    ],
+    "answer": "ABC",
+    "explanation": "处理机管理、存储器管理、文件管理均属于操作系统的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "302cc34988635a03c33c"
+  },
+  {
+    "id": "OS-MC-0139",
+    "type": "multiple_choice",
+    "stem": "关于操作系统，正确的说法有( )。",
+    "options": [
+      "A. 管理计算机硬件与软件资源并向用户和应用程序提供服务的系统软件",
+      "B. 处理机管理",
+      "C. 存储器管理",
+      "D. 直接提高硬件主频"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合操作系统定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6def9bc0f3db2e356b52"
+  },
+  {
+    "id": "OS-MC-0140",
+    "type": "multiple_choice",
+    "stem": "围绕操作系统进行判断，正确项包括( )。",
+    "options": [
+      "A. 文件管理",
+      "B. Linux",
+      "C. 操作系统导论",
+      "D. 替代所有应用软件"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "59607038388a12897640"
+  },
+  {
+    "id": "OS-MC-0141",
+    "type": "multiple_choice",
+    "stem": "学习操作系统时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 操作系统功能",
+      "B. Windows",
+      "C. 处理机管理",
+      "D. 保存网页内容"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是操作系统的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ad90ddfdb78fedfe2462"
+  },
+  {
+    "id": "OS-MC-0142",
+    "type": "multiple_choice",
+    "stem": "若题目考查操作系统，可作为正确线索的有( )。",
+    "options": [
+      "A. 管理计算机硬件与软件资源并向用户和应用程序提供服务的系统软件",
+      "B. Windows",
+      "C. macOS",
+      "D. 保存网页内容"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别操作系统。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "操作系统功能",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ba422e3c68a2de47c778"
+  },
+  {
+    "id": "OS-MC-0143",
+    "type": "multiple_choice",
+    "stem": "下列与用户接口相关的概念有( )。",
+    "options": [
+      "A. 命令解释程序",
+      "B. Shell",
+      "C. GUI",
+      "D. 只能由内核开发者使用"
+    ],
+    "answer": "ABC",
+    "explanation": "命令解释程序、Shell、GUI与用户接口相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c86ae0a6230e2c47dfad"
+  },
+  {
+    "id": "OS-MC-0144",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现用户接口的作用？",
+    "options": [
+      "A. 命令接口",
+      "B. 程序接口",
+      "C. 命令解释程序",
+      "D. 只包含硬件总线"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现用户接口在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f40deceb551a67400a9a"
+  },
+  {
+    "id": "OS-MC-0145",
+    "type": "multiple_choice",
+    "stem": "下列属于用户接口特征的有( )。",
+    "options": [
+      "A. 命令接口",
+      "B. 程序接口",
+      "C. 图形用户接口",
+      "D. 只包含硬件总线"
+    ],
+    "answer": "ABC",
+    "explanation": "命令接口、程序接口、图形用户接口均属于用户接口的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2b582034b358dfdbd11a"
+  },
+  {
+    "id": "OS-MC-0146",
+    "type": "multiple_choice",
+    "stem": "下列属于用户接口考查范围的有( )。",
+    "options": [
+      "A. 用户接口",
+      "B. GUI",
+      "C. 系统调用接口",
+      "D. 等同于页表"
+    ],
+    "answer": "ABC",
+    "explanation": "用户接口、GUI和系统调用接口属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8847d1ac020e72c6509b"
+  },
+  {
+    "id": "OS-MC-0147",
+    "type": "multiple_choice",
+    "stem": "关于用户接口，正确的说法有( )。",
+    "options": [
+      "A. 操作系统提供给用户或程序使用系统功能的交互入口和服务接口",
+      "B. 命令接口",
+      "C. 程序接口",
+      "D. 等同于页表"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合用户接口定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5ad71386138b5fa19df6"
+  },
+  {
+    "id": "OS-MC-0148",
+    "type": "multiple_choice",
+    "stem": "围绕用户接口进行判断，正确项包括( )。",
+    "options": [
+      "A. 图形用户接口",
+      "B. Shell",
+      "C. 操作系统导论",
+      "D. 只能由内核开发者使用"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "796630b334fd343ad3e3"
+  },
+  {
+    "id": "OS-MC-0149",
+    "type": "multiple_choice",
+    "stem": "学习用户接口时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 用户接口",
+      "B. 命令解释程序",
+      "C. 命令接口",
+      "D. 用于磁盘寻道排序"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是用户接口的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ecafa5d3ef36252f5b1c"
+  },
+  {
+    "id": "OS-MC-0150",
+    "type": "multiple_choice",
+    "stem": "若题目考查用户接口，可作为正确线索的有( )。",
+    "options": [
+      "A. 操作系统提供给用户或程序使用系统功能的交互入口和服务接口",
+      "B. 命令解释程序",
+      "C. API",
+      "D. 用于磁盘寻道排序"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别用户接口。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "用户接口",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1f89a44e3553064a32de"
+  },
+  {
+    "id": "OS-MC-0151",
+    "type": "multiple_choice",
+    "stem": "下列与系统调用相关的概念有( )。",
+    "options": [
+      "A. 创建进程",
+      "B. 读文件",
+      "C. 写文件",
+      "D. 不需要陷入内核"
+    ],
+    "answer": "ABC",
+    "explanation": "创建进程、读文件、写文件与系统调用相关。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "49b1cf40631769051a7d"
+  },
+  {
+    "id": "OS-MC-0152",
+    "type": "multiple_choice",
+    "stem": "下列关于系统调用的说法正确的有( )。",
+    "options": [
+      "A. 系统调用是用户程序请求内核服务的接口",
+      "B. 系统调用通常会引起用户态到核心态的转换",
+      "C. 系统调用只能在核心态程序中发起",
+      "D. 系统调用属于操作系统提供的服务"
+    ],
+    "answer": "ABD",
+    "explanation": "用户程序可通过系统调用进入内核完成受保护操作。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "fd30c7c43fdb8b4bf320"
+  },
+  {
+    "id": "OS-MC-0153",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现系统调用的作用？",
+    "options": [
+      "A. 引起态转换",
+      "B. 提供受保护服务",
+      "C. 创建进程",
+      "D. 只能由内核主动发起"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现系统调用在系统中的作用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "fa05163cba152ad8896a"
+  },
+  {
+    "id": "OS-MC-0154",
+    "type": "multiple_choice",
+    "stem": "下列属于系统调用特征的有( )。",
+    "options": [
+      "A. 引起态转换",
+      "B. 提供受保护服务",
+      "C. 由内核完成",
+      "D. 只能由内核主动发起"
+    ],
+    "answer": "ABC",
+    "explanation": "引起态转换、提供受保护服务、由内核完成均属于系统调用的特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "93e9098402d634b9b9b2"
+  },
+  {
+    "id": "OS-MC-0155",
+    "type": "multiple_choice",
+    "stem": "下列属于系统调用考查范围的有( )。",
+    "options": [
+      "A. 系统调用",
+      "B. 写文件",
+      "C. 属于操作系统接口",
+      "D. 等同于普通函数调用"
+    ],
+    "answer": "ABC",
+    "explanation": "系统调用、写文件和属于操作系统接口属于该知识点范围。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "17ed528ba77ff10a22bd"
+  },
+  {
+    "id": "OS-MC-0156",
+    "type": "multiple_choice",
+    "stem": "关于系统调用，正确的说法有( )。",
+    "options": [
+      "A. 用户程序请求操作系统内核服务的接口",
+      "B. 引起态转换",
+      "C. 提供受保护服务",
+      "D. 等同于普通函数调用"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合系统调用定义和特征。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "180ccc43ea12b2d1c541"
+  },
+  {
+    "id": "OS-MC-0157",
+    "type": "multiple_choice",
+    "stem": "围绕系统调用进行判断，正确项包括( )。",
+    "options": [
+      "A. 由内核完成",
+      "B. 读文件",
+      "C. 操作系统导论",
+      "D. 不需要陷入内核"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "086f40cb786cc8af7529"
+  },
+  {
+    "id": "OS-MC-0158",
+    "type": "multiple_choice",
+    "stem": "学习系统调用时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 系统调用",
+      "B. 创建进程",
+      "C. 引起态转换",
+      "D. 用于提高磁盘转速"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是系统调用的核心学习内容。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3377a3d5ffae2d7bea5f"
+  },
+  {
+    "id": "OS-MC-0159",
+    "type": "multiple_choice",
+    "stem": "若题目考查系统调用，可作为正确线索的有( )。",
+    "options": [
+      "A. 用户程序请求操作系统内核服务的接口",
+      "B. 创建进程",
+      "C. 申请内存",
+      "D. 用于提高磁盘转速"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别系统调用。",
+    "chapter": "操作系统导论",
+    "knowledge_point": "系统调用",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "64517f7eac320bac774a"
+  },
+  {
+    "id": "OS-MC-0160",
+    "type": "multiple_choice",
+    "stem": "下列与文件物理结构相关的概念有( )。",
+    "options": [
+      "A. 连续分配",
+      "B. 链式分配",
+      "C. 索引分配",
+      "D. 中断向量"
+    ],
+    "answer": "ABC",
+    "explanation": "连续分配、链式分配、索引分配与文件物理结构相关。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "be800ad5c2e86c39a9a1"
+  },
+  {
+    "id": "OS-MC-0161",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现文件物理结构的作用？",
+    "options": [
+      "A. 连续结构",
+      "B. 链接结构",
+      "C. 连续分配",
+      "D. 就绪队列"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现文件物理结构在系统中的作用。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7edc1ff78346c746a097"
+  },
+  {
+    "id": "OS-MC-0162",
+    "type": "multiple_choice",
+    "stem": "下列属于文件物理结构特征的有( )。",
+    "options": [
+      "A. 连续结构",
+      "B. 链接结构",
+      "C. 索引结构",
+      "D. 就绪队列"
+    ],
+    "answer": "ABC",
+    "explanation": "连续结构、链接结构、索引结构均属于文件物理结构的特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2ce7b90d70f976db80ae"
+  },
+  {
+    "id": "OS-MC-0163",
+    "type": "multiple_choice",
+    "stem": "下列属于文件物理结构考查范围的有( )。",
+    "options": [
+      "A. 文件物理结构",
+      "B. 索引分配",
+      "C. 外存块分配",
+      "D. 时间片大小"
+    ],
+    "answer": "ABC",
+    "explanation": "文件物理结构、索引分配和外存块分配属于该知识点范围。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5bb0dc38fedd219cda6e"
+  },
+  {
+    "id": "OS-MC-0164",
+    "type": "multiple_choice",
+    "stem": "关于文件物理结构，正确的说法有( )。",
+    "options": [
+      "A. 文件在外存上的组织和分配方式",
+      "B. 连续结构",
+      "C. 链接结构",
+      "D. 时间片大小"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合文件物理结构定义和特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "165ad4c2ce91f5c2e447"
+  },
+  {
+    "id": "OS-MC-0165",
+    "type": "multiple_choice",
+    "stem": "围绕文件物理结构进行判断，正确项包括( )。",
+    "options": [
+      "A. 索引结构",
+      "B. 链式分配",
+      "C. 文件系统",
+      "D. 中断向量"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ce09f35d889007564022"
+  },
+  {
+    "id": "OS-MC-0166",
+    "type": "multiple_choice",
+    "stem": "学习文件物理结构时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 文件物理结构",
+      "B. 连续分配",
+      "C. 连续结构",
+      "D. 访问控制主体"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是文件物理结构的核心学习内容。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9c9db25d6f750f2e42a1"
+  },
+  {
+    "id": "OS-MC-0167",
+    "type": "multiple_choice",
+    "stem": "文件的物理结构通常包括( )。",
+    "options": [
+      "A. 连续结构",
+      "B. 链接结构",
+      "C. 索引结构",
+      "D. 树形目录结构"
+    ],
+    "answer": "ABC",
+    "explanation": "树形目录结构属于目录组织方式，不是文件物理结构。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "e735fe2c2d33a77ec8eb"
+  },
+  {
+    "id": "OS-MC-0168",
+    "type": "multiple_choice",
+    "stem": "若题目考查文件物理结构，可作为正确线索的有( )。",
+    "options": [
+      "A. 文件在外存上的组织和分配方式",
+      "B. 连续分配",
+      "C. 混合索引",
+      "D. 访问控制主体"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别文件物理结构。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件物理结构",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "608b34b258f519ed4d83"
+  },
+  {
+    "id": "OS-MC-0169",
+    "type": "multiple_choice",
+    "stem": "下列与文件目录相关的概念有( )。",
+    "options": [
+      "A. 单级目录",
+      "B. 二级目录",
+      "C. 树形目录",
+      "D. 页面置换队列"
+    ],
+    "answer": "ABC",
+    "explanation": "单级目录、二级目录、树形目录与文件目录相关。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f442771b9092360e3cad"
+  },
+  {
+    "id": "OS-MC-0170",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现文件目录的作用？",
+    "options": [
+      "A. 按名访问",
+      "B. 目录项",
+      "C. 单级目录",
+      "D. 处理机调度队列"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现文件目录在系统中的作用。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "304406acca05a61453b9"
+  },
+  {
+    "id": "OS-MC-0171",
+    "type": "multiple_choice",
+    "stem": "下列属于文件目录特征的有( )。",
+    "options": [
+      "A. 按名访问",
+      "B. 目录项",
+      "C. 层次结构",
+      "D. 处理机调度队列"
+    ],
+    "answer": "ABC",
+    "explanation": "按名访问、目录项、层次结构均属于文件目录的特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c1391ea8f4c4f3b7cdbf"
+  },
+  {
+    "id": "OS-MC-0172",
+    "type": "multiple_choice",
+    "stem": "下列属于文件目录考查范围的有( )。",
+    "options": [
+      "A. 文件目录",
+      "B. 树形目录",
+      "C. 文件共享",
+      "D. 信号量数组"
+    ],
+    "answer": "ABC",
+    "explanation": "文件目录、树形目录和文件共享属于该知识点范围。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "47a2e3e20ad587df08a1"
+  },
+  {
+    "id": "OS-MC-0173",
+    "type": "multiple_choice",
+    "stem": "关于文件目录，正确的说法有( )。",
+    "options": [
+      "A. 记录文件名及其元数据位置以支持按名访问的数据结构",
+      "B. 按名访问",
+      "C. 目录项",
+      "D. 信号量数组"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合文件目录定义和特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "2f69cd13dea4a4afa4eb"
+  },
+  {
+    "id": "OS-MC-0174",
+    "type": "multiple_choice",
+    "stem": "围绕文件目录进行判断，正确项包括( )。",
+    "options": [
+      "A. 层次结构",
+      "B. 二级目录",
+      "C. 文件系统",
+      "D. 页面置换队列"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6262db9138ad1e47c4dc"
+  },
+  {
+    "id": "OS-MC-0175",
+    "type": "multiple_choice",
+    "stem": "学习文件目录时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 文件目录",
+      "B. 单级目录",
+      "C. 按名访问",
+      "D. DMA 控制器"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是文件目录的核心学习内容。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "52afb3f2c4e97ee40154"
+  },
+  {
+    "id": "OS-MC-0176",
+    "type": "multiple_choice",
+    "stem": "若题目考查文件目录，可作为正确线索的有( )。",
+    "options": [
+      "A. 记录文件名及其元数据位置以支持按名访问的数据结构",
+      "B. 单级目录",
+      "C. 路径名",
+      "D. DMA 控制器"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别文件目录。",
+    "chapter": "文件系统",
+    "knowledge_point": "文件目录",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "76bd0d2f3586d1c82c11"
+  },
+  {
+    "id": "OS-MC-0177",
+    "type": "multiple_choice",
+    "stem": "8.1 3\n 第6章习题\n 下列关于数据项的说法错误 的是()",
+    "options": [
+      "A. 数据项是计算机中最小的数 据单位",
+      "B. 数据项是文件系统中最低级 的数据组织形式",
+      "C. 基本数据项是文件系统中最 小的逻辑数据单位",
+      "D. 若干个相关的基本数据项可 以合成组合数据项",
+      "E. 数据项描述实体的一个属性， 有名字和类型，每个实体可以有 不同的值"
+    ],
+    "answer": "AB",
+    "explanation": "暂无解析",
+    "chapter": "文件系统",
+    "knowledge_point": "文件系统",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/2401_87555402/article/details/143611960",
+    "source_title": "操作系统期末总复习(题库)_操作系统期末题库及答案-CSDN博客",
+    "fingerprint": "a3c83605edd5b7128045"
+  },
+  {
+    "id": "OS-MC-0178",
+    "type": "multiple_choice",
+    "stem": "下列与空闲空间管理相关的概念有( )。",
+    "options": [
+      "A. 位图",
+      "B. 空闲块链",
+      "C. 超级块",
+      "D. 时间片轮转"
+    ],
+    "answer": "ABC",
+    "explanation": "位图、空闲块链、超级块与空闲空间管理相关。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "cf9ae9a1f46de8715e56"
+  },
+  {
+    "id": "OS-MC-0179",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现空闲空间管理的作用？",
+    "options": [
+      "A. 位示图",
+      "B. 空闲链表",
+      "C. 位图",
+      "D. 银行家算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现空闲空间管理在系统中的作用。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "d454aac49245c1fbb924"
+  },
+  {
+    "id": "OS-MC-0180",
+    "type": "multiple_choice",
+    "stem": "下列属于空闲空间管理特征的有( )。",
+    "options": [
+      "A. 位示图",
+      "B. 空闲链表",
+      "C. 成组链接法",
+      "D. 银行家算法"
+    ],
+    "answer": "ABC",
+    "explanation": "位示图、空闲链表、成组链接法均属于空闲空间管理的特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f9ca0d576f3ed9a34402"
+  },
+  {
+    "id": "OS-MC-0181",
+    "type": "multiple_choice",
+    "stem": "下列属于空闲空间管理考查范围的有( )。",
+    "options": [
+      "A. 空闲空间管理",
+      "B. 超级块",
+      "C. 空闲表",
+      "D. 页面淘汰"
+    ],
+    "answer": "ABC",
+    "explanation": "空闲空间管理、超级块和空闲表属于该知识点范围。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c48cb8ff60d9e955a357"
+  },
+  {
+    "id": "OS-MC-0182",
+    "type": "multiple_choice",
+    "stem": "关于空闲空间管理，正确的说法有( )。",
+    "options": [
+      "A. 文件系统记录和分配外存空闲块的方法",
+      "B. 位示图",
+      "C. 空闲链表",
+      "D. 页面淘汰"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合空闲空间管理定义和特征。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "50185970612db84403af"
+  },
+  {
+    "id": "OS-MC-0183",
+    "type": "multiple_choice",
+    "stem": "围绕空闲空间管理进行判断，正确项包括( )。",
+    "options": [
+      "A. 成组链接法",
+      "B. 空闲块链",
+      "C. 文件系统",
+      "D. 时间片轮转"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "48e8afbd344241c35407"
+  },
+  {
+    "id": "OS-MC-0184",
+    "type": "multiple_choice",
+    "stem": "学习空闲空间管理时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 空闲空间管理",
+      "B. 位图",
+      "C. 位示图",
+      "D. 临界区进入"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是空闲空间管理的核心学习内容。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f10afb7b9dd3eb13fab5"
+  },
+  {
+    "id": "OS-MC-0185",
+    "type": "multiple_choice",
+    "stem": "文件系统中管理空闲磁盘块的方法包括( )。",
+    "options": [
+      "A. 位示图",
+      "B. 空闲链表",
+      "C. 成组链接法",
+      "D. 索引表法"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些方法都可记录和分配外存空闲块。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "c49c3394def670cff166"
+  },
+  {
+    "id": "OS-MC-0186",
+    "type": "multiple_choice",
+    "stem": "若题目考查空闲空间管理，可作为正确线索的有( )。",
+    "options": [
+      "A. 文件系统记录和分配外存空闲块的方法",
+      "B. 位图",
+      "C. 块分配",
+      "D. 临界区进入"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别空闲空间管理。",
+    "chapter": "文件系统",
+    "knowledge_point": "空闲空间管理",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "eb323351286b03b6520d"
+  },
+  {
+    "id": "OS-MC-0187",
+    "type": "multiple_choice",
+    "stem": "产生死锁的必要条件包括( )。",
+    "options": [
+      "A. 互斥条件",
+      "B. 请求并保持条件",
+      "C. 不剥夺条件",
+      "D. 循环等待条件"
+    ],
+    "answer": "ABCD",
+    "explanation": "四个条件同时成立时系统可能发生死锁。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "968e59856df47f333680"
+  },
+  {
+    "id": "OS-MC-0188",
+    "type": "multiple_choice",
+    "stem": "处理死锁的基本策略包括( )。",
+    "options": [
+      "A. 预防死锁",
+      "B. 避免死锁",
+      "C. 检测并解除死锁",
+      "D. 忽略死锁"
+    ],
+    "answer": "ABCD",
+    "explanation": "不同系统可选择预防、避免、检测恢复或忽略策略。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁处理",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "7b900c6d2fc19924a864"
+  },
+  {
+    "id": "OS-MC-0189",
+    "type": "multiple_choice",
+    "stem": "下列与死锁相关的概念有( )。",
+    "options": [
+      "A. 资源分配图",
+      "B. 循环等待链",
+      "C. 银行家算法",
+      "D. 文件目录损坏"
+    ],
+    "answer": "ABC",
+    "explanation": "资源分配图、循环等待链、银行家算法与死锁相关。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "28b341d4c7a1daf5358f"
+  },
+  {
+    "id": "OS-MC-0190",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现死锁的作用？",
+    "options": [
+      "A. 互斥条件",
+      "B. 请求并保持",
+      "C. 资源分配图",
+      "D. CPU 利用率升高"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现死锁在系统中的作用。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "616d7709c994c59aa684"
+  },
+  {
+    "id": "OS-MC-0191",
+    "type": "multiple_choice",
+    "stem": "下列属于死锁条件考查范围的有( )。",
+    "options": [
+      "A. 死锁",
+      "B. 银行家算法",
+      "C. 循环等待",
+      "D. 页面命中率为零"
+    ],
+    "answer": "ABC",
+    "explanation": "死锁、银行家算法和循环等待属于该知识点范围。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b702f1752356e4cea36d"
+  },
+  {
+    "id": "OS-MC-0192",
+    "type": "multiple_choice",
+    "stem": "下列属于死锁特征的有( )。",
+    "options": [
+      "A. 互斥条件",
+      "B. 请求并保持",
+      "C. 不剥夺条件",
+      "D. CPU 利用率升高"
+    ],
+    "answer": "ABC",
+    "explanation": "互斥条件、请求并保持、不剥夺条件均属于死锁的特征。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "30d749e99370b94ad836"
+  },
+  {
+    "id": "OS-MC-0193",
+    "type": "multiple_choice",
+    "stem": "关于死锁，正确的说法有( )。",
+    "options": [
+      "A. 多个进程因相互等待对方占有的资源而无法继续推进的状态",
+      "B. 互斥条件",
+      "C. 请求并保持",
+      "D. 页面命中率为零"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合死锁定义和特征。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9992f9ff738e02c8a8de"
+  },
+  {
+    "id": "OS-MC-0194",
+    "type": "multiple_choice",
+    "stem": "围绕死锁进行判断，正确项包括( )。",
+    "options": [
+      "A. 不剥夺条件",
+      "B. 循环等待链",
+      "C. 死锁",
+      "D. 文件目录损坏"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5cc555623738d7762c4b"
+  },
+  {
+    "id": "OS-MC-0195",
+    "type": "multiple_choice",
+    "stem": "学习死锁时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 死锁条件",
+      "B. 资源分配图",
+      "C. 互斥条件",
+      "D. 中断被处理"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是死锁的核心学习内容。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "e9f3947e9458d8419afe"
+  },
+  {
+    "id": "OS-MC-0196",
+    "type": "multiple_choice",
+    "stem": "若题目考查死锁，可作为正确线索的有( )。",
+    "options": [
+      "A. 多个进程因相互等待对方占有的资源而无法继续推进的状态",
+      "B. 资源分配图",
+      "C. 安全序列",
+      "D. 中断被处理"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别死锁。",
+    "chapter": "死锁",
+    "knowledge_point": "死锁条件",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "fde301d8d5e0e775447a"
+  },
+  {
+    "id": "OS-MC-0197",
+    "type": "multiple_choice",
+    "stem": "下列与银行家算法相关的概念有( )。",
+    "options": [
+      "A. Available",
+      "B. Max",
+      "C. Allocation",
+      "D. 破坏所有死锁条件"
+    ],
+    "answer": "ABC",
+    "explanation": "Available、Max、Allocation与银行家算法相关。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c759a02258900c35e7ae"
+  },
+  {
+    "id": "OS-MC-0198",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现银行家算法的作用？",
+    "options": [
+      "A. 需要最大需求信息",
+      "B. 检查安全状态",
+      "C. Available",
+      "D. 用于检测磁盘坏块"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现银行家算法在系统中的作用。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3a600b40e6ba916ffeb2"
+  },
+  {
+    "id": "OS-MC-0199",
+    "type": "multiple_choice",
+    "stem": "下列属于银行家算法特征的有( )。",
+    "options": [
+      "A. 需要最大需求信息",
+      "B. 检查安全状态",
+      "C. 避免进入不安全状态",
+      "D. 用于检测磁盘坏块"
+    ],
+    "answer": "ABC",
+    "explanation": "需要最大需求信息、检查安全状态、避免进入不安全状态均属于银行家算法的特征。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "79912284a7b3f1ef9fb1"
+  },
+  {
+    "id": "OS-MC-0200",
+    "type": "multiple_choice",
+    "stem": "下列属于银行家算法考查范围的有( )。",
+    "options": [
+      "A. 银行家算法",
+      "B. Allocation",
+      "C. 支持动态申请",
+      "D. 不需要资源向量"
+    ],
+    "answer": "ABC",
+    "explanation": "银行家算法、Allocation和支持动态申请属于该知识点范围。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6047b2b8329c0a58db26"
+  },
+  {
+    "id": "OS-MC-0201",
+    "type": "multiple_choice",
+    "stem": "关于银行家算法，正确的说法有( )。",
+    "options": [
+      "A. 根据安全性检查决定是否分配资源的死锁避免算法",
+      "B. 需要最大需求信息",
+      "C. 检查安全状态",
+      "D. 不需要资源向量"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合银行家算法定义和特征。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5c5dae84b9f245b81e29"
+  },
+  {
+    "id": "OS-MC-0202",
+    "type": "multiple_choice",
+    "stem": "围绕银行家算法进行判断，正确项包括( )。",
+    "options": [
+      "A. 避免进入不安全状态",
+      "B. Max",
+      "C. 死锁",
+      "D. 破坏所有死锁条件"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1bf28062be51a3cfe81f"
+  },
+  {
+    "id": "OS-MC-0203",
+    "type": "multiple_choice",
+    "stem": "学习银行家算法时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 银行家算法",
+      "B. Available",
+      "C. 需要最大需求信息",
+      "D. 总是立即满足请求"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是银行家算法的核心学习内容。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "541e31bed927ad36c185"
+  },
+  {
+    "id": "OS-MC-0204",
+    "type": "multiple_choice",
+    "stem": "若题目考查银行家算法，可作为正确线索的有( )。",
+    "options": [
+      "A. 根据安全性检查决定是否分配资源的死锁避免算法",
+      "B. Available",
+      "C. Need",
+      "D. 总是立即满足请求"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别银行家算法。",
+    "chapter": "死锁",
+    "knowledge_point": "银行家算法",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3f311ec92c900445617f"
+  },
+  {
+    "id": "OS-MC-0205",
+    "type": "multiple_choice",
+    "stem": "常见磁盘调度算法包括( )。",
+    "options": [
+      "A. FCFS",
+      "B. SSTF",
+      "C. SCAN",
+      "D. C-SCAN"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些算法用于安排磁盘访问请求顺序，减少寻道开销。",
+    "chapter": "磁盘与存储管理",
+    "knowledge_point": "磁盘调度",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "521974fb5a61ac9c19a9"
+  },
+  {
+    "id": "OS-MC-0206",
+    "type": "multiple_choice",
+    "stem": "下列与LRU 页面置换算法相关的概念有( )。",
+    "options": [
+      "A. 访问位",
+      "B. 时间戳",
+      "C. 栈算法",
+      "D. 总是最优算法"
+    ],
+    "answer": "ABC",
+    "explanation": "访问位、时间戳、栈算法与LRU 页面置换算法相关。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "dfe08e06e42cb030d35c"
+  },
+  {
+    "id": "OS-MC-0207",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现LRU 页面置换算法的作用？",
+    "options": [
+      "A. 利用时间局部性",
+      "B. 需要记录访问历史",
+      "C. 访问位",
+      "D. 淘汰最先进入页面"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现LRU 页面置换算法在系统中的作用。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3958b78a64a27f7e3912"
+  },
+  {
+    "id": "OS-MC-0208",
+    "type": "multiple_choice",
+    "stem": "下列属于LRU考查范围的有( )。",
+    "options": [
+      "A. LRU 页面置换算法",
+      "B. 栈算法",
+      "C. 不会出现 Belady 异常",
+      "D. 按磁道距离选择"
+    ],
+    "answer": "ABC",
+    "explanation": "LRU 页面置换算法、栈算法和不会出现 Belady 异常属于该知识点范围。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "e2ceac6424c90f53f9da"
+  },
+  {
+    "id": "OS-MC-0209",
+    "type": "multiple_choice",
+    "stem": "下列属于LRU 页面置换算法特征的有( )。",
+    "options": [
+      "A. 利用时间局部性",
+      "B. 需要记录访问历史",
+      "C. 近似实现常用 CLOCK",
+      "D. 淘汰最先进入页面"
+    ],
+    "answer": "ABC",
+    "explanation": "利用时间局部性、需要记录访问历史、近似实现常用 CLOCK均属于LRU 页面置换算法的特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "95eca48ca684e81fd209"
+  },
+  {
+    "id": "OS-MC-0210",
+    "type": "multiple_choice",
+    "stem": "关于LRU 页面置换算法，正确的说法有( )。",
+    "options": [
+      "A. 淘汰最近最久未使用页面的页面置换算法",
+      "B. 利用时间局部性",
+      "C. 需要记录访问历史",
+      "D. 按磁道距离选择"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合LRU 页面置换算法定义和特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3bc174af36bf5e179948"
+  },
+  {
+    "id": "OS-MC-0211",
+    "type": "multiple_choice",
+    "stem": "围绕LRU 页面置换算法进行判断，正确项包括( )。",
+    "options": [
+      "A. 近似实现常用 CLOCK",
+      "B. 时间戳",
+      "C. 虚拟内存",
+      "D. 总是最优算法"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "379be154b3916dce0021"
+  },
+  {
+    "id": "OS-MC-0212",
+    "type": "multiple_choice",
+    "stem": "学习LRU 页面置换算法时，需要掌握的内容包括( )。",
+    "options": [
+      "A. LRU",
+      "B. 访问位",
+      "C. 利用时间局部性",
+      "D. 用于进程创建"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是LRU 页面置换算法的核心学习内容。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5ac4ef1dd5544cae4048"
+  },
+  {
+    "id": "OS-MC-0213",
+    "type": "multiple_choice",
+    "stem": "若题目考查LRU 页面置换算法，可作为正确线索的有( )。",
+    "options": [
+      "A. 淘汰最近最久未使用页面的页面置换算法",
+      "B. 访问位",
+      "C. 页面置换",
+      "D. 用于进程创建"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别LRU 页面置换算法。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "LRU",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7b7cd3a19a1451a60500"
+  },
+  {
+    "id": "OS-MC-0214",
+    "type": "multiple_choice",
+    "stem": "下列与抖动相关的概念有( )。",
+    "options": [
+      "A. 工作集模型",
+      "B. 驻留集",
+      "C. 缺页中断",
+      "D. 线程切换消失"
+    ],
+    "answer": "ABC",
+    "explanation": "工作集模型、驻留集、缺页中断与抖动相关。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9e243d61387084bb3a10"
+  },
+  {
+    "id": "OS-MC-0215",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现抖动的作用？",
+    "options": [
+      "A. 缺页率很高",
+      "B. CPU 利用率下降",
+      "C. 工作集模型",
+      "D. 磁盘寻道时间为零"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现抖动在系统中的作用。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "a37310b26c55fdad3eda"
+  },
+  {
+    "id": "OS-MC-0216",
+    "type": "multiple_choice",
+    "stem": "下列属于抖动特征的有( )。",
+    "options": [
+      "A. 缺页率很高",
+      "B. CPU 利用率下降",
+      "C. 工作集不足",
+      "D. 磁盘寻道时间为零"
+    ],
+    "answer": "ABC",
+    "explanation": "缺页率很高、CPU 利用率下降、工作集不足均属于抖动的特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9f8f6293c36bba7bace9"
+  },
+  {
+    "id": "OS-MC-0217",
+    "type": "multiple_choice",
+    "stem": "下列属于抖动考查范围的有( )。",
+    "options": [
+      "A. 抖动",
+      "B. 缺页中断",
+      "C. 多道程度过高可能导致",
+      "D. 文件目录自动压缩"
+    ],
+    "answer": "ABC",
+    "explanation": "抖动、缺页中断和多道程度过高可能导致属于该知识点范围。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1c9a0c7bb970d4ca9ab6"
+  },
+  {
+    "id": "OS-MC-0218",
+    "type": "multiple_choice",
+    "stem": "关于抖动，正确的说法有( )。",
+    "options": [
+      "A. 系统频繁进行页面换入换出而有效执行时间很少的现象",
+      "B. 缺页率很高",
+      "C. CPU 利用率下降",
+      "D. 文件目录自动压缩"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合抖动定义和特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "54361a7821ae3cc3995c"
+  },
+  {
+    "id": "OS-MC-0219",
+    "type": "multiple_choice",
+    "stem": "围绕抖动进行判断，正确项包括( )。",
+    "options": [
+      "A. 工作集不足",
+      "B. 驻留集",
+      "C. 虚拟内存",
+      "D. 线程切换消失"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "031ada80ec7ecfeefc73"
+  },
+  {
+    "id": "OS-MC-0220",
+    "type": "multiple_choice",
+    "stem": "学习抖动时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 抖动",
+      "B. 工作集模型",
+      "C. 缺页率很高",
+      "D. 用户态变核心态"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是抖动的核心学习内容。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "974ab396108ef3c0bf9f"
+  },
+  {
+    "id": "OS-MC-0221",
+    "type": "multiple_choice",
+    "stem": "若题目考查抖动，可作为正确线索的有( )。",
+    "options": [
+      "A. 系统频繁进行页面换入换出而有效执行时间很少的现象",
+      "B. 工作集模型",
+      "C. 页面置换",
+      "D. 用户态变核心态"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别抖动。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "抖动",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b174301bff3789855953"
+  },
+  {
+    "id": "OS-MC-0222",
+    "type": "multiple_choice",
+    "stem": "请求分页系统中可能导致缺页中断的情况有( )。",
+    "options": [
+      "A. 访问的页面不在内存",
+      "B. 页表项有效位为无效",
+      "C. 页面访问越界",
+      "D. 所需页面在外存"
+    ],
+    "answer": "ABD",
+    "explanation": "缺页通常表示合法页面暂不在内存，需要从外存调入。越界属于地址保护异常。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "缺页中断",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "8180decbc80469965731"
+  },
+  {
+    "id": "OS-MC-0223",
+    "type": "multiple_choice",
+    "stem": "下列与请求分页相关的概念有( )。",
+    "options": [
+      "A. 缺页率",
+      "B. 驻留集",
+      "C. 工作集",
+      "D. 不需要页表"
+    ],
+    "answer": "ABC",
+    "explanation": "缺页率、驻留集、工作集与请求分页相关。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "21b2119b2b6bd145d1b5"
+  },
+  {
+    "id": "OS-MC-0224",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现请求分页的作用？",
+    "options": [
+      "A. 缺页中断",
+      "B. 页面调入",
+      "C. 缺页率",
+      "D. 程序必须一次全部装入"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现请求分页在系统中的作用。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "326ee3ba2f992524162d"
+  },
+  {
+    "id": "OS-MC-0225",
+    "type": "multiple_choice",
+    "stem": "下列属于请求分页特征的有( )。",
+    "options": [
+      "A. 缺页中断",
+      "B. 页面调入",
+      "C. 页面置换",
+      "D. 程序必须一次全部装入"
+    ],
+    "answer": "ABC",
+    "explanation": "缺页中断、页面调入、页面置换均属于请求分页的特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "591280b6bff6588130c7"
+  },
+  {
+    "id": "OS-MC-0226",
+    "type": "multiple_choice",
+    "stem": "下列属于请求分页考查范围的有( )。",
+    "options": [
+      "A. 请求分页",
+      "B. 工作集",
+      "C. 有效位",
+      "D. 不能使用外存"
+    ],
+    "answer": "ABC",
+    "explanation": "请求分页、工作集和有效位属于该知识点范围。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "55ebe09f0afd377c3d0a"
+  },
+  {
+    "id": "OS-MC-0227",
+    "type": "multiple_choice",
+    "stem": "关于请求分页，正确的说法有( )。",
+    "options": [
+      "A. 只在需要访问页面时才将页面调入内存的虚拟存储管理方式",
+      "B. 缺页中断",
+      "C. 页面调入",
+      "D. 不能使用外存"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合请求分页定义和特征。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "bbc88d20b799443daf4f"
+  },
+  {
+    "id": "OS-MC-0228",
+    "type": "multiple_choice",
+    "stem": "围绕请求分页进行判断，正确项包括( )。",
+    "options": [
+      "A. 页面置换",
+      "B. 驻留集",
+      "C. 虚拟内存",
+      "D. 不需要页表"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "22e7727dd7038480af21"
+  },
+  {
+    "id": "OS-MC-0229",
+    "type": "multiple_choice",
+    "stem": "学习请求分页时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 请求分页",
+      "B. 缺页率",
+      "C. 缺页中断",
+      "D. 只适合连续分配"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是请求分页的核心学习内容。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "0df9279057c08cc3571b"
+  },
+  {
+    "id": "OS-MC-0230",
+    "type": "multiple_choice",
+    "stem": "若题目考查请求分页，可作为正确线索的有( )。",
+    "options": [
+      "A. 只在需要访问页面时才将页面调入内存的虚拟存储管理方式",
+      "B. 缺页率",
+      "C. 页面置换",
+      "D. 只适合连续分配"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别请求分页。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "请求分页",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f1b00077cc3c8c36e3d5"
+  },
+  {
+    "id": "OS-MC-0231",
+    "type": "multiple_choice",
+    "stem": "下列属于页面置换算法的有( )。",
+    "options": [
+      "A. FIFO",
+      "B. LRU",
+      "C. CLOCK",
+      "D. OPT"
+    ],
+    "answer": "ABCD",
+    "explanation": "这些算法用于缺页时选择被淘汰页面。",
+    "chapter": "虚拟内存",
+    "knowledge_point": "页面置换",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "61705cceaf86da0afba5"
+  },
+  {
+    "id": "OS-MC-0232",
+    "type": "multiple_choice",
+    "stem": "下列与进程控制块 PCB相关的概念有( )。",
+    "options": [
+      "A. 保存现场",
+      "B. 组织进程队列",
+      "C. 记录优先级",
+      "D. 磁盘引导块"
+    ],
+    "answer": "ABC",
+    "explanation": "保存现场、组织进程队列、记录优先级与进程控制块 PCB相关。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "3242ab80622b5e546251"
+  },
+  {
+    "id": "OS-MC-0233",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现进程控制块 PCB的作用？",
+    "options": [
+      "A. 进程标识符",
+      "B. 处理机状态",
+      "C. 保存现场",
+      "D. 文件正文"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现进程控制块 PCB在系统中的作用。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "795433bb9708d55d1112"
+  },
+  {
+    "id": "OS-MC-0234",
+    "type": "multiple_choice",
+    "stem": "下列属于PCB考查范围的有( )。",
+    "options": [
+      "A. 进程控制块 PCB",
+      "B. 记录优先级",
+      "C. 资源清单",
+      "D. 用户界面"
+    ],
+    "answer": "ABC",
+    "explanation": "进程控制块 PCB、记录优先级和资源清单属于该知识点范围。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "6a5e41a75c5749a1300d"
+  },
+  {
+    "id": "OS-MC-0235",
+    "type": "multiple_choice",
+    "stem": "下列属于进程控制块 PCB 中常见内容的有( )。",
+    "options": [
+      "A. 进程标识符",
+      "B. 处理机状态",
+      "C. 进程调度信息",
+      "D. 资源清单"
+    ],
+    "answer": "ABCD",
+    "explanation": "PCB 保存操作系统管理和调度进程所需的信息。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "3d4d3d48c5aea3808f63"
+  },
+  {
+    "id": "OS-MC-0236",
+    "type": "multiple_choice",
+    "stem": "下列属于进程控制块 PCB特征的有( )。",
+    "options": [
+      "A. 进程标识符",
+      "B. 处理机状态",
+      "C. 调度信息",
+      "D. 文件正文"
+    ],
+    "answer": "ABC",
+    "explanation": "进程标识符、处理机状态、调度信息均属于进程控制块 PCB的特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "36e602092ca4fb3b716e"
+  },
+  {
+    "id": "OS-MC-0237",
+    "type": "multiple_choice",
+    "stem": "关于进程控制块 PCB，正确的说法有( )。",
+    "options": [
+      "A. 操作系统描述和管理进程的数据结构",
+      "B. 进程标识符",
+      "C. 处理机状态",
+      "D. 用户界面"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合进程控制块 PCB定义和特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "aa889fee1e3183a3780f"
+  },
+  {
+    "id": "OS-MC-0238",
+    "type": "multiple_choice",
+    "stem": "围绕进程控制块 PCB进行判断，正确项包括( )。",
+    "options": [
+      "A. 调度信息",
+      "B. 组织进程队列",
+      "C. 进程与线程",
+      "D. 磁盘引导块"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "52e251dbae2e67fca672"
+  },
+  {
+    "id": "OS-MC-0239",
+    "type": "multiple_choice",
+    "stem": "学习进程控制块 PCB时，需要掌握的内容包括( )。",
+    "options": [
+      "A. PCB",
+      "B. 保存现场",
+      "C. 进程标识符",
+      "D. 编译器符号表"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是进程控制块 PCB的核心学习内容。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "9cd0dc8c61fd1fe49143"
+  },
+  {
+    "id": "OS-MC-0240",
+    "type": "multiple_choice",
+    "stem": "若题目考查进程控制块 PCB，可作为正确线索的有( )。",
+    "options": [
+      "A. 操作系统描述和管理进程的数据结构",
+      "B. 保存现场",
+      "C. 记录打开文件",
+      "D. 编译器符号表"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别进程控制块 PCB。",
+    "chapter": "进程与线程",
+    "knowledge_point": "PCB",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "e24feb49b93bae5e6b47"
+  },
+  {
+    "id": "OS-MC-0241",
+    "type": "multiple_choice",
+    "stem": "下列与线程相关的概念有( )。",
+    "options": [
+      "A. 用户级线程",
+      "B. 内核级线程",
+      "C. 线程控制块",
+      "D. 不能并发执行"
+    ],
+    "answer": "ABC",
+    "explanation": "用户级线程、内核级线程、线程控制块与线程相关。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f0eb31d225c94ce842a7"
+  },
+  {
+    "id": "OS-MC-0242",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现线程的作用？",
+    "options": [
+      "A. 共享进程地址空间",
+      "B. 拥有独立栈",
+      "C. 用户级线程",
+      "D. 拥有完全独立地址空间"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现线程在系统中的作用。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "91ffc0c6f86f22021bea"
+  },
+  {
+    "id": "OS-MC-0243",
+    "type": "multiple_choice",
+    "stem": "下列属于线程特征的有( )。",
+    "options": [
+      "A. 共享进程地址空间",
+      "B. 拥有独立栈",
+      "C. 切换开销较小",
+      "D. 拥有完全独立地址空间"
+    ],
+    "answer": "ABC",
+    "explanation": "共享进程地址空间、拥有独立栈、切换开销较小均属于线程的特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "757944c06817c3fe8a61"
+  },
+  {
+    "id": "OS-MC-0244",
+    "type": "multiple_choice",
+    "stem": "下列属于线程考查范围的有( )。",
+    "options": [
+      "A. 线程",
+      "B. 线程控制块",
+      "C. 可提高并发性",
+      "D. 一定没有寄存器现场"
+    ],
+    "answer": "ABC",
+    "explanation": "线程、线程控制块和可提高并发性属于该知识点范围。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "b247a861a1a04577caf0"
+  },
+  {
+    "id": "OS-MC-0245",
+    "type": "multiple_choice",
+    "stem": "关于线程，正确的说法有( )。",
+    "options": [
+      "A. 进程内的一个执行流，是处理机调度的基本单位",
+      "B. 共享进程地址空间",
+      "C. 拥有独立栈",
+      "D. 一定没有寄存器现场"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合线程定义和特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "0bde5e7a6122c40ba9a4"
+  },
+  {
+    "id": "OS-MC-0246",
+    "type": "multiple_choice",
+    "stem": "围绕线程进行判断，正确项包括( )。",
+    "options": [
+      "A. 切换开销较小",
+      "B. 内核级线程",
+      "C. 进程与线程",
+      "D. 不能并发执行"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f7254a919ae7e19b1988"
+  },
+  {
+    "id": "OS-MC-0247",
+    "type": "multiple_choice",
+    "stem": "学习线程时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 线程",
+      "B. 用户级线程",
+      "C. 共享进程地址空间",
+      "D. 是外存分配单位"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是线程的核心学习内容。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "8ab714f2fb5625ad54a6"
+  },
+  {
+    "id": "OS-MC-0248",
+    "type": "multiple_choice",
+    "stem": "若题目考查线程，可作为正确线索的有( )。",
+    "options": [
+      "A. 进程内的一个执行流，是处理机调度的基本单位",
+      "B. 用户级线程",
+      "C. 多线程",
+      "D. 是外存分配单位"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别线程。",
+    "chapter": "进程与线程",
+    "knowledge_point": "线程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "946d10c172c75f62da5f"
+  },
+  {
+    "id": "OS-MC-0249",
+    "type": "multiple_choice",
+    "stem": "下列与进程相关的概念有( )。",
+    "options": [
+      "A. 就绪态",
+      "B. 运行态",
+      "C. 阻塞态",
+      "D. 只能串行运行"
+    ],
+    "answer": "ABC",
+    "explanation": "就绪态、运行态、阻塞态与进程相关。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "f69a03a56f24cee93f05"
+  },
+  {
+    "id": "OS-MC-0250",
+    "type": "multiple_choice",
+    "stem": "下列关于动态分区分配算法 说法错误的是()",
+    "options": [
+      "A. 首次适应算法每次分配空间时都 从表(链)首开始查找操作集中在低 地址段，容易在低地址段形成碎片 并增加系统开销",
+      "B. 循环首次适应算法每次分配空间 时都从表(链)首开始查找操作均 匀分散，缺点是容易导致缺乏大的 空闲区",
+      "C. 最佳适应算法每次最小的可分配 空闲分区给进程，因此效率最高，不 易形成碎片。",
+      "D. 最坏适应算法每次选择最大的空 闲分区分配给进程，不易形成碎片。"
+    ],
+    "answer": "BC",
+    "explanation": "暂无解析",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/2401_87555402/article/details/143611960",
+    "source_title": "操作系统期末总复习(题库)_操作系统期末题库及答案-CSDN博客",
+    "fingerprint": "c3427cb46c0d8c5dbe6c"
+  },
+  {
+    "id": "OS-MC-0251",
+    "type": "multiple_choice",
+    "stem": "下列哪些选项能体现进程的作用？",
+    "options": [
+      "A. 动态性",
+      "B. 并发性",
+      "C. 就绪态",
+      "D. 静态保存在磁盘上的代码"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项能体现进程在系统中的作用。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "5f58c2357bb7287006b5"
+  },
+  {
+    "id": "OS-MC-0252",
+    "type": "multiple_choice",
+    "stem": "下列属于进程特征的有( )。",
+    "options": [
+      "A. 动态性",
+      "B. 并发性",
+      "C. 独立性",
+      "D. 静态保存在磁盘上的代码"
+    ],
+    "answer": "ABC",
+    "explanation": "动态性、并发性、独立性均属于进程的特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "1e6b47a99a79755769f1"
+  },
+  {
+    "id": "OS-MC-0253",
+    "type": "multiple_choice",
+    "stem": "下列属于进程考查范围的有( )。",
+    "options": [
+      "A. 进程",
+      "B. 阻塞态",
+      "C. 异步性",
+      "D. 没有生命周期"
+    ],
+    "answer": "ABC",
+    "explanation": "进程、阻塞态和异步性属于该知识点范围。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "c95df4f8cc63237120bb"
+  },
+  {
+    "id": "OS-MC-0254",
+    "type": "multiple_choice",
+    "stem": "从下述关于模块化程序的叙述中，选出5条正确的叙述。( )",
+    "options": [
+      "A. 使程序设计更为方便，但比较难维护。",
+      "B. 便于由多人分工编制大型程序。",
+      "C. 便于软件功能扩充。",
+      "D. 在内存能够容纳的前提下，应使模块尽可能大，以减少模块的个数。",
+      "E. 模块之间的接口叫数据文件。",
+      "F. 只要模块接口不变，各模块内部实现细节的修改，不会影响别的模块。",
+      "G. 使程序易于理解，也利于排错。",
+      "H. 模块间的单向调用关系，形成了模块的层次式结构。 I、 模块愈小，模块化的优点愈明显，一般说来，一个模块的大小在10行以下。 J、 —个模建实际上是一个进程。"
+    ],
+    "answer": "BCFGH",
+    "explanation": "暂无解析",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/weixin_46425661/article/details/136547232",
+    "source_title": "操作系统习题精解-CSDN博客",
+    "fingerprint": "c4fccd7c9327bde89620"
+  },
+  {
+    "id": "OS-MC-0255",
+    "type": "multiple_choice",
+    "stem": "关于进程，正确的说法有( )。",
+    "options": [
+      "A. 程序的一次执行过程，是系统进行资源分配和保护的基本单位",
+      "B. 动态性",
+      "C. 并发性",
+      "D. 没有生命周期"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项符合进程定义和特征。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "658bb622be7d7b4e696f"
+  },
+  {
+    "id": "OS-MC-0256",
+    "type": "multiple_choice",
+    "stem": "围绕进程进行判断，正确项包括( )。",
+    "options": [
+      "A. 独立性",
+      "B. 运行态",
+      "C. 进程与线程",
+      "D. 只能串行运行"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项分别对应特征、相关概念和所属章节。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "ced82c656aaa0b6bb68e"
+  },
+  {
+    "id": "OS-MC-0257",
+    "type": "multiple_choice",
+    "stem": "学习进程时，需要掌握的内容包括( )。",
+    "options": [
+      "A. 进程",
+      "B. 就绪态",
+      "C. 动态性",
+      "D. 不需要 PCB"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项是进程的核心学习内容。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "694fa770111211036914"
+  },
+  {
+    "id": "OS-MC-0258",
+    "type": "multiple_choice",
+    "stem": "测得某个请求调页的计算机系统部分状态数据为：CPU利用率20%，用于对换空间的硬盘的利用率97.7%，其他设备的利用率5%。由此断定系统出现异常。此种情况，( )能提高CPU的利用率。",
+    "options": [
+      "A. 通过扩大硬盘容量，增加对换空间",
+      "B. 使用访问速度更快的内存条",
+      "C. 加内存条，增加物理空间容量",
+      "D. 减少运行的进程数。"
+    ],
+    "answer": "CD",
+    "explanation": "暂无解析",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "web",
+    "source_url": "https://blog.csdn.net/weixin_46425661/article/details/136547232",
+    "source_title": "操作系统习题精解-CSDN博客",
+    "fingerprint": "4dd1b64f08fab4838679"
+  },
+  {
+    "id": "OS-MC-0259",
+    "type": "multiple_choice",
+    "stem": "若题目考查进程，可作为正确线索的有( )。",
+    "options": [
+      "A. 程序的一次执行过程，是系统进行资源分配和保护的基本单位",
+      "B. 就绪态",
+      "C. PCB",
+      "D. 不需要 PCB"
+    ],
+    "answer": "ABC",
+    "explanation": "前三项都可帮助识别进程。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程",
+    "source_type": "generated",
+    "source_url": "generated://os-core-bank",
+    "source_title": "操作系统核心知识点生成题",
+    "fingerprint": "7d4a47c87ac9f938c1e1"
+  },
+  {
+    "id": "OS-MC-0260",
+    "type": "multiple_choice",
+    "stem": "进程的基本状态通常包括( )。",
+    "options": [
+      "A. 就绪态",
+      "B. 运行态",
+      "C. 阻塞态",
+      "D. 后备态"
+    ],
+    "answer": "ABC",
+    "explanation": "三态模型包括就绪、运行和阻塞。后备态常用于作业状态而非基本进程状态。",
+    "chapter": "进程与线程",
+    "knowledge_point": "进程状态",
+    "source_type": "generated",
+    "source_url": "manual_seed",
+    "source_title": "基础种子题",
+    "fingerprint": "74fe80854994d6fba126"
+  }
+]

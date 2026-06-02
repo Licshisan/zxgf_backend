@@ -1,0 +1,23 @@
+[
+  {
+    "res_id": "m001",
+    "section_id": "ch02_02",
+    "res_type": "ppt",
+    "file_path": "PptSource/ch02_单链表.pptx",
+    "desc": "单链表结构、头插尾插课堂课件"
+  },
+  {
+    "res_id": "m002",
+    "section_id": "ch05_03",
+    "res_type": "img",
+    "file_path": "ImageSource/二叉树三种遍历示意图.png",
+    "desc": "前序中序后序遍历流程配图"
+  },
+  {
+    "res_id": "m003",
+    "section_id": "ch03_01",
+    "res_type": "video_script",
+    "file_path": "VideoScript/顺序栈讲解.md",
+    "desc": "顺序栈入栈出栈演示文案"
+  }
+]
