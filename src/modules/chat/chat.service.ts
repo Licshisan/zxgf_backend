@@ -10,6 +10,7 @@ import { LlmProviderRegistry } from '../../shared/llm/llm-provider.registry';
 import { ProfileService } from '../profile/profile.service';
 import type { UserProfileData } from '../profile/types/user-profile.type';
 import { RagService } from '../rag/rag.service';
+import { TaskLogService } from '../task-log/task-log.service';
 import {
   type ChatRunContext,
   createRunContext,
@@ -44,6 +45,7 @@ export class ChatService {
     private readonly providerRegistry: LlmProviderRegistry,
     private readonly ragService: RagService,
     private readonly profileService: ProfileService,
+    private readonly taskLogService: TaskLogService,
   ) {}
 
   async *runAgent(
@@ -54,23 +56,48 @@ export class ChatService {
     if (signal.aborted) return;
 
     const context = createRunContext(input, user);
+    const chatTaskId = await this.taskLogService.startTask({
+      userId: context.userId,
+      agentName: 'chat',
+      taskType: 'chat.run',
+      input: {
+        provider: context.options.provider ?? 'openai',
+        model: context.options.model,
+        messageCount: context.messages.length,
+        userTextLength: context.userText.length,
+        ragEnabled: context.options.rag?.enabled !== false,
+        profileEnabled: context.options.profile?.enabled !== false,
+      },
+    });
 
-    yield createRunStartedEvent(context);
+    try {
+      yield createRunStartedEvent(context);
 
-    await this.applyProfileIfEnabled(context);
-    context.messages = yield* this.applyRagIfEnabled(context, signal);
+      await this.applyProfileIfEnabled(context);
+      context.messages = yield* this.applyRagIfEnabled(context, signal);
 
-    if (signal.aborted) return;
+      if (signal.aborted) return;
 
-    context.assistantText = yield* this.streamAssistantResponse(
-      context,
-      signal,
-    );
+      context.assistantText = yield* this.streamAssistantResponse(
+        context,
+        signal,
+      );
 
-    if (signal.aborted) return;
+      if (signal.aborted) return;
 
-    yield createRunFinishedEvent(context);
-    this.scheduleProfileUpdate(context);
+      yield createRunFinishedEvent(context);
+      await this.taskLogService.succeedTask(chatTaskId, {
+        assistantTextLength: context.assistantText.length,
+        ragEnabled: context.options.rag?.enabled !== false,
+        profileUpdateScheduled: this.shouldUpdateProfile(context),
+      });
+      this.scheduleProfileUpdate(context);
+    } catch (err) {
+      await this.taskLogService.failTask(chatTaskId, err, {
+        assistantTextLength: context.assistantText.length,
+      });
+      throw err;
+    }
   }
 
   private async applyProfileIfEnabled(context: ChatRunContext): Promise<void> {
@@ -107,6 +134,18 @@ export class ChatService {
       sourceId: context.options.rag?.sourceId,
       filters: context.options.rag?.filters,
     };
+    const ragTaskId = await this.taskLogService.startTask({
+      userId: context.userId,
+      agentName: 'rag',
+      taskType: 'rag.search',
+      input: {
+        queryLength: query.length,
+        topK: searchInput.topK,
+        minScore: searchInput.minScore,
+        sourceId: searchInput.sourceId,
+        filterKeys: searchInput.filters ? Object.keys(searchInput.filters) : [],
+      },
+    });
 
     yield createToolCallStartEvent(toolCallId, 'rag_search');
     yield createToolCallArgsEvent(toolCallId, searchInput);
@@ -114,6 +153,15 @@ export class ChatService {
 
     try {
       const searchResult = await this.ragService.search(searchInput);
+      const sourceIds = [
+        ...new Set(searchResult.results.map((result) => result.sourceId)),
+      ];
+
+      await this.taskLogService.succeedTask(ragTaskId, {
+        resultCount: searchResult.results.length,
+        topScore: searchResult.results[0]?.score ?? null,
+        sourceIds,
+      });
 
       yield createToolCallResultEvent(toolCallId, {
         ok: true,
@@ -139,6 +187,8 @@ export class ChatService {
         this.formatRagContext(searchResult.results),
       );
     } catch (err) {
+      await this.taskLogService.failTask(ragTaskId, err);
+
       yield createToolCallResultEvent(toolCallId, {
         ok: false,
         error: err instanceof Error ? err.message : 'RAG search failed',
@@ -177,23 +227,27 @@ export class ChatService {
   }
 
   private scheduleProfileUpdate(context: ChatRunContext): void {
-    if (
-      context.options.profile?.enabled === false ||
-      context.options.profile?.update === false ||
-      !context.profile ||
-      !context.userText ||
-      !context.assistantText
-    ) {
+    if (!this.shouldUpdateProfile(context)) {
       return;
     }
 
     void this.updateProfileFromConversation({
       userId: context.userId,
-      profile: context.profile,
+      profile: context.profile!,
       userText: context.userText,
       assistantText: context.assistantText,
       options: context.options,
     });
+  }
+
+  private shouldUpdateProfile(context: ChatRunContext): boolean {
+    return (
+      context.options.profile?.enabled !== false &&
+      context.options.profile?.update !== false &&
+      Boolean(context.profile) &&
+      Boolean(context.userText) &&
+      Boolean(context.assistantText)
+    );
   }
 
   private async getUserProfileForChat(
@@ -214,6 +268,17 @@ export class ChatService {
   private async updateProfileFromConversation(
     input: ProfileUpdateInput,
   ): Promise<void> {
+    const taskId = await this.taskLogService.startTask({
+      userId: input.userId,
+      agentName: 'profile',
+      taskType: 'profile.update_from_chat',
+      input: {
+        userTextLength: input.userText.length,
+        assistantTextLength: input.assistantText.length,
+        hasCurrentProfile: Boolean(input.profile),
+      },
+    });
+
     try {
       const result = await this.profileService.updateProfile(input.userId, {
         conversation: {
@@ -223,10 +288,17 @@ export class ChatService {
         currentProfile: input.profile,
         options: input.options,
       });
+      const patchDimensions = Object.keys(result.patch);
+
+      await this.taskLogService.succeedTask(taskId, {
+        changedCount: patchDimensions.length,
+        patchDimensions,
+      });
       this.logger.debug(
         `Recognized profile patch: ${JSON.stringify(result.patch)}`,
       );
     } catch (err) {
+      await this.taskLogService.failTask(taskId, err);
       this.logger.warn(
         `Failed to update user profile from chat: ${
           err instanceof Error ? err.message : String(err)
