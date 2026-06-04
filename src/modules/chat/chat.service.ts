@@ -94,7 +94,7 @@ export class ChatService {
           id: userMessage.id,
           role: 'user',
           content: userText,
-        } as Message,
+        },
       ],
     } satisfies Partial<RunAgentInput>;
     const context = createRunContext(runInput, user);
@@ -264,7 +264,9 @@ export class ChatService {
     context: ChatRunContext,
     signal: AbortSignal,
   ): AsyncGenerator<AGUIEvent, string> {
-    const provider = this.providerRegistry.getProvider(context.options.provider);
+    const provider = this.providerRegistry.getProvider(
+      context.options.provider,
+    );
     const events = provider.streamChat({
       messages: context.messages,
       options: context.options,

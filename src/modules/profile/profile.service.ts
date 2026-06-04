@@ -1,6 +1,5 @@
 import { randomUUID } from 'node:crypto';
 import { Injectable, NotFoundException } from '@nestjs/common';
-import type { Message } from '@ag-ui/core';
 import { Prisma } from '@prisma/client';
 import type { LlmProviderOptions } from '../../shared/llm/llm-provider.interface';
 import { LlmProviderRegistry } from '../../shared/llm/llm-provider.registry';
@@ -8,7 +7,6 @@ import { PrismaService } from '../../shared/prisma/prisma.service';
 import {
   createEmptyUserProfile,
   PROFILE_DIMENSIONS,
-  type ProfileDimension,
   ProfileDimensionValue,
   UserProfileData,
   UserProfilePatch,
@@ -84,7 +82,8 @@ export class ProfileService {
     userId: string,
     input: ProfileConversationUpdateInput,
   ): Promise<ProfileRecognitionResult> {
-    const currentProfile = input.currentProfile ?? (await this.getProfile(userId));
+    const currentProfile =
+      input.currentProfile ?? (await this.getProfile(userId));
     const patch = await this.extractProfilePatch({
       profile: currentProfile,
       userText: input.conversation.user,
@@ -118,7 +117,7 @@ export class ProfileService {
           id: `profile_extract_system_${randomUUID()}`,
           role: 'system',
           content: this.getProfileExtractionPrompt(),
-        } as Message,
+        },
         {
           id: `profile_extract_user_${randomUUID()}`,
           role: 'user',
@@ -129,7 +128,7 @@ export class ProfileService {
               assistant: input.assistantText,
             },
           }),
-        } as Message,
+        },
       ],
       options: {
         ...input.options,
@@ -173,7 +172,7 @@ export class ProfileService {
       if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
         return null;
       }
-      return parsed as UserProfilePatch;
+      return parsed;
     } catch {
       return null;
     }
@@ -213,7 +212,7 @@ export class ProfileService {
       }
 
       const nextValue = this.normalizeDimensionValue(
-        patch[dimension as ProfileDimension],
+        patch[dimension],
         updatedAt,
       );
 
@@ -225,7 +224,10 @@ export class ProfileService {
       const previousValue = current[dimension];
       merged[dimension] = {
         ...nextValue,
-        evidence: this.mergeEvidence(previousValue?.evidence, nextValue.evidence),
+        evidence: this.mergeEvidence(
+          previousValue?.evidence,
+          nextValue.evidence,
+        ),
         updatedAt,
       };
     }

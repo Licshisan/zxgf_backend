@@ -4,11 +4,7 @@ import { MockLlmProvider } from './providers/mock.provider';
 import { OpenAILlmProvider } from './providers/openai.provider';
 
 @Module({
-  providers: [
-    LlmProviderRegistry,
-    MockLlmProvider,
-    OpenAILlmProvider,
-  ],
+  providers: [LlmProviderRegistry, MockLlmProvider, OpenAILlmProvider],
   exports: [LlmProviderRegistry],
 })
 export class LlmModule {}

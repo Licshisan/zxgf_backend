@@ -1,5 +1,10 @@
 import { randomUUID } from 'node:crypto';
-import { EventType, type AGUIEvent, type Message, type RunAgentInput } from '@ag-ui/core';
+import {
+  EventType,
+  type AGUIEvent,
+  type Message,
+  type RunAgentInput,
+} from '@ag-ui/core';
 import type { AuthUser } from '../../../common/types/auth-user.type';
 import type { LlmProviderOptions } from '../../../shared/llm/llm-provider.interface';
 import type { UserProfileData } from '../../profile/types/user-profile.type';
@@ -50,7 +55,7 @@ export function prependSystemMessage(
       id: `${idPrefix}_${randomUUID()}`,
       role: 'system',
       content,
-    } as Message,
+    },
     ...messages,
   ];
 }

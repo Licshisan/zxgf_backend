@@ -1,9 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import {
-  EventType,
-  type AGUIEvent,
-  type RunAgentInput,
-} from '@ag-ui/core';
+import { EventType, type AGUIEvent, type RunAgentInput } from '@ag-ui/core';
 import type {
   LlmProviderEvent,
   LlmProviderName,

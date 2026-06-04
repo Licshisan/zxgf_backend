@@ -21,7 +21,8 @@ export class TaskLogController {
   @Get('my')
   @ApiOperation({
     summary: '查询当前用户智能体任务日志',
-    description: '分页返回当前登录用户的智能体任务日志，支持按状态、任务类型和智能体名称过滤。',
+    description:
+      '分页返回当前登录用户的智能体任务日志，支持按状态、任务类型和智能体名称过滤。',
   })
   @ApiOkResponse({ description: '查询成功' })
   listMyTasks(@CurrentUser() user: AuthUser, @Query() query: ListTaskLogsDto) {

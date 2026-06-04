@@ -15,9 +15,7 @@ export class OpenAILlmProvider implements LlmProvider {
 
   constructor(private readonly config: ConfigService) {}
 
-  async *streamChat(
-    input: LlmProviderInput,
-  ): AsyncGenerator<LlmProviderEvent> {
+  async *streamChat(input: LlmProviderInput): AsyncGenerator<LlmProviderEvent> {
     if (input.signal.aborted) return;
 
     const messages = toOpenAIChatMessages(input.messages);

@@ -110,7 +110,9 @@ export class TaskLogService {
     }
   }
 
-  private toJson(value: JsonRecord | undefined): Prisma.InputJsonValue | undefined {
+  private toJson(
+    value: JsonRecord | undefined,
+  ): Prisma.InputJsonValue | undefined {
     return value as Prisma.InputJsonValue | undefined;
   }
 

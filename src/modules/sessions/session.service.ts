@@ -109,12 +109,18 @@ export class SessionService {
     return this.prisma.session.update({
       where: { id: sessionId },
       data: {
-        ...(dto.title !== undefined ? { title: this.optionalText(dto.title) } : {}),
+        ...(dto.title !== undefined
+          ? { title: this.optionalText(dto.title) }
+          : {}),
         ...(dto.course !== undefined
           ? { course: this.optionalText(dto.course) }
           : {}),
-        ...(dto.goal !== undefined ? { goal: this.optionalText(dto.goal) } : {}),
-        ...(dto.metadata !== undefined ? { metadata: this.toJson(dto.metadata) } : {}),
+        ...(dto.goal !== undefined
+          ? { goal: this.optionalText(dto.goal) }
+          : {}),
+        ...(dto.metadata !== undefined
+          ? { metadata: this.toJson(dto.metadata) }
+          : {}),
       },
     });
   }
@@ -133,13 +139,14 @@ export class SessionService {
     const session = await this.getMySession(userId, sessionId);
 
     return session.messages.map((message) => {
-      const role = message.role === MessageRole.ASSISTANT ? 'assistant' : 'user';
+      const role =
+        message.role === MessageRole.ASSISTANT ? 'assistant' : 'user';
 
       return {
         id: message.id,
         role,
         content: message.content,
-      } as Message;
+      };
     });
   }
 

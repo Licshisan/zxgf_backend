@@ -17,9 +17,7 @@ export class MockLlmProvider implements LlmProvider {
   readonly name: LlmProviderName = 'mock';
   private readonly logger = new Logger(MockLlmProvider.name);
 
-  async *streamChat(
-    input: LlmProviderInput,
-  ): AsyncGenerator<LlmProviderEvent> {
+  async *streamChat(input: LlmProviderInput): AsyncGenerator<LlmProviderEvent> {
     try {
       const reply = this.createMockReply(input.messages);
       const chunks = reply.match(new RegExp(`.{1,${CHUNK_SIZE}}`, 'gu')) ?? [];

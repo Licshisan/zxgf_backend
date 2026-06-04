@@ -108,11 +108,7 @@ export class ResourceAgentService {
         ragEnabled: Boolean(ragResult),
         ragResultCount: ragResult?.results.length ?? 0,
         ragSources: ragResult
-          ? [
-              ...new Set(
-                ragResult.results.map((result) => result.sourceId),
-              ),
-            ]
+          ? [...new Set(ragResult.results.map((result) => result.sourceId))]
           : [],
       };
       const updated = await this.prisma.generatedResource.update({
@@ -251,8 +247,8 @@ export class ResourceAgentService {
   private shouldUseRag(dto: GenerateLearningDocumentDto): boolean {
     return Boolean(
       dto.rag?.enabled === true ||
-        dto.rag?.sourceId ||
-        (dto.rag?.filters && Object.keys(dto.rag.filters).length > 0),
+      dto.rag?.sourceId ||
+      (dto.rag?.filters && Object.keys(dto.rag.filters).length > 0),
     );
   }
 
@@ -331,12 +327,12 @@ export class ResourceAgentService {
         id: 'resource_generation_system',
         role: 'system',
         content: '你是专业的中文学习文档生成助手。',
-      } as Message,
+      },
       {
         id: 'resource_generation_user',
         role: 'user',
         content: prompt,
-      } as Message,
+      },
     ];
 
     for await (const event of provider.streamChat({
@@ -444,9 +440,10 @@ export class ResourceAgentService {
     return paragraphs;
   }
 
-  private parseHeading(
-    line: string,
-  ): { level: (typeof HeadingLevel)[keyof typeof HeadingLevel]; text: string } | null {
+  private parseHeading(line: string): {
+    level: (typeof HeadingLevel)[keyof typeof HeadingLevel];
+    text: string;
+  } | null {
     const match = line.match(/^(#{1,3})\s+(.+)$/);
     if (!match) return null;
 
