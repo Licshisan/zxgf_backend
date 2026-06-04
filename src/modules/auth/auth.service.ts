@@ -2,7 +2,10 @@ import {
   BadRequestException,
   ConflictException,
   Injectable,
+  Logger,
+  OnModuleInit,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Prisma, UserRole } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
@@ -19,13 +22,20 @@ const CODE_TTL_SECONDS = 10 * 60;
 const SALT_ROUNDS = 10;
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnModuleInit {
+  private readonly logger = new Logger(AuthService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly redisService: RedisService,
     private readonly mailService: MailService,
     private readonly jwtService: JwtService,
+    private readonly config: ConfigService,
   ) {}
+
+  async onModuleInit(): Promise<void> {
+    await this.initializeDefaultAdmin();
+  }
 
   async sendRegisterCode(dto: SendEmailCodeDto) {
     const email = dto.email.toLowerCase();
@@ -129,6 +139,45 @@ export class AuthService {
     });
     await this.deleteEmailCode('reset', email);
     return { message: '密码重置成功' };
+  }
+
+  private async initializeDefaultAdmin(): Promise<void> {
+    const username = this.config.get<string>('ADMIN_USERNAME')?.trim();
+    const email = this.config.get<string>('ADMIN_EMAIL')?.trim().toLowerCase();
+    const password = this.config.get<string>('ADMIN_PASSWORD');
+    const displayName = this.config.get<string>('ADMIN_DISPLAY_NAME')?.trim();
+
+    if (!username || !email || !password) {
+      this.logger.warn(
+        '未配置 ADMIN_USERNAME、ADMIN_EMAIL、ADMIN_PASSWORD，跳过默认管理员初始化',
+      );
+      return;
+    }
+
+    const existingUser = await this.prisma.user.findFirst({
+      where: {
+        OR: [{ username }, { email }],
+      },
+      select: { id: true },
+    });
+
+    if (existingUser) {
+      this.logger.log('默认管理员账号已存在，跳过初始化');
+      return;
+    }
+
+    const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
+    await this.prisma.user.create({
+      data: {
+        username,
+        email,
+        passwordHash,
+        displayName: displayName || '系统管理员',
+        role: UserRole.ADMIN,
+      },
+    });
+
+    this.logger.log('默认管理员账号初始化完成');
   }
 
   private async saveEmailCode(purpose: 'register' | 'reset', email: string) {
