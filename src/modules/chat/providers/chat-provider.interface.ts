@@ -16,6 +16,13 @@ export interface ChatProviderOptions {
   provider?: ChatProviderName;
   model?: string;
   temperature?: number;
+  rag?: {
+    enabled?: boolean;
+    topK?: number;
+    minScore?: number;
+    sourceId?: string;
+    filters?: Record<string, unknown>;
+  };
   reasoning?: {
     enabled?: boolean;
     effort?: 'minimal' | 'low' | 'medium' | 'high';

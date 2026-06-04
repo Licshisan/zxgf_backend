@@ -60,6 +60,51 @@ export function getProviderOptions(
   }
 
   if (
+    typeof props.rag === 'object' &&
+    props.rag !== null &&
+    !Array.isArray(props.rag)
+  ) {
+    const rag = props.rag as Record<string, unknown>;
+    const parsedRag: NonNullable<ChatProviderOptions['rag']> = {};
+
+    if (typeof rag.enabled === 'boolean') {
+      parsedRag.enabled = rag.enabled;
+    }
+
+    if (
+      Number.isInteger(rag.topK) &&
+      typeof rag.topK === 'number' &&
+      rag.topK >= 1 &&
+      rag.topK <= 20
+    ) {
+      parsedRag.topK = rag.topK;
+    }
+
+    if (
+      typeof rag.minScore === 'number' &&
+      Number.isFinite(rag.minScore) &&
+      rag.minScore >= 0 &&
+      rag.minScore <= 1
+    ) {
+      parsedRag.minScore = rag.minScore;
+    }
+
+    if (typeof rag.sourceId === 'string' && rag.sourceId.trim()) {
+      parsedRag.sourceId = rag.sourceId.trim();
+    }
+
+    if (
+      typeof rag.filters === 'object' &&
+      rag.filters !== null &&
+      !Array.isArray(rag.filters)
+    ) {
+      parsedRag.filters = rag.filters as Record<string, unknown>;
+    }
+
+    options.rag = parsedRag;
+  }
+
+  if (
     typeof props.reasoning === 'object' &&
     props.reasoning !== null &&
     !Array.isArray(props.reasoning)
