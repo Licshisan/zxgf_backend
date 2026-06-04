@@ -35,18 +35,30 @@ enum AgentTaskStatus {
   CANCELED
 }
 
+enum GeneratedResourceType {
+  LEARNING_DOCUMENT
+}
+
+enum GeneratedResourceStatus {
+  PENDING
+  RUNNING
+  SUCCEEDED
+  FAILED
+}
+
 model User {
-  id           String         @id @default(uuid()) @db.Uuid
-  username     String         @unique @db.VarChar(64)
-  email        String?        @unique @db.VarChar(255)
-  passwordHash String         @map("password_hash") @db.VarChar(255)
-  displayName  String?        @map("display_name") @db.VarChar(100)
-  role         UserRole       @default(STUDENT)
-  profile      Json?
-  sessions     Session[]
-  taskLogs     AgentTaskLog[]
-  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
-  updatedAt    DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+  id                 String              @id @default(uuid()) @db.Uuid
+  username           String              @unique @db.VarChar(64)
+  email              String?             @unique @db.VarChar(255)
+  passwordHash       String              @map("password_hash") @db.VarChar(255)
+  displayName        String?             @map("display_name") @db.VarChar(100)
+  role               UserRole            @default(STUDENT)
+  profile            Json?
+  sessions           Session[]
+  taskLogs           AgentTaskLog[]
+  generatedResources GeneratedResource[]
+  createdAt          DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime            @updatedAt @map("updated_at") @db.Timestamptz(6)
 
   @@map("users")
 }
@@ -123,4 +135,28 @@ model AgentTaskLog {
   @@index([status])
   @@index([taskType])
   @@map("agent_task_logs")
+}
+
+model GeneratedResource {
+  id        String                  @id @default(uuid()) @db.Uuid
+  userId    String                  @map("user_id") @db.Uuid
+  user      User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String                  @db.VarChar(200)
+  type      GeneratedResourceType   @default(LEARNING_DOCUMENT)
+  status    GeneratedResourceStatus @default(PENDING)
+  prompt    String?
+  input     Json?
+  content   String?
+  filePath  String?                 @map("file_path")
+  fileName  String?                 @map("file_name") @db.VarChar(255)
+  metadata  Json?
+  error     String?
+  createdAt DateTime                @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime                @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([userId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@map("generated_resources")
 }
