@@ -5,7 +5,6 @@ import { EmbeddingProviderRegistry } from './embeddings/embedding-provider.regis
 import { OpenAIEmbeddingProvider } from './embeddings/openai-embedding.provider';
 import { XfyunEmbeddingProvider } from './embeddings/xfyun-embedding.provider';
 import { RagService } from './rag.service';
-import { VectorStoreService } from './vector-store/vector-store.service';
 
 @Module({
   imports: [PrismaModule],
@@ -15,7 +14,6 @@ import { VectorStoreService } from './vector-store/vector-store.service';
     OpenAIEmbeddingProvider,
     XfyunEmbeddingProvider,
     EmbeddingProviderRegistry,
-    VectorStoreService,
   ],
   exports: [RagService],
 })

@@ -12,7 +12,6 @@ interface StreamAgentOptions {
   errorMessage?: string;
 }
 
-// 将普通控制器方法装饰为 AG-UI SSE 流端点，统一处理响应头、断连取消和错误事件。
 export function StreamAgent(options: StreamAgentOptions = {}): MethodDecorator {
   return (
     _target: object,
@@ -22,7 +21,6 @@ export function StreamAgent(options: StreamAgentOptions = {}): MethodDecorator {
     const original = descriptor.value as StreamHandler;
 
     descriptor.value = async function (...args: unknown[]): Promise<void> {
-      // 从控制器入参中找到 Express 响应对象，让装饰器接管后续的流式写出。
       const response = args.find((value): value is Response => {
         return (
           typeof value === 'object' &&
@@ -43,7 +41,6 @@ export function StreamAgent(options: StreamAgentOptions = {}): MethodDecorator {
         accept: Array.isArray(accept) ? accept.join(', ') : accept,
       });
 
-      // 用 AG-UI 协议要求的响应头打开一条干净的 SSE 通道。
       response.setHeader('Content-Type', encoder.getContentType());
       response.setHeader('Cache-Control', 'no-cache, no-transform');
       response.setHeader('Connection', 'keep-alive');
@@ -83,7 +80,6 @@ export function StreamAgent(options: StreamAgentOptions = {}): MethodDecorator {
           errMsg = err.message;
         }
 
-        // 即使业务流失败，也用 AG-UI 事件格式把错误收束给前端。
         const errorEvent: AGUIEvent = {
           type: EventType.RUN_ERROR,
           message: errMsg,

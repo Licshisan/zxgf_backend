@@ -33,7 +33,8 @@ class ProfileDimensionValueDto {
   evidence!: string[];
 
   @IsString()
-  updatedAt!: string;
+  @IsOptional()
+  updatedAt?: string;
 }
 
 class UserProfileDataDto {
@@ -72,5 +73,5 @@ export class UpdateProfileDto {
   @IsObject()
   @ValidateNested()
   @Type(() => UserProfileDataDto)
-  profile!: userProfileType.UserProfileData;
+  profile!: userProfileType.UserProfilePatch;
 }

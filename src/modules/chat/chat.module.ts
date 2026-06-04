@@ -1,20 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from '../auth/auth.module';
+import { ProfileModule } from '../profile/profile.module';
 import { RagModule } from '../rag/rag.module';
+import { LlmModule } from '../../shared/llm/llm.module';
 import { ChatController } from './chat.controller';
 import { ChatService } from './chat.service';
-import { ChatProviderRegistry } from './providers/chat-provider.registry';
-import { MockChatProvider } from './providers/mock-chat.provider';
-import { OpenAIChatProvider } from './providers/openai-chat.provider';
 
 @Module({
-  imports: [AuthModule, RagModule],
+  imports: [AuthModule, ProfileModule, RagModule, LlmModule],
   controllers: [ChatController],
-  providers: [
-    ChatService,
-    ChatProviderRegistry,
-    MockChatProvider,
-    OpenAIChatProvider,
-  ],
+  providers: [ChatService],
 })
 export class ChatModule {}

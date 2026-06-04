@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Res } from '@nestjs/common';
+import { Body, Controller, Post, Res, UseGuards } from '@nestjs/common';
 import {
   ApiOkResponse,
   ApiOperation,
@@ -8,7 +8,10 @@ import {
 import { type AGUIEvent, type RunAgentInput } from '@ag-ui/core';
 import { AGUI_MEDIA_TYPE } from '@ag-ui/encoder';
 import type { Response } from 'express';
-import { StreamAgent } from './decorators/stream-agent.decorator';
+import { CurrentUser } from '../../common/decorators/current-user.decorator';
+import { StreamAgent } from '../../common/decorators/stream-agent.decorator';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import type { AuthUser } from '../../common/types/auth-user.type';
 import { ChatService } from './chat.service';
 
 const CHAT_STREAM_ERROR_CODE = 'CHAT_STREAM_FAILED';
@@ -26,13 +29,15 @@ export class ChatController {
   })
   @ApiProduces('text/event-stream', AGUI_MEDIA_TYPE)
   @ApiOkResponse({ description: '返回 AG-UI Server-Sent Events 事件流' })
+  @UseGuards(JwtAuthGuard)
   @StreamAgent({ errorCode: CHAT_STREAM_ERROR_CODE })
   llmStream(
     @Body() body: Partial<RunAgentInput>,
+    @CurrentUser() user: AuthUser,
     @Res({ passthrough: true }) response: Response,
     signal: AbortSignal,
   ): AsyncGenerator<AGUIEvent> {
     void response;
-    return this.chatService.runAgent(body, signal);
+    return this.chatService.runAgent(body, signal, user);
   }
 }

@@ -1,25 +1,25 @@
 import { Injectable, Logger } from '@nestjs/common';
 import type { Message } from '@ag-ui/core';
-import { messageContentToText } from '../adapters/chat.adapter';
+import { messageContentToText } from '../llm-message.adapter';
 import type {
-  ChatProvider,
-  ChatProviderEvent,
-  ChatProviderInput,
-  ChatProviderName,
-} from './chat-provider.interface';
+  LlmProvider,
+  LlmProviderEvent,
+  LlmProviderInput,
+  LlmProviderName,
+} from '../llm-provider.interface';
 
 const MOCK_REPLY_PREFIX = '这是一条模拟 AI 回复：';
 const STREAM_DELAY_MS = 120;
 const CHUNK_SIZE = 12;
 
 @Injectable()
-export class MockChatProvider implements ChatProvider {
-  readonly name: ChatProviderName = 'mock';
-  private readonly logger = new Logger(MockChatProvider.name);
+export class MockLlmProvider implements LlmProvider {
+  readonly name: LlmProviderName = 'mock';
+  private readonly logger = new Logger(MockLlmProvider.name);
 
   async *streamChat(
-    input: ChatProviderInput,
-  ): AsyncGenerator<ChatProviderEvent> {
+    input: LlmProviderInput,
+  ): AsyncGenerator<LlmProviderEvent> {
     try {
       const reply = this.createMockReply(input.messages);
       const chunks = reply.match(new RegExp(`.{1,${CHUNK_SIZE}}`, 'gu')) ?? [];

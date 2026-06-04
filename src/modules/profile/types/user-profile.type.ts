@@ -23,6 +23,8 @@ export type UserProfileData = Record<
   ProfileDimensionValue | null
 >;
 
+export type UserProfilePatch = Partial<UserProfileData>;
+
 export function createEmptyUserProfile(): UserProfileData {
   return PROFILE_DIMENSIONS.reduce((profile, dimension) => {
     profile[dimension] = null;

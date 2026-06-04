@@ -1,23 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
-import { toOpenAIChatMessages } from '../adapters/chat.adapter';
+import { toOpenAIChatMessages } from '../llm-message.adapter';
 import type {
-  ChatProvider,
-  ChatProviderEvent,
-  ChatProviderInput,
-  ChatProviderName,
-} from './chat-provider.interface';
+  LlmProvider,
+  LlmProviderEvent,
+  LlmProviderInput,
+  LlmProviderName,
+} from '../llm-provider.interface';
 
 @Injectable()
-export class OpenAIChatProvider implements ChatProvider {
-  readonly name: ChatProviderName = 'openai';
+export class OpenAILlmProvider implements LlmProvider {
+  readonly name: LlmProviderName = 'openai';
 
   constructor(private readonly config: ConfigService) {}
 
   async *streamChat(
-    input: ChatProviderInput,
-  ): AsyncGenerator<ChatProviderEvent> {
+    input: LlmProviderInput,
+  ): AsyncGenerator<LlmProviderEvent> {
     if (input.signal.aborted) return;
 
     const messages = toOpenAIChatMessages(input.messages);
@@ -34,7 +34,6 @@ export class OpenAIChatProvider implements ChatProvider {
     const model = input.options.model || this.config.get<string>('LLM_MODEL')!;
     const client = new OpenAI({ apiKey, baseURL });
 
-    console.log(messages);
     try {
       const stream = await client.chat.completions.create(
         {
@@ -54,7 +53,6 @@ export class OpenAIChatProvider implements ChatProvider {
         }
       }
     } catch (err) {
-      console.error('OpenAIChatProvider streamChat error:', err);
       if (
         input.signal.aborted ||
         (err instanceof Error && err.name === 'AbortError')

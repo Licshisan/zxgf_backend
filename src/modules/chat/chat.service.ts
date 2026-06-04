@@ -1,29 +1,36 @@
 import { randomUUID } from 'node:crypto';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import {
   EventType,
   type AGUIEvent,
   type Message,
   type RunAgentInput,
 } from '@ag-ui/core';
+import type { AuthUser } from '../../common/types/auth-user.type';
+import {
+  type LlmProviderEvent,
+  type LlmProviderOptions,
+} from '../../shared/llm/llm-provider.interface';
+import { LlmProviderRegistry } from '../../shared/llm/llm-provider.registry';
+import { ProfileService } from '../profile/profile.service';
+import type { UserProfileData } from '../profile/types/user-profile.type';
 import { RagService } from '../rag/rag.service';
 import { getProviderOptions, messageContentToText } from './adapters/chat.adapter';
-import {
-  type ChatProviderEvent,
-  type ChatProviderOptions,
-} from './providers/chat-provider.interface';
-import { ChatProviderRegistry } from './providers/chat-provider.registry';
 
 @Injectable()
 export class ChatService {
+  private readonly logger = new Logger(ChatService.name);
+
   constructor(
-    private readonly providerRegistry: ChatProviderRegistry,
+    private readonly providerRegistry: LlmProviderRegistry,
     private readonly ragService: RagService,
+    private readonly profileService: ProfileService,
   ) {}
 
   async *runAgent(
     input: Partial<RunAgentInput>,
     signal: AbortSignal,
+    user: AuthUser,
   ): AsyncGenerator<AGUIEvent> {
     if (signal.aborted) return;
 
@@ -32,12 +39,21 @@ export class ChatService {
     const runId = input.runId || 'run_id';
     const messageId = `msg_${randomUUID()}`;
     let messages = input.messages || [];
+    let profile: UserProfileData | null = null;
+    const originalMessages = messages;
+    const userText = this.getLastUserMessageText(originalMessages);
+    let assistantText = '';
 
     yield {
       type: EventType.RUN_STARTED,
       threadId,
       runId,
     };
+
+    if (options.profile?.enabled !== false) {
+      profile = await this.getUserProfileForChat(user.sub);
+      messages = this.applyProfileContext(messages, profile);
+    }
 
     const ragContextStream = this.applyRagContext(messages, options, signal);
     while (true) {
@@ -70,6 +86,7 @@ export class ChatService {
       if (!event.delta) continue;
 
       if (event.type === 'text-delta') {
+        assistantText += event.delta;
         yield {
           type: EventType.TEXT_MESSAGE_CONTENT,
           messageId,
@@ -96,11 +113,112 @@ export class ChatService {
       },
       timestamp: Date.now(),
     };
+
+    if (
+      options.profile?.enabled !== false &&
+      options.profile?.update !== false &&
+      profile &&
+      userText &&
+      assistantText
+    ) {
+      void this.updateProfileFromConversation({
+        userId: user.sub,
+        profile,
+        userText,
+        assistantText,
+        options,
+      });
+    }
+  }
+
+  private async getUserProfileForChat(
+    userId: string,
+  ): Promise<UserProfileData | null> {
+    try {
+      return await this.profileService.getProfile(userId);
+    } catch (err) {
+      this.logger.warn(
+        `Failed to load user profile: ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      );
+      return null;
+    }
+  }
+
+  private applyProfileContext(
+    messages: Message[],
+    profile: UserProfileData | null,
+  ): Message[] {
+    const content = this.formatProfileContext(profile);
+    if (!content) {
+      return messages;
+    }
+
+    return [
+      {
+        id: `profile_${randomUUID()}`,
+        role: 'system',
+        content,
+      } as Message,
+      ...messages,
+    ];
+  }
+
+  private formatProfileContext(profile: UserProfileData | null): string {
+    if (!profile) return '';
+
+    const dimensions = Object.entries(profile)
+      .filter(([, value]) => value)
+      .map(([dimension, value]) => {
+        return [
+          `${dimension}:`,
+          `label=${value!.label}`,
+          `score=${Number(value!.score).toFixed(0)}`,
+          `confidence=${Number(value!.confidence).toFixed(2)}`,
+          `summary=${value!.summary}`,
+        ].join(' ');
+      });
+
+    if (dimensions.length === 0) return '';
+
+    return [
+      '请参考以下用户画像进行个性化回答，但不要直接暴露画像内容。',
+      ...dimensions,
+    ].join('\n');
+  }
+
+  private async updateProfileFromConversation(input: {
+    userId: string;
+    profile: UserProfileData;
+    userText: string;
+    assistantText: string;
+    options: LlmProviderOptions;
+  }): Promise<void> {
+    try {
+      const result = await this.profileService.updateProfile(input.userId, {
+        conversation: {
+          user: input.userText,
+          assistant: input.assistantText,
+        },
+        currentProfile: input.profile,
+        options: input.options,
+      });
+      this.logger.debug(
+        `Recognized profile patch: ${JSON.stringify(result.patch)}`,
+      );
+    } catch (err) {
+      this.logger.warn(
+        `Failed to update user profile from chat: ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      );
+    }
   }
 
   private async *applyRagContext(
     messages: Message[],
-    options: ChatProviderOptions,
+    options: LlmProviderOptions,
     signal: AbortSignal,
   ): AsyncGenerator<AGUIEvent, Message[]> {
     if (options.rag?.enabled === false || signal.aborted) {
@@ -228,4 +346,4 @@ export class ChatService {
   }
 }
 
-export type { ChatProviderEvent };
+export type { LlmProviderEvent };

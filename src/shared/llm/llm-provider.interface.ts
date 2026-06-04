@@ -1,8 +1,8 @@
 import type { Message } from '@ag-ui/core';
 
-export type ChatProviderName = 'mock' | 'openai';
+export type LlmProviderName = 'mock' | 'openai';
 
-export type ChatProviderEvent =
+export type LlmProviderEvent =
   | {
       type: 'text-delta';
       delta: string;
@@ -12,8 +12,8 @@ export type ChatProviderEvent =
       delta: string;
     };
 
-export interface ChatProviderOptions {
-  provider?: ChatProviderName;
+export interface LlmProviderOptions {
+  provider?: LlmProviderName;
   model?: string;
   temperature?: number;
   rag?: {
@@ -23,6 +23,10 @@ export interface ChatProviderOptions {
     sourceId?: string;
     filters?: Record<string, unknown>;
   };
+  profile?: {
+    enabled?: boolean;
+    update?: boolean;
+  };
   reasoning?: {
     enabled?: boolean;
     effort?: 'minimal' | 'low' | 'medium' | 'high';
@@ -30,13 +34,13 @@ export interface ChatProviderOptions {
   };
 }
 
-export interface ChatProviderInput {
+export interface LlmProviderInput {
   messages: Message[];
-  options: ChatProviderOptions;
+  options: LlmProviderOptions;
   signal: AbortSignal;
 }
 
-export interface ChatProvider {
-  readonly name: ChatProviderName;
-  streamChat(input: ChatProviderInput): AsyncIterable<ChatProviderEvent>;
+export interface LlmProvider {
+  readonly name: LlmProviderName;
+  streamChat(input: LlmProviderInput): AsyncIterable<LlmProviderEvent>;
 }
