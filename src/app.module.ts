@@ -5,6 +5,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { ChatModule } from './modules/chat/chat.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { RagModule } from './modules/rag/rag.module';
+import { SessionModule } from './modules/sessions/session.module';
 import { TaskLogModule } from './modules/task-log/task-log.module';
 
 @Module({
@@ -18,6 +19,7 @@ import { TaskLogModule } from './modules/task-log/task-log.module';
     ChatModule,
     ProfileModule,
     RagModule,
+    SessionModule,
     TaskLogModule,
   ],
 })

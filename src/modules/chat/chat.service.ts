@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { type AGUIEvent, type Message, type RunAgentInput } from '@ag-ui/core';
 import type { AuthUser } from '../../common/types/auth-user.type';
 import {
@@ -10,6 +10,7 @@ import { LlmProviderRegistry } from '../../shared/llm/llm-provider.registry';
 import { ProfileService } from '../profile/profile.service';
 import type { UserProfileData } from '../profile/types/user-profile.type';
 import { RagService } from '../rag/rag.service';
+import { SessionService } from '../sessions/session.service';
 import { TaskLogService } from '../task-log/task-log.service';
 import {
   type ChatRunContext,
@@ -26,11 +27,13 @@ import {
   getLastUserMessageText,
   prependSystemMessage,
 } from './adapters/chat-events';
+import type { ChatStreamDto } from './dto/chat-stream.dto';
 
 type RagSearchResults = Awaited<ReturnType<RagService['search']>>['results'];
 
 interface ProfileUpdateInput {
   userId: string;
+  sessionId: string;
   profile: UserProfileData;
   userText: string;
   assistantText: string;
@@ -45,19 +48,60 @@ export class ChatService {
     private readonly providerRegistry: LlmProviderRegistry,
     private readonly ragService: RagService,
     private readonly profileService: ProfileService,
+    private readonly sessionService: SessionService,
     private readonly taskLogService: TaskLogService,
   ) {}
 
   async *runAgent(
-    input: Partial<RunAgentInput>,
+    input: ChatStreamDto,
     signal: AbortSignal,
     user: AuthUser,
   ): AsyncGenerator<AGUIEvent> {
     if (signal.aborted) return;
 
-    const context = createRunContext(input, user);
+    const sessionId = input.sessionId?.trim();
+    if (!sessionId) {
+      throw new BadRequestException('sessionId 不能为空');
+    }
+
+    const userText = this.sessionService.getLastUserText(input.messages);
+    if (!userText) {
+      throw new BadRequestException('本轮对话必须包含一条用户消息');
+    }
+
+    const historyMessages = await this.sessionService.getMessagesForChat(
+      user.sub,
+      sessionId,
+    );
+    const userMessage = await this.sessionService.appendMessage({
+      sessionId,
+      userId: user.sub,
+      role: 'user',
+      content: userText,
+    });
+    await this.sessionService.touchSessionTitleIfEmpty(
+      user.sub,
+      sessionId,
+      userText,
+    );
+
+    const runInput = {
+      ...(input as Partial<RunAgentInput>),
+      threadId: input.threadId || sessionId,
+      messages: [
+        ...historyMessages,
+        {
+          id: userMessage.id,
+          role: 'user',
+          content: userText,
+        } as Message,
+      ],
+    } satisfies Partial<RunAgentInput>;
+    const context = createRunContext(runInput, user);
     const chatTaskId = await this.taskLogService.startTask({
       userId: context.userId,
+      sessionId,
+      messageId: userMessage.id,
       agentName: 'chat',
       taskType: 'chat.run',
       input: {
@@ -74,7 +118,11 @@ export class ChatService {
       yield createRunStartedEvent(context);
 
       await this.applyProfileIfEnabled(context);
-      context.messages = yield* this.applyRagIfEnabled(context, signal);
+      context.messages = yield* this.applyRagIfEnabled(
+        context,
+        sessionId,
+        signal,
+      );
 
       if (signal.aborted) return;
 
@@ -85,13 +133,25 @@ export class ChatService {
 
       if (signal.aborted) return;
 
+      const assistantMessage = await this.sessionService.appendMessage({
+        sessionId,
+        userId: context.userId,
+        role: 'assistant',
+        content: context.assistantText,
+        metadata: {
+          provider: context.options.provider ?? 'openai',
+          model: context.options.model,
+        },
+      });
+
       yield createRunFinishedEvent(context);
       await this.taskLogService.succeedTask(chatTaskId, {
+        assistantMessageId: assistantMessage.id,
         assistantTextLength: context.assistantText.length,
         ragEnabled: context.options.rag?.enabled !== false,
         profileUpdateScheduled: this.shouldUpdateProfile(context),
       });
-      this.scheduleProfileUpdate(context);
+      this.scheduleProfileUpdate(context, sessionId);
     } catch (err) {
       await this.taskLogService.failTask(chatTaskId, err, {
         assistantTextLength: context.assistantText.length,
@@ -115,6 +175,7 @@ export class ChatService {
 
   private async *applyRagIfEnabled(
     context: ChatRunContext,
+    sessionId: string,
     signal: AbortSignal,
   ): AsyncGenerator<AGUIEvent, Message[]> {
     if (context.options.rag?.enabled === false || signal.aborted) {
@@ -136,6 +197,7 @@ export class ChatService {
     };
     const ragTaskId = await this.taskLogService.startTask({
       userId: context.userId,
+      sessionId,
       agentName: 'rag',
       taskType: 'rag.search',
       input: {
@@ -226,13 +288,17 @@ export class ChatService {
     return assistantText;
   }
 
-  private scheduleProfileUpdate(context: ChatRunContext): void {
+  private scheduleProfileUpdate(
+    context: ChatRunContext,
+    sessionId: string,
+  ): void {
     if (!this.shouldUpdateProfile(context)) {
       return;
     }
 
     void this.updateProfileFromConversation({
       userId: context.userId,
+      sessionId,
       profile: context.profile!,
       userText: context.userText,
       assistantText: context.assistantText,
@@ -270,6 +336,7 @@ export class ChatService {
   ): Promise<void> {
     const taskId = await this.taskLogService.startTask({
       userId: input.userId,
+      sessionId: input.sessionId,
       agentName: 'profile',
       taskType: 'profile.update_from_chat',
       input: {
